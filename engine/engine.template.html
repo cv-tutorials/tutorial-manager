@@ -65,7 +65,7 @@
  .spot.static{border-color:var(--navy); cursor:default; box-shadow:0 0 0 9999px rgba(14,19,47,.5)}
  .spot.static::after{display:none}
  @keyframes pulse{0%{opacity:.8;transform:scale(1)}70%{opacity:0;transform:scale(1.06)}100%{opacity:0}}
- .blur{position:absolute; backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); z-index:2; border-radius:4px}
+ .blur{position:absolute; z-index:2; border-radius:4px}
  .ctrl{display:flex; align-items:flex-start; gap:18px; padding:18px 24px 6px}
  .num{font-size:42px; font-weight:800; line-height:.82; color:var(--navy); font-variant-numeric:tabular-nums; letter-spacing:-2px; flex:none; min-width:58px}
  .copy{flex:1; min-width:0}
@@ -231,7 +231,7 @@
      sp.style.width=s.w+"%"; sp.style.height=s.h+"%";
      sp.classList.toggle("static", !!s.static);
      document.querySelectorAll(".blur").forEach(e=>e.remove());
-     if(s.blur){s.blur.forEach(b=>{const d=document.createElement("div");d.className="blur";d.style.left=(b.x)+"%";d.style.top=(b.y)+"%";d.style.width=(b.w)+"%";d.style.height=(b.h)+"%";document.getElementById("canvas").appendChild(d);});}
+     if(s.blur){s.blur.forEach(b=>{const d=document.createElement("div");d.className="blur";d.style.left=(b.x)+"%";d.style.top=(b.y)+"%";d.style.width=(b.w)+"%";d.style.height=(b.h)+"%";const a=(b.a||8)+"px";d.style.backdropFilter="blur("+a+")";d.style.webkitBackdropFilter="blur("+a+")";document.getElementById("canvas").appendChild(d);});}
      document.getElementById("num").textContent=String(idx+1).padStart(2,"0");
      document.getElementById("cT").textContent=s[lang].t;
      document.getElementById("cD").textContent=s[lang].d;
