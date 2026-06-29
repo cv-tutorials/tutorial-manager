@@ -52,6 +52,7 @@
       "h": 6,
       "z": 2.0,
       "static": false,
+      "blur": [{"x": 25, "y": 50, "w": 73, "h": 50}],
       "en": { "t": "Click the Invite button", "d": "At the top-right of the coach list, click the blue \"Invite\" button." },
       "es": { "t": "Haz clic en el botón Invite", "d": "En la parte superior derecha de la lista, haz clic en el botón azul \"Invite\"." }
     },
@@ -64,6 +65,7 @@
       "h": 4,
       "z": 2.0,
       "static": false,
+      "blur": [{"x": 25, "y": 50, "w": 73, "h": 50}],
       "en": { "t": "Choose Email", "d": "Select \"Email\" to invite coaches by email address. You can also use \"CSV\" to upload a spreadsheet with multiple coaches at once." },
       "es": { "t": "Elige Email", "d": "Selecciona \"Email\" para invitar entrenadores por correo. También puedes usar \"CSV\" para subir una planilla con varios entrenadores a la vez." }
     },
@@ -76,6 +78,7 @@
       "h": 17,
       "z": 1.4,
       "static": false,
+      "blur": [{"x": 25, "y": 50, "w": 73, "h": 50}],
       "en": { "t": "Type the coach's email", "d": "Enter the email address and press Enter to confirm it. You can add multiple emails separated by commas, or paste them from a spreadsheet." },
       "es": { "t": "Escribe el correo del entrenador", "d": "Ingresa el correo y presiona Enter para confirmarlo. Puedes agregar varios correos separados por comas, o pegarlos desde una planilla." }
     },
@@ -88,6 +91,7 @@
       "h": 18,
       "z": 1.5,
       "static": false,
+      "blur": [{"x": 25, "y": 50, "w": 73, "h": 50}],
       "en": { "t": "Select a role", "d": "Choose \"Coach\" for regular coaches, or \"Admin\" if they need to manage the club settings and other coaches." },
       "es": { "t": "Selecciona un rol", "d": "Elige \"Coach\" para entrenadores regulares, o \"Admin\" si necesitan gestionar el club y otros entrenadores." }
     },
@@ -100,6 +104,7 @@
       "h": 13,
       "z": 1.5,
       "static": false,
+      "blur": [{"x": 25, "y": 50, "w": 73, "h": 50}],
       "en": { "t": "Assign a group (optional)", "d": "If your club uses Coach Groups, select the appropriate group. Otherwise, leave it as \"None\" and click \"Invite\"." },
       "es": { "t": "Asigna un grupo (opcional)", "d": "Si tu club usa Coach Groups, selecciona el grupo correspondiente. Si no, déjalo en \"None\" y haz clic en \"Invite\"." }
     },
@@ -112,6 +117,7 @@
       "h": 6,
       "z": 2.0,
       "static": false,
+      "blur": [{"x": 25, "y": 50, "w": 73, "h": 50}],
       "en": { "t": "Click Invite", "d": "Once you've filled in the email, role, and group, click the \"Invite\" button to send the invitation." },
       "es": { "t": "Haz clic en Invite", "d": "Una vez que hayas completado el correo, rol y grupo, haz clic en el botón \"Invite\" para enviar la invitación." }
     },
@@ -124,6 +130,7 @@
       "h": 40,
       "z": 1.0,
       "static": true,
+      "blur": [{"x": 25, "y": 50, "w": 73, "h": 50}],
       "en": { "t": "Invitation sent!", "d": "The coach will receive an email to accept the invitation. Until they accept, they will appear as \"Pending\" in your coach list. You can repeat this process for each new coach." },
       "es": { "t": "¡Invitación enviada!", "d": "El entrenador recibirá un correo para aceptar la invitación. Hasta que acepte, aparecerá como \"Pending\" en tu lista. Puedes repetir este proceso para cada nuevo entrenador." }
     }
