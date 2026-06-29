@@ -1,0 +1,35 @@
+{
+  "version": 2,
+  "partner": "efl",
+  "flow": "invite-users",
+  "title": {
+    "en": "Inviting users to the LMS",
+    "es": "Cómo invitar usuarios al LMS"
+  },
+  "steps": [
+    {
+      "img": "screenshots/01-account-menu.png",
+      "ar": 1.66,
+      "cx": 84,
+      "cy": 4,
+      "w": 5,
+      "h": 7,
+      "z": 1.55,
+      "static": false,
+      "en": { "t": "Open your account menu", "d": "Click your avatar at the top right." },
+      "es": { "t": "Abre tu menú de cuenta", "d": "Haz clic en tu avatar arriba a la derecha." }
+    },
+    {
+      "img": "screenshots/09-result.png",
+      "ar": 1.75,
+      "cx": 50,
+      "cy": 54,
+      "w": 60,
+      "h": 6.5,
+      "z": 1.0,
+      "static": true,
+      "en": { "t": "Invitation sent", "d": "The user shows as Pending until they accept." },
+      "es": { "t": "Invitación enviada", "d": "El usuario queda en Pending hasta que acepte." }
+    }
+  ]
+}

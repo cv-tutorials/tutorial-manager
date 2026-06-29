@@ -1,0 +1,131 @@
+{
+  "version": 2,
+  "partner": "asc",
+  "flow": "invite-coaches",
+  "title": {
+    "en": "Inviting coaches to the LMS",
+    "es": "Cómo invitar entrenadores al LMS"
+  },
+  "steps": [
+    {
+      "img": "screenshots/01-home.png",
+      "ar": 1.59,
+      "cx": 91,
+      "cy": 10,
+      "w": 5,
+      "h": 5,
+      "z": 2.5,
+      "static": false,
+      "en": { "t": "Open your account menu", "d": "Click your avatar at the top-right corner of the screen." },
+      "es": { "t": "Abre tu menú de cuenta", "d": "Haz clic en tu avatar en la esquina superior derecha de la pantalla." }
+    },
+    {
+      "img": "screenshots/02-avatar-menu.png",
+      "ar": 1.61,
+      "cx": 78,
+      "cy": 25,
+      "w": 15,
+      "h": 5,
+      "z": 2.0,
+      "static": false,
+      "en": { "t": "Go to Club Settings", "d": "Select \"Club Settings\" from the dropdown menu." },
+      "es": { "t": "Ve a Club Settings", "d": "Selecciona \"Club Settings\" en el menú desplegable." }
+    },
+    {
+      "img": "screenshots/03-org-settings.png",
+      "ar": 1.60,
+      "cx": 13,
+      "cy": 35,
+      "w": 10,
+      "h": 4,
+      "z": 2.0,
+      "static": false,
+      "en": { "t": "Click My Coaches", "d": "In the left sidebar under My Club, click \"My Coaches\"." },
+      "es": { "t": "Haz clic en My Coaches", "d": "En la barra lateral izquierda, bajo My Club, haz clic en \"My Coaches\"." }
+    },
+    {
+      "img": "screenshots/04-my-coaches.png",
+      "ar": 1.61,
+      "cx": 81,
+      "cy": 34,
+      "w": 8,
+      "h": 6,
+      "z": 2.0,
+      "static": false,
+      "en": { "t": "Click the Invite button", "d": "At the top-right of the coach list, click the blue \"Invite\" button." },
+      "es": { "t": "Haz clic en el botón Invite", "d": "En la parte superior derecha de la lista, haz clic en el botón azul \"Invite\"." }
+    },
+    {
+      "img": "screenshots/05-invite-dropdown.png",
+      "ar": 1.60,
+      "cx": 80,
+      "cy": 39,
+      "w": 6,
+      "h": 4,
+      "z": 2.0,
+      "static": false,
+      "en": { "t": "Choose Email", "d": "Select \"Email\" to invite coaches by email address. You can also use \"CSV\" to upload a spreadsheet with multiple coaches at once." },
+      "es": { "t": "Elige Email", "d": "Selecciona \"Email\" para invitar entrenadores por correo. También puedes usar \"CSV\" para subir una planilla con varios entrenadores a la vez." }
+    },
+    {
+      "img": "screenshots/06-invite-modal.png",
+      "ar": 1.60,
+      "cx": 50,
+      "cy": 50,
+      "w": 42,
+      "h": 17,
+      "z": 1.4,
+      "static": false,
+      "en": { "t": "Type the coach's email", "d": "Enter the email address and press Enter to confirm it. You can add multiple emails separated by commas, or paste them from a spreadsheet." },
+      "es": { "t": "Escribe el correo del entrenador", "d": "Ingresa el correo y presiona Enter para confirmarlo. Puedes agregar varios correos separados por comas, o pegarlos desde una planilla." }
+    },
+    {
+      "img": "screenshots/08-select-role.png",
+      "ar": 1.61,
+      "cx": 40,
+      "cy": 67,
+      "w": 20,
+      "h": 18,
+      "z": 1.5,
+      "static": false,
+      "en": { "t": "Select a role", "d": "Choose \"Coach\" for regular coaches, or \"Admin\" if they need to manage the club settings and other coaches." },
+      "es": { "t": "Selecciona un rol", "d": "Elige \"Coach\" para entrenadores regulares, o \"Admin\" si necesitan gestionar el club y otros entrenadores." }
+    },
+    {
+      "img": "screenshots/09-select-group.png",
+      "ar": 1.60,
+      "cx": 61,
+      "cy": 65,
+      "w": 22,
+      "h": 13,
+      "z": 1.5,
+      "static": false,
+      "en": { "t": "Assign a group (optional)", "d": "If your club uses Coach Groups, select the appropriate group. Otherwise, leave it as \"None\" and click \"Invite\"." },
+      "es": { "t": "Asigna un grupo (opcional)", "d": "Si tu club usa Coach Groups, selecciona el grupo correspondiente. Si no, déjalo en \"None\" y haz clic en \"Invite\"." }
+    },
+    {
+      "img": "screenshots/07-type-email.png",
+      "ar": 1.59,
+      "cx": 68,
+      "cy": 70,
+      "w": 8,
+      "h": 6,
+      "z": 2.0,
+      "static": false,
+      "en": { "t": "Click Invite", "d": "Once you've filled in the email, role, and group, click the \"Invite\" button to send the invitation." },
+      "es": { "t": "Haz clic en Invite", "d": "Una vez que hayas completado el correo, rol y grupo, haz clic en el botón \"Invite\" para enviar la invitación." }
+    },
+    {
+      "img": "screenshots/04-my-coaches.png",
+      "ar": 1.61,
+      "cx": 50,
+      "cy": 50,
+      "w": 60,
+      "h": 40,
+      "z": 1.0,
+      "static": true,
+      "en": { "t": "Invitation sent!", "d": "The coach will receive an email to accept the invitation. Until they accept, they will appear as \"Pending\" in your coach list. You can repeat this process for each new coach." },
+      "es": { "t": "¡Invitación enviada!", "d": "El entrenador recibirá un correo para aceptar la invitación. Hasta que acepte, aparecerá como \"Pending\" en tu lista. Puedes repetir este proceso para cada nuevo entrenador." }
+    }
+  ]
+}

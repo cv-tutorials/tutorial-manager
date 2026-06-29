@@ -1,0 +1,5 @@
+email,role,group
+alice@example.com,coach,group 1
+bob@example.com,admin,group 2
+charlie@example.com,coach,group 3
+dana@example.com,admin,group 4

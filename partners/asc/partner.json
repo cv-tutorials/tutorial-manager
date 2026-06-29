@@ -1,0 +1,9 @@
+{
+  "name": "Athletic Soccer Club",
+  "shortName": "ASC",
+  "primary": "#122744",
+  "accent": "#64BEB5",
+  "email": "athleticsc@coachesvoice.com",
+  "logo": "logo.png",
+  "languages": ["en", "es"]
+}
