@@ -91,7 +91,7 @@
       "h": 18,
       "z": 1.5,
       "static": false,
-      "blur": [{"x": 25, "y": 73, "w": 73, "h": 27, "a": 5}],
+      "blur": [{"x": 25, "y": 78, "w": 73, "h": 22, "a": 5}],
       "en": { "t": "Select a role", "d": "Choose \"Coach\" for regular coaches, or \"Admin\" if they need to manage the club settings and other coaches." },
       "es": { "t": "Selecciona un rol", "d": "Elige \"Coach\" para entrenadores regulares, o \"Admin\" si necesitan gestionar el club y otros entrenadores." }
     },
@@ -120,19 +120,16 @@
       "blur": [{"x": 25, "y": 73, "w": 73, "h": 27, "a": 5}],
       "en": { "t": "Click Invite", "d": "Once you've filled in the email, role, and group, click the \"Invite\" button to send the invitation." },
       "es": { "t": "Haz clic en Invite", "d": "Una vez que hayas completado el correo, rol y grupo, haz clic en el botón \"Invite\" para enviar la invitación." }
-    },
-    {
-      "img": "screenshots/04-my-coaches.png",
-      "ar": 1.61,
-      "cx": 50,
-      "cy": 50,
-      "w": 60,
-      "h": 40,
-      "z": 1.0,
-      "static": true,
-      "blur": [{"x": 25, "y": 50, "w": 73, "h": 50, "a": 5}],
-      "en": { "t": "Invitation sent!", "d": "The invited coach will appear as \"Pending\" in your list. They will receive an email from noreply@coachesvoice.com and have 14 days to accept the invitation." },
-      "es": { "t": "¡Invitación enviada!", "d": "El entrenador invitado aparecerá como \"Pending\" en tu lista. Recibirá un correo desde noreply@coachesvoice.com y tendrá 14 días para aceptar la invitación." }
     }
-  ]
+  ],
+  "ui": {
+    "en": {
+      "doneT": "Invitation sent!",
+      "doneD": "The invited coach will appear as \"Pending\" in your list. They will receive an email from noreply@coachesvoice.com and have 14 days to accept. You can repeat this process for each new coach."
+    },
+    "es": {
+      "doneT": "¡Invitación enviada!",
+      "doneD": "El entrenador invitado aparecerá como \"Pending\" en tu lista. Recibirá un correo desde noreply@coachesvoice.com y tendrá 14 días para aceptar. Puedes repetir este proceso para cada nuevo entrenador."
+    }
+  }
 }
