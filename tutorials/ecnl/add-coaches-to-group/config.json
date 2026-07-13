@@ -1,0 +1,142 @@
+{
+  "version": 2,
+  "partner": "ecnl",
+  "flow": "add-coaches-to-group",
+  "title": {
+    "en": "Adding coaches to a Coach Group"
+  },
+  "steps": [
+    {
+      "img": "screenshots/01-home.png",
+      "ar": 1.53,
+      "cx": 96.5,
+      "cy": 10,
+      "w": 7,
+      "h": 8,
+      "z": 2.0,
+      "static": false,
+      "en": { "t": "Open your account menu", "d": "Click your initials at the top-right corner of the screen." }
+    },
+    {
+      "img": "screenshots/02-avatar-menu.png",
+      "ar": 1.54,
+      "cx": 90,
+      "cy": 33,
+      "w": 16,
+      "h": 6,
+      "z": 1.8,
+      "static": false,
+      "en": { "t": "Go to Club Settings", "d": "Select \"Club Settings\" from the dropdown menu." }
+    },
+    {
+      "img": "screenshots/04-click-coach-groups.png",
+      "ar": 1.54,
+      "cx": 7,
+      "cy": 44,
+      "w": 14,
+      "h": 6,
+      "z": 1.6,
+      "static": false,
+      "en": { "t": "Click Coach Groups", "d": "In the left sidebar under My Club, click \"Coach Groups\". Then select the group you want to manage." }
+    },
+    {
+      "img": "screenshots/06-click-coaches-tab.png",
+      "ar": 1.54,
+      "cx": 32,
+      "cy": 35,
+      "w": 9,
+      "h": 6,
+      "z": 2.0,
+      "static": false,
+      "en": { "t": "Click the Coaches tab", "d": "Once inside the group, switch to the \"Coaches\" tab to see the current members." }
+    },
+    {
+      "img": "screenshots/07-coaches-tab-empty.png",
+      "ar": 1.55,
+      "cx": 50,
+      "cy": 50,
+      "w": 60,
+      "h": 40,
+      "z": 1,
+      "static": true,
+      "noSpot": true,
+      "en": { "t": "No coaches in this group yet", "d": "The Coaches tab shows \"0 Coaches\" — no one has been added to this Coach Group. Let's add one." }
+    },
+    {
+      "img": "screenshots/07-coaches-tab-empty.png",
+      "ar": 1.55,
+      "cx": 83.5,
+      "cy": 44,
+      "w": 12,
+      "h": 6,
+      "z": 2.0,
+      "static": false,
+      "en": { "t": "Click Add Coaches", "d": "Click the \"Add Coaches\" button to start adding coaches to this group." }
+    },
+    {
+      "img": "screenshots/08-add-coaches-modal.png",
+      "ar": 1.55,
+      "cx": 50,
+      "cy": 50,
+      "w": 60,
+      "h": 60,
+      "z": 1,
+      "static": true,
+      "noSpot": true,
+      "en": { "t": "Find a coach", "d": "A list of all available coaches appears. Scroll through or use the search field to find a specific coach by name or email." }
+    },
+    {
+      "img": "screenshots/09-search-coach.png",
+      "ar": 1.55,
+      "cx": 50,
+      "cy": 50,
+      "w": 60,
+      "h": 60,
+      "z": 1,
+      "static": true,
+      "noSpot": true,
+      "en": { "t": "Search by name or email", "d": "Type the coach's name or email in the search field. The list will filter as you type. You can select multiple coaches at once." }
+    },
+    {
+      "img": "screenshots/10-coach-selected.png",
+      "ar": 1.54,
+      "cx": 50,
+      "cy": 50,
+      "w": 60,
+      "h": 60,
+      "z": 1,
+      "static": true,
+      "noSpot": true,
+      "en": { "t": "Select the coach", "d": "Click the checkbox next to the coach you want to add. They will appear listed below." }
+    },
+    {
+      "img": "screenshots/10-coach-selected.png",
+      "ar": 1.54,
+      "cx": 62.5,
+      "cy": 64.5,
+      "w": 12,
+      "h": 6,
+      "z": 1.5,
+      "static": false,
+      "en": { "t": "Click Add Coaches", "d": "When ready, click the \"Add Coaches\" button to confirm your selection." }
+    },
+    {
+      "img": "screenshots/11-coach-added-success.png",
+      "ar": 1.53,
+      "cx": 50,
+      "cy": 50,
+      "w": 100,
+      "h": 100,
+      "z": 1,
+      "static": true,
+      "noSpot": true,
+      "en": { "t": "Coach added successfully", "d": "A success message confirms the coach was added. They now appear in the group's coach list. You can click \"Add Coaches\" again to add more." }
+    }
+  ],
+  "ui": {
+    "en": {
+      "doneT": "Coaches added to the group!",
+      "doneD": "The selected coaches are now part of this Coach Group. They will see any content assigned to the group. You can repeat this process to add more coaches, or use the same steps for other groups."
+    }
+  }
+}
