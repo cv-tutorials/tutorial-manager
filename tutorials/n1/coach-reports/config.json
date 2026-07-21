@@ -1,0 +1,88 @@
+{
+  "version": 2,
+  "partner": "n1",
+  "flow": "coach-reports",
+  "title": {
+    "en": "Reviewing your coaches' reports"
+  },
+  "steps": [
+    {
+      "img": "screenshots/01-home.png",
+      "ar": 1.76,
+      "cx": 92, "cy": 5, "w": 5, "h": 8, "z": 2.0, "static": false,
+      "en": { "t": "Open your account menu", "d": "Click your initials at the top-right corner of the screen." }
+    },
+    {
+      "img": "screenshots/02-account-menu.png",
+      "ar": 1.75,
+      "cx": 77, "cy": 27, "w": 14, "h": 5, "z": 1.8, "static": false,
+      "en": { "t": "Go to Club Settings", "d": "Select \"Club Settings\" from the dropdown menu." }
+    },
+    {
+      "img": "screenshots/03-open-reporting.png",
+      "ar": 1.75,
+      "cx": 15, "cy": 55, "w": 16, "h": 6, "z": 1.6, "static": false,
+      "en": { "t": "Open Reporting", "d": "Scroll down the left sidebar to the ANALYTICS section and click \"Reporting\"." }
+    },
+    {
+      "img": "screenshots/04-dashboard.png",
+      "ar": 1.71,
+      "cx": 50, "cy": 50, "w": 60, "h": 40, "z": 1, "static": true, "noSpot": true,
+      "en": { "t": "The Reporting dashboard", "d": "This is your reporting home: summary figures at the top, and four tabs below with the detail." }
+    },
+    {
+      "img": "screenshots/04-dashboard.png",
+      "ar": 1.71,
+      "cx": 44, "cy": 34, "w": 42, "h": 26, "z": 1.2, "static": false,
+      "en": { "t": "Check the headline numbers", "d": "\"Active coaches\" and \"Seats used\" show how much of your licence is in use. \"Coaches met\" shows how many have hit their CPD target." }
+    },
+    {
+      "img": "screenshots/04-dashboard.png",
+      "ar": 1.71,
+      "cx": 37, "cy": 50.5, "w": 28, "h": 5, "z": 1.5, "static": false,
+      "en": { "t": "Choose a report view", "d": "Switch between Coaches, Modules, Coach Groups and Events. Start with \"Coaches\" to review people." }
+    },
+    {
+      "img": "screenshots/05-coaches-columns.png",
+      "ar": 2.33,
+      "cx": 50, "cy": 50, "w": 60, "h": 40, "z": 1, "static": true, "noSpot": true,
+      "en": { "t": "Read the coach columns", "d": "Scroll right to see every metric: In Progress, Completed, Failed, Season CPD, Target Met, Lifetime CPD and Daily Visits." }
+    },
+    {
+      "img": "screenshots/06-coaches-filters.png",
+      "ar": 2.31,
+      "cx": 46, "cy": 54, "w": 44, "h": 10, "z": 1.3, "static": false,
+      "en": { "t": "Filter the period", "d": "Set a date range to report on a specific season or block, or search for one coach by name. \"Clear filters\" resets everything." }
+    },
+    {
+      "img": "screenshots/04-dashboard.png",
+      "ar": 1.71,
+      "cx": 32, "cy": 91.5, "w": 10, "h": 5, "z": 1.5, "static": false,
+      "en": { "t": "Open a coach's report", "d": "Click the coach's name to drill into their individual activity." }
+    },
+    {
+      "img": "screenshots/07-coach-units.png",
+      "ar": 1.85,
+      "cx": 50, "cy": 50, "w": 60, "h": 40, "z": 1, "static": true, "noSpot": true,
+      "en": { "t": "See what they have worked on", "d": "Every unit the coach has started, with its module, completion date, status and CPD time earned." }
+    },
+    {
+      "img": "screenshots/07-coach-units.png",
+      "ar": 1.85,
+      "cx": 88.5, "cy": 20.5, "w": 12, "h": 7, "z": 1.5, "static": false,
+      "en": { "t": "Export the data", "d": "Click \"Export\" to download the report as a file — useful for sharing it or tracking progress over time." }
+    },
+    {
+      "img": "screenshots/08-unit-detail.png",
+      "ar": 1.70,
+      "cx": 50, "cy": 50, "w": 60, "h": 40, "z": 1, "static": true, "noSpot": true,
+      "en": { "t": "Drill into a single unit", "d": "Click any unit to see it video by video, marked \"Watched\" or \"Unwatched\" — so you know exactly where a coach stopped." }
+    }
+  ],
+  "ui": {
+    "en": {
+      "doneT": "You know how to read the reports!",
+      "doneD": "You can now track licence usage, CPD progress and individual coach activity, drill down to a single video, and export any view. Check back regularly to spot coaches who need a nudge."
+    }
+  }
+}
