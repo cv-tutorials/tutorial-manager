@@ -13,6 +13,7 @@ const UI_STRINGS = {
   en: {
     step: 'Step', of: 'of', back: 'Back', next: 'Next', finish: 'Finish',
     restart: 'Start over', review: 'Review steps',
+    listen: 'Listen', pause: 'Pause',
     tip: 'Click the highlighted area or use the ← → keys',
     help: 'Need more help? Email', power: 'Powered by',
     start: 'Start guide', m2: '~2 min', sub: 'Admin guide',
@@ -22,6 +23,7 @@ const UI_STRINGS = {
   es: {
     step: 'Paso', of: 'de', back: 'Atrás', next: 'Siguiente', finish: 'Finalizar',
     restart: 'Reiniciar', review: 'Ver pasos',
+    listen: 'Escuchar', pause: 'Pausar',
     tip: 'Haz clic en el área resaltada o usa las teclas ← →',
     help: '¿Otra duda? Escribe a', power: 'Con tecnología de',
     start: 'Comenzar', m2: '~2 min', sub: 'Guía de administrador',
@@ -108,10 +110,22 @@ function buildTutorial(engineTemplate, partner, config, configDir) {
   const ui = buildUI(partner, config, steps.length);
   const title = `${config.title.en || config.title[Object.keys(config.title)[0]]} · ${partner.name}`;
 
+  // audio: which <lang>/step-N.mp3 clips exist for this tutorial
+  const langs = partner.languages || ['en', 'es'];
+  const audioKeys = [];
+  for (const lang of langs) {
+    for (let i = 1; i <= config.steps.length; i++) {
+      if (fs.existsSync(path.join(configDir, 'audio', lang, `step-${i}.mp3`))) {
+        audioKeys.push(`${lang}/step-${i}.mp3`);
+      }
+    }
+  }
+
   let html = engineTemplate;
   html = html.split('__PRIMARY__').join(config.primary || partner.primary);
   html = html.split('__ACCENT__').join(config.accent || partner.accent);
   html = html.replace('__STEPS__', JSON.stringify(steps));
+  html = html.replace('__AUDIO__', JSON.stringify(audioKeys));
   html = html.replace('__UI__', JSON.stringify(ui));
   html = html.replace('__EMAIL__', config.email || partner.email);
   html = html.replace('__TITLE__', title);
@@ -205,9 +219,12 @@ function discoverTutorials() {
       if (!fs.statSync(flowDir).isDirectory()) continue;
 
       const configFile = path.join(flowDir, 'config.json');
-      if (!fs.existsSync(configFile)) continue;
-
-      tutorials.push({ partnerSlug, flowSlug, configFile, configDir: flowDir });
+      const pageFile = path.join(flowDir, 'page.html');
+      if (fs.existsSync(configFile)) {
+        tutorials.push({ partnerSlug, flowSlug, configFile, configDir: flowDir, type: 'tutorial' });
+      } else if (fs.existsSync(pageFile)) {
+        tutorials.push({ partnerSlug, flowSlug, pageFile, configDir: flowDir, type: 'page' });
+      } else continue;
     }
   }
   return tutorials;
@@ -238,8 +255,22 @@ if (!tutorials.length) {
 console.log(`Found ${tutorials.length} tutorial(s):\n`);
 
 let built = 0;
-for (const { partnerSlug, flowSlug, configFile, configDir } of tutorials) {
+for (const t of tutorials) {
+  const { partnerSlug, flowSlug, configFile, configDir } = t;
   console.log(`  → ${partnerSlug}/${flowSlug}`);
+
+  if (t.type === 'page') {
+    const outDir = path.join(DIST_DIR, partnerSlug, flowSlug);
+    fs.mkdirSync(outDir, { recursive: true });
+    fs.writeFileSync(path.join(outDir, 'index.html'), fs.readFileSync(t.pageFile, 'utf8'));
+    for (const f of fs.readdirSync(configDir)) {
+      if (f === 'page.html') continue;
+      fs.cpSync(path.join(configDir, f), path.join(outDir, f), { recursive: true });
+    }
+    console.log(`    ✓ dist/${partnerSlug}/${flowSlug}/index.html (hub page)`);
+    built++;
+    continue;
+  }
 
   const config = JSON.parse(fs.readFileSync(configFile, 'utf8'));
   const partner = loadPartner(config.partner || partnerSlug);
@@ -257,6 +288,13 @@ for (const { partnerSlug, flowSlug, configFile, configDir } of tutorials) {
 
   console.log(`    ✓ dist/${partnerSlug}/${flowSlug}/index.html`);
   console.log(`    ✓ dist/${partnerSlug}/${flowSlug}/embed.html`);
+
+  // copy narration audio (mp3s) alongside the html so relative paths resolve
+  const audioSrc = path.join(configDir, 'audio');
+  if (fs.existsSync(audioSrc)) {
+    fs.cpSync(audioSrc, path.join(outDir, 'audio'), { recursive: true });
+    console.log(`    ✓ dist/${partnerSlug}/${flowSlug}/audio/`);
+  }
   built++;
 }
 

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ECNL onboarding · Coach Education Center</title>
+<style>
+ :root{ --navy:#003539; --navy-dk:#0E132F; --green:#17B26A; --green-dk:#0f8c52;
+   --ink:#11161A; --slate:#333F48; --muted:#5E6B76; --line:#D8DEE3; --surf:#F4F6F8;
+   --font:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+ *{box-sizing:border-box; margin:0; padding:0}
+ body{font-family:var(--font); color:var(--ink); background:var(--navy-dk);
+   min-height:100vh; display:flex; align-items:flex-start; justify-content:center; padding:24px; -webkit-font-smoothing:antialiased}
+ .shell{width:100%; max-width:960px; background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 30px 70px -28px rgba(0,0,0,.6)}
+ .top{display:flex; align-items:center; gap:14px; padding:15px 24px; border-bottom:1px solid var(--line)}
+ .top>img{height:30px; flex:none}
+ .top .div{width:1px; height:26px; background:var(--line); flex:none}
+ .ttl h1{font-size:15.5px; font-weight:700; letter-spacing:-.3px; color:var(--navy); line-height:1.15}
+ .ttl p{font-size:11px; color:var(--muted); margin-top:3px; text-transform:uppercase; letter-spacing:.7px}
+ .hero{padding:26px 24px 6px}
+ .eyebrow{font-size:11.5px; font-weight:800; letter-spacing:1.4px; text-transform:uppercase; color:var(--green)}
+ .hero h2{font-size:26px; font-weight:800; letter-spacing:-.7px; color:var(--navy); margin:8px 0 6px; line-height:1.1}
+ .hero .lead{font-size:14.5px; line-height:1.6; color:var(--slate); max-width:60ch}
+ .video{position:relative; margin:18px 0 0; border-radius:12px; overflow:hidden; background:#04231f; aspect-ratio:16/9}
+ .video iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+ .poster{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:brightness(.5)}
+ .posterOv{position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; color:#fff; text-align:center; padding:20px}
+ .playdot{width:60px; height:60px; border-radius:50%; background:var(--green); display:grid; place-items:center}
+ .playdot svg{width:26px; height:26px; fill:#fff; margin-left:3px}
+ .posterOv .note{font-size:12.5px; color:#9FE1CB; max-width:44ch; line-height:1.5}
+ .chaps{display:flex; flex-wrap:wrap; gap:8px; padding:12px 24px 4px; align-items:center}
+ .chaps .lbl{font-size:12px; color:var(--muted); font-weight:700}
+ .chap{font-size:12px; border:1px solid var(--line); background:#fff; color:var(--navy); border-radius:999px; padding:6px 12px; cursor:pointer; font-weight:600; transition:.15s}
+ .chap:hover{border-color:var(--navy)}
+ .chap.on{background:var(--navy); color:#fff; border-color:var(--navy)}
+ .list{padding:20px 24px 6px}
+ .lhd{display:flex; align-items:center; justify-content:space-between; margin-bottom:8px}
+ .lhd h3{font-size:16px; font-weight:800; color:var(--navy)}
+ .lhd .cnt{font-size:12.5px; color:var(--muted); font-weight:700}
+ .bar{height:6px; background:var(--surf); border-radius:999px; overflow:hidden; margin-bottom:16px}
+ .bar>i{display:block; height:100%; width:0; background:var(--green); border-radius:999px; transition:width .3s}
+ .grp{font-size:11px; text-transform:uppercase; letter-spacing:.6px; color:var(--muted); font-weight:800; margin:14px 0 8px}
+ .item{display:flex; align-items:flex-start; gap:13px; border:1px solid var(--line); border-radius:12px; padding:13px 15px; margin-bottom:9px; cursor:pointer; transition:.15s; background:#fff}
+ .item:hover{border-color:var(--navy)}
+ .item .box{width:21px; height:21px; border-radius:6px; border:1.6px solid #BFC8CE; flex:none; margin-top:1px; display:grid; place-items:center}
+ .item .box svg{width:13px; height:13px; stroke:#fff; stroke-width:3; fill:none; opacity:0; transition:.15s}
+ .item.done .box{background:var(--green); border-color:var(--green)}
+ .item.done .box svg{opacity:1}
+ .item .t{font-size:14px; font-weight:700; color:var(--navy)}
+ .item.done .t{text-decoration:line-through; color:var(--muted)}
+ .item .d{font-size:13px; color:var(--slate); margin-top:2px; line-height:1.45}
+ .item .act{font-size:12px; font-weight:700; color:var(--green); white-space:nowrap; align-self:center; margin-left:auto}
+ .foot{margin:18px 24px 20px; padding-top:14px; border-top:1px solid var(--line); display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center}
+ .foot .p{font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.6px; font-weight:700}
+ .foot .h{font-size:13px; color:var(--slate); font-weight:600}
+ .foot .h a{color:var(--green); font-weight:700; text-decoration:none}
+ @media (max-width:620px){ body{padding:10px} .hero h2{font-size:22px} .item .act{margin-left:0; width:100%; margin-top:6px} }
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="top">
+    <img src="logo.png" alt="ECNL · National League">
+    <div class="div"></div>
+    <div class="ttl"><h1>Getting started with the Coach Education Center</h1><p>ECNL · Onboarding</p></div>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">Welcome</div>
+    <h2>Everything you need to get going</h2>
+    <p class="lead">Watch the short walkthrough, then work through your checklist below. Coaches: focus on your CPD. Admins: invite your coaches and track their progress.</p>
+    <div class="video" id="video"></div>
+  </div>
+
+  <div class="chaps" id="chaps"><span class="lbl">Chapters:</span></div>
+
+  <div class="list">
+    <div class="lhd">
+      <h3>Your getting-started checklist</h3>
+      <div class="cnt"><span id="cnt">0</span> of <span id="tot">5</span> done</div>
+    </div>
+    <div class="bar"><i id="bar"></i></div>
+
+    <div class="grp">For coaches</div>
+    <div id="coachList"></div>
+
+    <div class="grp">For admins</div>
+    <div id="adminList"></div>
+  </div>
+
+  <div class="foot">
+    <span class="p">Powered by Coaches' Voice</span>
+    <span class="h">Need more help? Email <a href="mailto:ecnlsupport@coachesvoice.com">ecnlsupport@coachesvoice.com</a></span>
+  </div>
+</div>
+
+<script>
+ /* ── 1) PASTE YOUR UNLISTED YOUTUBE VIDEO ID HERE ──
+    From youtube.com/watch?v=XXXXXXXXXXX  →  the XXXXXXXXXXX part.
+    Leave the placeholder to preview the layout with the poster fallback. */
+ const YOUTUBE_ID = "51iaRmH8lj8";
+
+ const CHAPTERS = [
+   { label:"Welcome & CPD", t:0 },
+   { label:"Required Learning", t:19 },
+   { label:"Resource library", t:53 },
+   { label:"Admin: invite", t:108 },
+   { label:"Admin: reporting", t:128 }
+ ];
+ const COACH = [
+   { id:"cpd", t:"Understand your CPD goal", d:"Reach 5 points — your certificate is issued automatically.", chapter:0 },
+   { id:"required", t:"Complete your Required Learning", d:"3 Core modules, plus 1 Tactical and 1 Technical.", chapter:19 },
+   { id:"library", t:"Explore the resource library", d:"Masterclasses, webinars and session plans, ready to use.", chapter:53 }
+ ];
+ const ADMIN = [
+   { id:"invite", t:"Invite your coaches", d:"Add people by email in My Coaches.", href:"../invite-coaches/" },
+   { id:"reporting", t:"Check your Reporting", d:"See who has met their seasonal CPD target.", href:"../coach-reports/" }
+ ];
+
+ const TOTAL = COACH.length + ADMIN.length;
+ document.getElementById("tot").textContent = TOTAL;
+
+ /* ── video (YouTube IFrame API) ── */
+ let player = null, playerReady = false;
+ const isPlaceholder = YOUTUBE_ID.indexOf("REPLACE") !== -1;
+ const vbox = document.getElementById("video");
+ if (isPlaceholder) {
+   vbox.innerHTML = '<img class="poster" src="poster.png" alt="">'
+     + '<div class="posterOv"><div class="playdot"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>'
+     + '<div class="note">Paste your unlisted YouTube video ID in page.html (YOUTUBE_ID) to activate the video.</div></div>';
+ } else {
+   vbox.innerHTML = '<div id="ytframe"></div>';
+   window.onYouTubeIframeAPIReady = function(){
+     player = new YT.Player("ytframe", {
+       videoId: YOUTUBE_ID,
+       playerVars: { rel:0, modestbranding:1, iv_load_policy:3, playsinline:1 },
+       events: { onReady: function(){ playerReady = true; } }
+     });
+   };
+   const s = document.createElement("script"); s.src = "https://www.youtube.com/iframe_api";
+   document.body.appendChild(s);
+ }
+
+ function seek(t, el){
+   document.querySelectorAll(".chap").forEach(c=>c.classList.remove("on"));
+   if (el) el.classList.add("on");
+   if (player && playerReady){ player.seekTo(t, true); player.playVideo(); }
+   vbox.scrollIntoView({ behavior:"smooth", block:"center" });
+ }
+
+ const chaps = document.getElementById("chaps");
+ CHAPTERS.forEach(c=>{
+   const b = document.createElement("button");
+   b.className = "chap"; b.textContent = c.label;
+   b.onclick = ()=>seek(c.t, b);
+   chaps.appendChild(b);
+ });
+
+ /* ── checklist + progress (saved in the browser) ── */
+ const KEY = "ecnl-onboarding-done";
+ let doneSet = new Set();
+ try { doneSet = new Set(JSON.parse(localStorage.getItem(KEY) || "[]")); } catch(e){}
+
+ function refresh(){
+   const n = document.querySelectorAll(".item.done").length;
+   document.getElementById("cnt").textContent = n;
+   document.getElementById("bar").style.width = Math.round(n / TOTAL * 100) + "%";
+ }
+ function save(){ try { localStorage.setItem(KEY, JSON.stringify([...doneSet])); } catch(e){} }
+
+ function makeItem(x, kind){
+   const d = document.createElement("div");
+   d.className = "item" + (doneSet.has(x.id) ? " done" : "");
+   const act = x.href ? "Open guide →" : "Watch ▸";
+   d.innerHTML = '<div class="box"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>'
+     + '<div><div class="t">'+x.t+'</div><div class="d">'+x.d+'</div></div>'
+     + '<div class="act">'+act+'</div>';
+   d.querySelector(".box").onclick = (e)=>{
+     e.stopPropagation();
+     const on = d.classList.toggle("done");
+     if (on) doneSet.add(x.id); else doneSet.delete(x.id);
+     save(); refresh();
+   };
+   d.onclick = ()=>{
+     if (x.href) { window.location.href = x.href; }
+     else if (typeof x.chapter === "number") { seek(x.chapter); }
+   };
+   return d;
+ }
+ const cl = document.getElementById("coachList"), al = document.getElementById("adminList");
+ COACH.forEach(x=>cl.appendChild(makeItem(x, "coach")));
+ ADMIN.forEach(x=>al.appendChild(makeItem(x, "admin")));
+ refresh();
+</script>
+</body>
+</html>

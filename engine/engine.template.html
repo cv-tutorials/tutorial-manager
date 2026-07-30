@@ -71,6 +71,11 @@
  .copy{flex:1; min-width:0}
  .copy h3{font-size:17px; font-weight:700; letter-spacing:-.3px; color:var(--navy)}
  .copy p{font-size:13.5px; line-height:1.55; color:var(--slate); margin-top:5px}
+ .abtn{margin-top:10px; display:inline-flex; align-items:center; gap:7px; border:1px solid var(--line);
+   background:#fff; color:var(--navy); font-weight:700; font-size:12px; padding:6px 13px; border-radius:999px; cursor:pointer; transition:.15s}
+ .abtn:hover{border-color:var(--navy)}
+ .abtn svg{width:13px; height:13px; fill:var(--red); flex:none}
+ .abtn.playing{background:var(--surf); border-color:var(--navy)}
 
  /* DONE */
  #vDone{padding:44px 40px 36px; text-align:center}
@@ -140,7 +145,7 @@
    </div>
    <div class="ctrl">
      <div class="num" id="num">01</div>
-     <div class="copy"><h3 id="cT"></h3><p id="cD"></p></div>
+     <div class="copy"><h3 id="cT"></h3><p id="cD"></p><button class="abtn" id="bAudio" onclick="toggleAudio()" style="display:none"><svg id="bAudioIco" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg><span id="bAudioLbl"></span></button></div>
      <div class="nav step"><button class="btn" id="bBack" onclick="back()"></button><button class="btn pri" id="bNext" onclick="adv()"></button></div>
    </div>
  </div>
@@ -160,9 +165,10 @@
 </div>
 
 <div class="lb" id="lb" onclick="closeLB()"><button class="x" id="lbx" aria-label="Close">&times;</button><img id="lbimg" alt=""></div>
+<audio id="narration" preload="none"></audio>
 
 <script>
- const S=__STEPS__, UI=__UI__, EMAIL="__EMAIL__", N=S.length;
+ const S=__STEPS__, UI=__UI__, EMAIL="__EMAIL__", AUDIO=__AUDIO__, N=S.length;
  let lang="en", idx=-1, zoomT;   // -1 intro · 0..N-1 steps · N done
  const LANGS=Object.keys(UI);
  if(LANGS.length<2) document.querySelector(".lang").style.display="none";
@@ -171,6 +177,23 @@
 
  function ga(ev,p){if(typeof gtag==="function")gtag("event",ev,p);}
  function L(l){lang=l; ga("tutorial_lang",{language:l}); paint();}
+
+ // ── narration audio ──
+ const PLAY_ICO='M8 5v14l11-7z', PAUSE_ICO='M6 5h4v14H6zM14 5h4v14h-4z';
+ function audioKey(){ return lang+"/step-"+(idx+1)+".mp3"; }
+ function hasAudio(){ return idx>=0 && idx<N && AUDIO.indexOf(audioKey())>=0; }
+ function setAudioBtn(playing){
+   document.getElementById("bAudio").classList.toggle("playing", playing);
+   document.getElementById("bAudioIco").firstChild.setAttribute("d", playing?PAUSE_ICO:PLAY_ICO);
+   document.getElementById("bAudioLbl").textContent = playing ? (UI[lang].pause||"Pause") : (UI[lang].listen||"Listen");
+ }
+ function toggleAudio(){
+   const au=document.getElementById("narration");
+   if(!hasAudio()) return;
+   if(au.paused){ ga("tutorial_audio",{step:idx+1}); au.play().then(()=>setAudioBtn(true)).catch(()=>setAudioBtn(false)); }
+   else { au.pause(); setAudioBtn(false); }
+ }
+ document.getElementById("narration").addEventListener("ended",()=>setAudioBtn(false));
  function GO(n){ idx=n; render(true); }
  function back(){ idx=Math.max(-1, idx-1); render(true); }
  function adv(){ if(idx>=0 && S[idx] && S[idx].static && idx===N-1){ idx=N; } else { idx=Math.min(N, idx+1); } render(true); }
@@ -240,6 +263,13 @@
      document.getElementById("cD").textContent=s[lang].d;
      document.getElementById("bBack").textContent=u.back;
      document.getElementById("bNext").textContent=last?u.finish:u.next;
+     // narration button
+     const au=document.getElementById("narration"), ab=document.getElementById("bAudio");
+     au.pause();
+     if(hasAudio()){ const src="audio/"+audioKey(); if(!au.src||!au.src.endsWith(src)) au.src=src; ab.style.display=""; setAudioBtn(false); }
+     else { ab.style.display="none"; au.removeAttribute("src"); }
+   } else {
+     document.getElementById("narration").pause();
    }
  }
  function openLB(){ if(idx<0||idx>=N) return; document.getElementById("lbimg").src=S[idx].img; document.getElementById("lb").classList.add("open"); }
