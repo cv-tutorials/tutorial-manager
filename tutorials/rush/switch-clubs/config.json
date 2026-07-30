@@ -1,0 +1,34 @@
+{
+  "version": 2,
+  "partner": "rush",
+  "flow": "switch-clubs",
+  "title": {
+    "en": "Switching between clubs"
+  },
+  "steps": [
+    {
+      "img": "screenshots/01-rush-soccer.png",
+      "ar": 1.76,
+      "cx": 50, "cy": 3, "w": 99, "h": 6, "z": 1, "static": true,
+      "en": { "t": "Find your club switcher", "d": "Along the very top of the screen is a tab for each Rush club you belong to. The highlighted tab is the club you're currently in." }
+    },
+    {
+      "img": "screenshots/01-rush-soccer.png",
+      "ar": 1.76,
+      "cx": 23, "cy": 3, "w": 9, "h": 5, "z": 1.9, "static": false,
+      "en": { "t": "Click the club you want", "d": "Click the tab of the club you want to switch to — here, \"Coastal Rush\"." }
+    },
+    {
+      "img": "screenshots/02-coastal-rush.png",
+      "ar": 1.89,
+      "cx": 50, "cy": 50, "w": 100, "h": 100, "z": 1, "static": true, "noSpot": true,
+      "en": { "t": "You've switched clubs", "d": "You're now in the new club — the logo, courses and CPD all update to that club. Switch back the same way anytime." }
+    }
+  ],
+  "ui": {
+    "en": {
+      "doneT": "That's how you switch clubs!",
+      "doneD": "Use the tabs at the top to move between any Rush clubs you belong to. Each club keeps its own courses, content and CPD progress."
+    }
+  }
+}
