@@ -192,5 +192,14 @@
  ADMIN.forEach(x=>al.appendChild(makeItem(x, "admin")));
  refresh();
 </script>
+<script>
+ /* broadcast height to a parent frame (e.g. Freshdesk) for auto-resize */
+ (function(){
+   if(window.parent === window) return;
+   function send(){ var s=document.querySelector('.shell'); if(s) parent.postMessage({tutorialHeight:s.scrollHeight+32},'*'); }
+   send(); window.addEventListener('load',send); window.addEventListener('resize',send);
+   new MutationObserver(send).observe(document.body,{childList:true,subtree:true,attributes:true});
+ })();
+</script>
 </body>
 </html>
