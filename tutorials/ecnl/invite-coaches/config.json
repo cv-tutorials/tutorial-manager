@@ -1,0 +1,76 @@
+{
+  "version": 2,
+  "partner": "ecnl",
+  "flow": "invite-coaches",
+  "title": {
+    "en": "Inviting coaches to the Coach Education Center"
+  },
+  "steps": [
+    {
+      "img": "screenshots/01-home.png",
+      "ar": 1.63,
+      "cx": 88.5, "cy": 4, "w": 5, "h": 8, "z": 2.0, "static": false,
+      "en": { "t": "Open your account menu", "d": "Click your initials at the top-right corner of the screen." }
+    },
+    {
+      "img": "screenshots/02-account-menu.png",
+      "ar": 1.66,
+      "cx": 86, "cy": 23, "w": 15, "h": 5, "z": 1.8, "static": false,
+      "en": { "t": "Go to Club Settings", "d": "Select \"Club Settings\" from the dropdown menu." }
+    },
+    {
+      "img": "screenshots/03-org-settings.png",
+      "ar": 1.61,
+      "cx": 10, "cy": 29, "w": 14, "h": 5, "z": 1.7, "static": false,
+      "en": { "t": "Open My Coaches", "d": "In the left sidebar under My Club, click \"My Coaches\"." }
+    },
+    {
+      "img": "screenshots/04-my-coaches.png",
+      "ar": 1.65,
+      "cx": 50, "cy": 50, "w": 60, "h": 40, "z": 1, "static": true, "noSpot": true,
+      "en": { "t": "Your current coaches", "d": "The My Coaches page lists everyone in your club. Let's invite a new one." }
+    },
+    {
+      "img": "screenshots/04-my-coaches.png",
+      "ar": 1.65,
+      "cx": 76, "cy": 23.5, "w": 8, "h": 6, "z": 1.9, "static": false,
+      "en": { "t": "Click Invite", "d": "Click the \"Invite\" button at the top-right of the Coaches panel." }
+    },
+    {
+      "img": "screenshots/05-invite-dropdown.png",
+      "ar": 1.53,
+      "cx": 80, "cy": 29, "w": 9, "h": 5, "z": 1.9, "static": false,
+      "en": { "t": "Choose Email", "d": "Select \"Email\" to invite coaches by their email address." }
+    },
+    {
+      "img": "screenshots/06-invite-email-typed.png",
+      "ar": 1.58,
+      "cx": 48, "cy": 47, "w": 44, "h": 13, "z": 1.3, "static": false,
+      "en": { "t": "Enter email addresses", "d": "Type one or more coach emails, separated by commas or new lines. You can invite several at once." }
+    },
+    {
+      "img": "screenshots/06-invite-email-typed.png",
+      "ar": 1.58,
+      "cx": 65, "cy": 64.5, "w": 11, "h": 6, "z": 1.5, "static": false,
+      "en": { "t": "Set the role and send", "d": "Choose the role (default is \"Coach\"), then click \"Invite\" to send the invitation." }
+    },
+    {
+      "img": "screenshots/07-invite-confirmed.png",
+      "ar": 1.68,
+      "cx": 50, "cy": 50, "w": 60, "h": 40, "z": 1, "static": true, "noSpot": true,
+      "en": { "t": "Invitation confirmed", "d": "A confirmation shows the coach with the status \"Invited\"." }
+    },
+    {
+      "img": "screenshots/08-invitation-pending.png",
+      "ar": 1.61,
+      "cx": 50, "cy": 50, "w": 100, "h": 100, "z": 1, "static": true, "noSpot": true,
+      "en": { "t": "Invitation sent", "d": "The coach now appears in your list as \"Pending\" until they accept the invitation." }
+    }
+  ],
+  "ui": {
+    "en": {
+      "doneT": "Coach invited!",
+      "doneD": "The invitation has been sent. The coach stays \"Pending\" until they accept and set up their account. You can repeat this process to invite more coaches at any time."
+    }
+  }
+}
