@@ -1,0 +1,70 @@
+{
+  "version": 2,
+  "partner": "ecnl",
+  "flow": "coach-reports",
+  "title": {
+    "en": "Reviewing your coaches' reports"
+  },
+  "steps": [
+    {
+      "img": "screenshots/01-home.png",
+      "ar": 1.63,
+      "cx": 88.5, "cy": 4, "w": 5, "h": 8, "z": 2.0, "static": false,
+      "en": { "t": "Open your account menu", "d": "Click your initials at the top-right corner of the screen." }
+    },
+    {
+      "img": "screenshots/02-account-menu.png",
+      "ar": 1.66,
+      "cx": 86, "cy": 23, "w": 15, "h": 5, "z": 1.8, "static": false,
+      "en": { "t": "Go to Club Settings", "d": "Select \"Club Settings\" from the dropdown menu." }
+    },
+    {
+      "img": "screenshots/03-open-reporting.png",
+      "ar": 1.60,
+      "cx": 11, "cy": 83, "w": 10, "h": 4.5, "z": 1.6, "static": false,
+      "en": { "t": "Open Reporting", "d": "In the left sidebar, scroll to the ANALYTICS & BILLING section and click \"Reporting\"." }
+    },
+    {
+      "img": "screenshots/04-dashboard.png",
+      "ar": 1.63,
+      "cx": 50, "cy": 45, "w": 60, "h": 40, "z": 1, "static": true, "noSpot": true,
+      "en": { "t": "The Reporting dashboard", "d": "This is your reporting home: summary figures at the top, and four tabs below with the detail." }
+    },
+    {
+      "img": "screenshots/04-dashboard.png",
+      "ar": 1.63,
+      "cx": 41, "cy": 33, "w": 44, "h": 24, "z": 1.2, "static": false,
+      "en": { "t": "Check the headline numbers", "d": "\"Active coaches\" and \"Seats used\" show how much of your licence is in use. \"Coaches met\" shows how many have hit their CPD target." }
+    },
+    {
+      "img": "screenshots/04-dashboard.png",
+      "ar": 1.63,
+      "cx": 36, "cy": 45.5, "w": 28, "h": 5, "z": 1.5, "static": false,
+      "en": { "t": "Choose a report view", "d": "Switch between Coaches, Modules, Coach Groups and Events. Start with \"Coaches\" to review people." }
+    },
+    {
+      "img": "screenshots/04-dashboard.png",
+      "ar": 1.63,
+      "cx": 73, "cy": 76, "w": 34, "h": 5, "z": 1.3, "static": false,
+      "en": { "t": "Read each coach's progress", "d": "For every coach you see modules In Progress, Completed and Failed, plus their Season CPD points." }
+    },
+    {
+      "img": "screenshots/04-dashboard.png",
+      "ar": 1.63,
+      "cx": 44, "cy": 68.5, "w": 42, "h": 6, "z": 1.3, "static": false,
+      "en": { "t": "Filter the period", "d": "Set a date range to report on a specific season or block, or search for one coach by name. \"Clear filters\" resets everything." }
+    },
+    {
+      "img": "screenshots/05-modules.png",
+      "ar": 1.65,
+      "cx": 50, "cy": 50, "w": 100, "h": 100, "z": 1, "static": true, "noSpot": true,
+      "en": { "t": "Report by module too", "d": "The \"Modules\" tab flips the view: every course with how many coaches have it In Progress, Completed or Failed. Export any view with the \"Export\" button." }
+    }
+  ],
+  "ui": {
+    "en": {
+      "doneT": "You know how to read the reports!",
+      "doneD": "You can now track licence usage, CPD progress and coach activity, switch between the Coaches and Modules views, filter by period, and export any report. Check back regularly to spot coaches who need a nudge."
+    }
+  }
+}
