@@ -46,6 +46,12 @@
  .seg span.done{background:var(--navy)} .seg span.cur{background:var(--red)}
  .seglbl{padding:8px 24px 0; font-size:11.5px; font-weight:700; color:var(--muted); letter-spacing:.3px}
  .seglbl b{color:var(--navy)}
+ .secnav{display:flex; flex-wrap:wrap; gap:7px; padding:16px 24px 0}
+ .secnav .sec{font-size:11.5px; font-weight:700; color:var(--muted); background:var(--surf); border:1px solid var(--line);
+   border-radius:999px; padding:5px 13px; cursor:pointer; transition:.15s; letter-spacing:.2px}
+ .secnav .sec:hover{border-color:var(--navy)}
+ .secnav .sec.done{color:var(--navy); border-color:var(--navy)}
+ .secnav .sec.on{background:var(--navy); color:#fff; border-color:var(--navy)}
  .stage{position:relative; margin:12px 24px 0; border-radius:11px; overflow:hidden; border:1px solid var(--line); background:#eceff1}
  .canvas{position:relative; transform-origin:var(--ox,50%) var(--oy,50%); transition:transform .5s cubic-bezier(.4,0,.2,1)}
  .canvas img{display:block; width:100%; height:auto}
@@ -137,6 +143,7 @@
 
  <!-- STEP -->
  <div id="vStep" style="display:none">
+   <div class="secnav" id="secNav"></div>
    <div class="seg" id="seg"></div>
    <div class="seglbl" id="uProg"></div>
    <div class="stage" id="stage">
@@ -174,6 +181,14 @@
  if(LANGS.length<2) document.querySelector(".lang").style.display="none";
  const seg=document.getElementById("seg");
  for(let k=0;k<N;k++){const sp=document.createElement("span");sp.onclick=()=>GO(k);seg.appendChild(sp);}
+
+ // sections (chapters) — grouped from consecutive steps sharing s.section
+ const SECTIONS=[];
+ S.forEach((s,i)=>{ if(!s.section) return; const last=SECTIONS[SECTIONS.length-1];
+   if(last && last.name===s.section){ last.end=i; } else { SECTIONS.push({name:s.section, start:i, end:i}); } });
+ const secNav=document.getElementById("secNav");
+ if(SECTIONS.length>1){ SECTIONS.forEach(sec=>{ const b=document.createElement("div"); b.className="sec"; b.textContent=sec.name; b.onclick=()=>GO(sec.start); secNav.appendChild(b); }); }
+ else { secNav.style.display="none"; }
 
  function ga(ev,p){if(typeof gtag==="function")gtag("event",ev,p);}
  function L(l){lang=l; ga("tutorial_lang",{language:l}); paint();}
@@ -235,7 +250,11 @@
    // step
    if(idx>=0 && idx<N){
      const s=S[idx], last=(idx===N-1);
-     document.getElementById("uProg").innerHTML=u.step+" <b>"+(idx+1)+"</b> "+u.of+" "+N;
+     let progHtml=u.step+" <b>"+(idx+1)+"</b> "+u.of+" "+N;
+     if(SECTIONS.length>1){ const cur=SECTIONS.findIndex(sec=>idx>=sec.start&&idx<=sec.end);
+       [...secNav.children].forEach((c,k)=>{ c.classList.toggle("on",k===cur); c.classList.toggle("done",k<cur); });
+       if(cur>=0) progHtml="<b>"+SECTIONS[cur].name+"</b> · "+progHtml; }
+     document.getElementById("uProg").innerHTML=progHtml;
      [...seg.children].forEach((c,k)=>{c.className=(k<idx?"done":k===idx?"cur":"");});
      document.getElementById("img").src=s.img;
      document.getElementById("stage").style.aspectRatio=s.ar;

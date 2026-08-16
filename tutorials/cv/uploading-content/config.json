@@ -1,0 +1,139 @@
+{
+  "version": 2,
+  "partner": "cv",
+  "flow": "uploading-content",
+  "title": {
+    "en": "Uploading your own content"
+  },
+  "steps": [
+    {
+      "img": "screenshots/01-modules-list.png",
+      "ar": 2.114,
+      "section": "Create a module",
+      "cx": 50,
+      "cy": 50,
+      "w": 60,
+      "h": 40,
+      "z": 1,
+      "static": true,
+      "noSpot": true,
+      "en": {
+        "t": "Modules are your building blocks",
+        "d": "A module is a course your coaches complete — made of units, which are made of lessons. Manage them all under Club Settings → Modules."
+      }
+    },
+    {
+      "img": "screenshots/01-modules-list.png",
+      "ar": 2.114,
+      "section": "Create a module",
+      "cx": 73.8,
+      "cy": 24.4,
+      "w": 8,
+      "h": 5.5,
+      "z": 1.4,
+      "static": false,
+      "en": {
+        "t": "Start a new module",
+        "d": "Click \"Create Module\". Your work is saved as a draft automatically while you build."
+      }
+    },
+    {
+      "img": "screenshots/03-form-filled.png",
+      "ar": 2.114,
+      "section": "Create a module",
+      "cx": 56.8,
+      "cy": 60,
+      "w": 56.5,
+      "h": 51,
+      "z": 1,
+      "static": false,
+      "en": {
+        "t": "Describe your module",
+        "d": "Give it a clear title and a short description. You can credit a coach, and keep the status \"Unpublished\" until it's ready."
+      }
+    },
+    {
+      "img": "screenshots/04-form-lower.png",
+      "ar": 2.114,
+      "section": "Create a module",
+      "cx": 57,
+      "cy": 36,
+      "w": 54,
+      "h": 46,
+      "z": 1,
+      "static": false,
+      "en": {
+        "t": "Cover image, certificate and CPD",
+        "d": "Upload a cover image (SVG, PNG or JPG), optionally award a certificate, and set CPD points — by default they total up automatically from each unit."
+      }
+    },
+    {
+      "img": "screenshots/04-form-lower.png",
+      "ar": 2.114,
+      "section": "Build the unit",
+      "cx": 80,
+      "cy": 67,
+      "w": 8,
+      "h": 5.5,
+      "z": 1.4,
+      "static": false,
+      "en": {
+        "t": "Create your first unit",
+        "d": "In the Units section, click \"Create Unit\" to open the unit builder."
+      }
+    },
+    {
+      "img": "screenshots/05-unit-form.png",
+      "ar": 2.114,
+      "section": "Build the unit",
+      "cx": 57,
+      "cy": 66.5,
+      "w": 54,
+      "h": 46,
+      "z": 1,
+      "static": false,
+      "en": {
+        "t": "Set how the unit works",
+        "d": "Give the unit its own CPD points and estimated duration. Optionally add a time limit, or enable \"Free navigation\" so coaches can move between lessons in any order — otherwise they complete them in sequence."
+      }
+    },
+    {
+      "img": "screenshots/06-lesson-types.png",
+      "ar": 2.114,
+      "section": "Build the unit",
+      "cx": 34.2,
+      "cy": 59,
+      "w": 14.5,
+      "h": 33,
+      "z": 1.2,
+      "static": false,
+      "en": {
+        "t": "Build lessons from six content types",
+        "d": "Add lessons, then fill each one with items: Question, Video, Article, PDF, External Video or SCORM. A typical lesson is a video followed by a question."
+      }
+    },
+    {
+      "img": "screenshots/06-lesson-types.png",
+      "ar": 2.114,
+      "section": "Build the unit",
+      "cx": 57,
+      "cy": 63,
+      "w": 54,
+      "h": 26,
+      "z": 1,
+      "static": true,
+      "noSpot": true,
+      "en": {
+        "t": "Set the pass mark and save",
+        "d": "Use \"Percentage To Pass\" to set how much of the unit a coach must complete, then click \"Create Unit\". You can Preview it first, exactly as a coach would see it."
+      }
+    }
+  ],
+  "ui": {
+    "en": {
+      "doneT": "Your content is ready to publish!",
+      "doneD": "Set the module's status to \"Published\" when you're happy. To make it visible to coaches, add it to a Content Rail and place that rail on your page in Page Builder — that's what builds their home screen.",
+      "lead": "For club admins. Create your own modules — units, lessons, videos, questions, even SCORM — and award CPD for completing them."
+    }
+  }
+}

@@ -1,0 +1,184 @@
+{
+  "version": 2,
+  "partner": "cv",
+  "flow": "reporting",
+  "title": {
+    "en": "Reviewing your coaches' reports"
+  },
+  "steps": [
+    {
+      "img": "screenshots/01.png",
+      "ar": 1.595,
+      "section": "Overview",
+      "cx": 86.5,
+      "cy": 22,
+      "w": 12,
+      "h": 5.5,
+      "z": 1.6,
+      "static": false,
+      "en": {
+        "t": "Open Club Settings",
+        "d": "Click your initials at the top-right, then select \"Club Settings\"."
+      }
+    },
+    {
+      "img": "screenshots/02.png",
+      "ar": 1.541,
+      "section": "Overview",
+      "cx": 13,
+      "cy": 86,
+      "w": 17,
+      "h": 6,
+      "z": 1.6,
+      "static": false,
+      "en": {
+        "t": "Go to Reporting",
+        "d": "In the left sidebar under Analytics & Billing, click \"Reporting\"."
+      }
+    },
+    {
+      "img": "screenshots/02.png",
+      "ar": 1.541,
+      "section": "Overview",
+      "cx": 50,
+      "cy": 50,
+      "w": 60,
+      "h": 40,
+      "z": 1,
+      "static": true,
+      "noSpot": true,
+      "en": {
+        "t": "Your reporting dashboard",
+        "d": "This is your reporting home: headline figures at the top, and tabs below with the detail."
+      }
+    },
+    {
+      "img": "screenshots/02.png",
+      "ar": 1.541,
+      "section": "Overview",
+      "cx": 44,
+      "cy": 29,
+      "w": 46,
+      "h": 26,
+      "z": 1.1,
+      "static": false,
+      "en": {
+        "t": "Check the headline numbers",
+        "d": "\"Active coaches\" and \"Seats used\" show how much of your licence is in use; \"Coaches met\" shows how many have hit their CPD target."
+      }
+    },
+    {
+      "img": "screenshots/03.png",
+      "ar": 2.142,
+      "section": "Overview",
+      "cx": 28,
+      "cy": 85,
+      "w": 52,
+      "h": 14,
+      "z": 1.3,
+      "static": false,
+      "en": {
+        "t": "Switch between report views",
+        "d": "Move between Coaches, Modules, Coach Groups and Events. Start with \"Coaches\" to review people."
+      }
+    },
+    {
+      "img": "screenshots/02.png",
+      "ar": 1.541,
+      "section": "Overview",
+      "cx": 78.5,
+      "cy": 80,
+      "w": 37,
+      "h": 22,
+      "z": 1.1,
+      "static": false,
+      "en": {
+        "t": "Read the coach columns",
+        "d": "For each coach you'll see In Progress, Completed, Failed, Season CPD, and whether they've met their target."
+      }
+    },
+    {
+      "img": "screenshots/02.png",
+      "ar": 1.541,
+      "section": "Overview",
+      "cx": 38,
+      "cy": 69,
+      "w": 28,
+      "h": 6,
+      "z": 1.4,
+      "static": false,
+      "en": {
+        "t": "Filter the period",
+        "d": "Set a date range to report on a specific season or block. \"Clear filters\" resets everything."
+      }
+    },
+    {
+      "img": "screenshots/04.png",
+      "ar": 1.793,
+      "section": "Overview",
+      "cx": 41.7,
+      "cy": 50.5,
+      "w": 20,
+      "h": 15,
+      "z": 1.2,
+      "static": false,
+      "en": {
+        "t": "Export the data",
+        "d": "Click \"Export\" to download the report as a file — handy for sharing or tracking progress over time."
+      }
+    },
+    {
+      "img": "screenshots/02.png",
+      "ar": 1.541,
+      "section": "Coach detail",
+      "cx": 32,
+      "cy": 83,
+      "w": 14,
+      "h": 6,
+      "z": 1.5,
+      "static": false,
+      "en": {
+        "t": "Open a coach's report",
+        "d": "Click a coach's name to drill into their individual activity."
+      }
+    },
+    {
+      "img": "screenshots/06.png",
+      "ar": 1.945,
+      "section": "Coach detail",
+      "cx": 50,
+      "cy": 55,
+      "w": 82,
+      "h": 52,
+      "z": 1,
+      "static": true,
+      "noSpot": true,
+      "en": {
+        "t": "See what they've worked on",
+        "d": "Every unit the coach has started, with its module, organisation, status and CPD time earned."
+      }
+    },
+    {
+      "img": "screenshots/07.png",
+      "ar": 1.879,
+      "section": "Coach detail",
+      "cx": 57,
+      "cy": 62,
+      "w": 28,
+      "h": 34,
+      "z": 1.2,
+      "static": false,
+      "en": {
+        "t": "Filter by status",
+        "d": "Narrow the list by status — Completed, In Progress or Failed — to focus on what matters."
+      }
+    }
+  ],
+  "ui": {
+    "en": {
+      "doneT": "You know how to read the reports!",
+      "doneD": "You can now track licence usage and CPD progress, drill into any coach's activity, and filter or export any view. Check back regularly to spot who needs a nudge.",
+      "lead": "For club admins. Track licence usage, CPD progress and every coach's activity — and export any view."
+    }
+  }
+}

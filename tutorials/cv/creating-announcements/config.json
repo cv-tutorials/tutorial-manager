@@ -1,0 +1,101 @@
+{
+  "version": 2,
+  "partner": "cv",
+  "flow": "creating-announcements",
+  "title": {
+    "en": "Creating announcements"
+  },
+  "steps": [
+    {
+      "img": "screenshots/01.png",
+      "ar": 3.89,
+      "cx": 90,
+      "cy": 67,
+      "w": 13,
+      "h": 11,
+      "z": 1.3,
+      "static": false,
+      "en": {
+        "t": "Open Club Settings",
+        "d": "Click your initials at the top-right, then select \"Club Settings\"."
+      }
+    },
+    {
+      "img": "screenshots/02.png",
+      "ar": 2.01,
+      "cx": 12.5,
+      "cy": 50.5,
+      "w": 19,
+      "h": 8,
+      "z": 1.4,
+      "static": false,
+      "en": {
+        "t": "Go to Announcements",
+        "d": "In the left sidebar under My Club, click \"Announcements\"."
+      }
+    },
+    {
+      "img": "screenshots/02.png",
+      "ar": 2.01,
+      "cx": 88,
+      "cy": 30.5,
+      "w": 15,
+      "h": 7,
+      "z": 1.4,
+      "static": false,
+      "en": {
+        "t": "Create an announcement",
+        "d": "Click \"Create Announcement\" to write a new message for your coaches."
+      }
+    },
+    {
+      "img": "screenshots/04.png",
+      "ar": 1.46,
+      "cx": 58,
+      "cy": 29.5,
+      "w": 76,
+      "h": 35,
+      "z": 1,
+      "static": false,
+      "en": {
+        "t": "Write your message",
+        "d": "Add a title and description — for example, a CPD deadline reminder."
+      }
+    },
+    {
+      "img": "screenshots/04.png",
+      "ar": 1.46,
+      "cx": 57,
+      "cy": 72,
+      "w": 76,
+      "h": 32,
+      "z": 1,
+      "static": false,
+      "en": {
+        "t": "Set the style and audience",
+        "d": "Pick a style, choose who receives it (Coach or Admin), and set the active date range."
+      }
+    },
+    {
+      "img": "screenshots/04.png",
+      "ar": 1.46,
+      "cx": 91.5,
+      "cy": 96,
+      "w": 8,
+      "h": 5,
+      "z": 1.4,
+      "static": false,
+      "en": {
+        "t": "Publish it",
+        "d": "Click \"Create\" to publish. Coaches will see the announcement when they log in."
+      }
+    }
+  ],
+  "ui": {
+    "en": {
+      "doneT": "Announcement published!",
+      "doneD": "Your announcement is live and your coaches will see it when they log in. You can create, edit or remove announcements any time from Club Settings.",
+      "lead": "For club admins. Publish messages that greet your coaches when they log in — like CPD deadline reminders."
+    }
+  }
+}

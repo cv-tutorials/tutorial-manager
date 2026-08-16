@@ -1,0 +1,101 @@
+{
+  "version": 2,
+  "partner": "cv",
+  "flow": "setting-up-your-club",
+  "title": {
+    "en": "Setting up your club"
+  },
+  "steps": [
+    {
+      "img": "screenshots/01.png",
+      "ar": 3.89,
+      "cx": 90,
+      "cy": 67,
+      "w": 13,
+      "h": 11,
+      "z": 1.3,
+      "static": false,
+      "en": {
+        "t": "Open Club Settings",
+        "d": "Click your initials at the top-right, then select \"Club Settings\"."
+      }
+    },
+    {
+      "img": "screenshots/09.png",
+      "ar": 1.51,
+      "cx": 71,
+      "cy": 10,
+      "w": 55,
+      "h": 6,
+      "z": 1.1,
+      "static": false,
+      "en": {
+        "t": "Name your club",
+        "d": "In Organisation Settings, enter your club's name."
+      }
+    },
+    {
+      "img": "screenshots/09.png",
+      "ar": 1.51,
+      "cx": 71,
+      "cy": 20,
+      "w": 55,
+      "h": 6,
+      "z": 1.1,
+      "static": false,
+      "en": {
+        "t": "Set your timezone",
+        "d": "Choose your timezone so dates and deadlines show correctly for your coaches."
+      }
+    },
+    {
+      "img": "screenshots/09.png",
+      "ar": 1.51,
+      "cx": 71,
+      "cy": 64.5,
+      "w": 57,
+      "h": 66,
+      "z": 1,
+      "static": false,
+      "en": {
+        "t": "Choose your brand colours",
+        "d": "Set your theme colours. \"Primary\" is your main brand colour, used across the admin and your coaches' experience."
+      }
+    },
+    {
+      "img": "screenshots/06.png",
+      "ar": 1.99,
+      "cx": 76.5,
+      "cy": 65,
+      "w": 44,
+      "h": 36,
+      "z": 1.1,
+      "static": false,
+      "en": {
+        "t": "Upload your club logo",
+        "d": "Click to upload your logo (SVG, PNG or JPG), or drag and drop it. It replaces the placeholder across the platform."
+      }
+    },
+    {
+      "img": "screenshots/07.png",
+      "ar": 1.89,
+      "cx": 95,
+      "cy": 91,
+      "w": 8,
+      "h": 7,
+      "z": 1.4,
+      "static": false,
+      "en": {
+        "t": "Save your settings",
+        "d": "Once your details, colours and logo are set, click \"Update\" to save."
+      }
+    }
+  ],
+  "ui": {
+    "en": {
+      "doneT": "Your club is set up!",
+      "doneD": "Your club name, timezone, brand colours and logo are saved. You can update these from Club Settings at any time.",
+      "lead": "For club admins. Add your club's name, timezone, brand colours and logo so the platform feels like yours."
+    }
+  }
+}

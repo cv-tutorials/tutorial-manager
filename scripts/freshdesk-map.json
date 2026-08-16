@@ -1,0 +1,27 @@
+{
+  "categories": {
+    "asc": 103000260357,
+    "ecnl": 103000260358,
+    "efl": 103000260359,
+    "n1": 103000260360,
+    "rush": 103000260367
+  },
+  "folders": {
+    "asc": 103000652870,
+    "ecnl": 103000652871,
+    "efl": 103000652872,
+    "n1": 103000652873,
+    "rush": 103000652927
+  },
+  "articles": {
+    "asc/invite-coaches": 103000409872,
+    "ecnl/add-coaches-to-group": 103000409873,
+    "ecnl/onboarding": 103000409874,
+    "efl/invite-users": 103000409875,
+    "n1/coach-reports": 103000409876,
+    "n1/invite-coaches": 103000409877,
+    "ecnl/coach-reports": 103000410262,
+    "ecnl/invite-coaches": 103000410263,
+    "rush/switch-clubs": 103000410264
+  }
+}

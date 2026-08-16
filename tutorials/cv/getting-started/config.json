@@ -1,0 +1,187 @@
+{
+  "version": 2,
+  "partner": "cv",
+  "flow": "getting-started",
+  "title": {
+    "en": "Getting started with your learning platform"
+  },
+  "steps": [
+    {
+      "img": "screenshots/01-home.png",
+      "ar": 2.114,
+      "section": "Your home",
+      "cx": 50,
+      "cy": 50,
+      "w": 60,
+      "h": 40,
+      "z": 1,
+      "static": true,
+      "noSpot": true,
+      "en": {
+        "t": "Welcome to your learning home",
+        "d": "When you sign in you land on My Learning — your courses, new content and CPD progress, all in one place."
+      }
+    },
+    {
+      "img": "screenshots/01-home.png",
+      "ar": 2.114,
+      "section": "Your home",
+      "cx": 74,
+      "cy": 20.5,
+      "w": 22,
+      "h": 18,
+      "z": 1.3,
+      "static": false,
+      "en": {
+        "t": "Track your CPD points",
+        "d": "Your Season CPD Points live at the top right, with your target and how many are left to go. Completing units earns points — reach the target and you're all set for the season."
+      }
+    },
+    {
+      "img": "screenshots/02-rails.png",
+      "ar": 2.114,
+      "section": "Learning",
+      "cx": 50,
+      "cy": 50,
+      "w": 60,
+      "h": 40,
+      "z": 1,
+      "static": true,
+      "noSpot": true,
+      "en": {
+        "t": "Browse the library",
+        "d": "Scroll down for rows of content: session plans by age group, masterclasses, webinars — and your assigned modules with their progress."
+      }
+    },
+    {
+      "img": "screenshots/02-rails.png",
+      "ar": 2.114,
+      "section": "Learning",
+      "cx": 25,
+      "cy": 64.5,
+      "w": 18,
+      "h": 34,
+      "z": 1.3,
+      "static": false,
+      "en": {
+        "t": "Open a module",
+        "d": "Click a module card to open it. The \"In progress\" and \"Completed\" tabs show where you left off."
+      }
+    },
+    {
+      "img": "screenshots/03-module.png",
+      "ar": 2.114,
+      "section": "Learning",
+      "cx": 50,
+      "cy": 50,
+      "w": 60,
+      "h": 40,
+      "z": 1,
+      "static": true,
+      "noSpot": true,
+      "en": {
+        "t": "The module page",
+        "d": "Each module shows its progress bar and is split into units. The icons on each unit show how many questions it has and the CPD time it earns."
+      }
+    },
+    {
+      "img": "screenshots/03-module.png",
+      "ar": 2.114,
+      "section": "Learning",
+      "cx": 41.5,
+      "cy": 68,
+      "w": 17,
+      "h": 30,
+      "z": 1.2,
+      "static": false,
+      "en": {
+        "t": "Start a unit",
+        "d": "Click a unit to begin. Completed units are marked with a green tick."
+      }
+    },
+    {
+      "img": "screenshots/04-unit-player.png",
+      "ar": 2.114,
+      "section": "Learning",
+      "cx": 50,
+      "cy": 50,
+      "w": 60,
+      "h": 40,
+      "z": 1,
+      "static": true,
+      "noSpot": true,
+      "en": {
+        "t": "Learn lesson by lesson",
+        "d": "Inside a unit, each lesson is a short video followed by a quick question. Watch the video, then click continue to answer."
+      }
+    },
+    {
+      "img": "screenshots/04-unit-player.png",
+      "ar": 2.114,
+      "section": "Learning",
+      "cx": 26.7,
+      "cy": 68.5,
+      "w": 21,
+      "h": 57,
+      "z": 1.15,
+      "static": false,
+      "en": {
+        "t": "Follow your progress",
+        "d": "The Unit Overview lists every lesson and question, ticking them off as you go — so you always know exactly where you are."
+      }
+    },
+    {
+      "img": "screenshots/05-search.png",
+      "ar": 2.114,
+      "section": "Finding content",
+      "cx": 75,
+      "cy": 4,
+      "w": 13,
+      "h": 6,
+      "z": 1.5,
+      "static": false,
+      "en": {
+        "t": "Search anything",
+        "d": "Click the magnifying glass and type a topic, coach or module name — then press Enter."
+      }
+    },
+    {
+      "img": "screenshots/06-search-results.png",
+      "ar": 2.114,
+      "section": "Finding content",
+      "cx": 50,
+      "cy": 50,
+      "w": 60,
+      "h": 40,
+      "z": 1,
+      "static": true,
+      "noSpot": true,
+      "en": {
+        "t": "Refine your results",
+        "d": "The search page shows everything that matches, and you can narrow it down by type or category."
+      }
+    },
+    {
+      "img": "screenshots/07-categories.png",
+      "ar": 2.114,
+      "section": "Finding content",
+      "cx": 27.2,
+      "cy": 34,
+      "w": 15.5,
+      "h": 56,
+      "z": 1.15,
+      "static": false,
+      "en": {
+        "t": "Browse by category",
+        "d": "Or open \"Categories\" in the top menu to jump straight to a topic — from tactical themes to age groups."
+      }
+    }
+  ],
+  "ui": {
+    "en": {
+      "doneT": "You're ready to start learning!",
+      "doneD": "You know your way around: find content, work through units lesson by lesson, and watch your CPD points grow. Your progress is saved automatically — pick up any time, right where you left off.",
+      "lead": "For coaches. Your first tour of the platform: where everything lives and how to start earning CPD points."
+    }
+  }
+}

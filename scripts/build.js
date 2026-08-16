@@ -299,3 +299,10 @@ for (const t of tutorials) {
 }
 
 console.log(`\nDone — ${built} tutorial(s) built.`);
+
+// Visual highlight-box editors (one per tutorial) — used by the team to fix boxes without code
+try {
+  execSync(`node "${path.join(__dirname, 'editor.js')}"`, { stdio: 'inherit' });
+} catch (e) {
+  console.error('Box editor generation failed (tutorials built fine):', e.message);
+}

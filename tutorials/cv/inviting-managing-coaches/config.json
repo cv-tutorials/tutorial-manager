@@ -1,0 +1,199 @@
+{
+  "version": 2,
+  "partner": "cv",
+  "flow": "inviting-managing-coaches",
+  "title": {
+    "en": "Inviting and managing coaches"
+  },
+  "steps": [
+    {
+      "img": "screenshots/11.png",
+      "ar": 1.54,
+      "section": "Inviting",
+      "cx": 93,
+      "cy": 5,
+      "w": 5,
+      "h": 8,
+      "z": 2.0,
+      "static": false,
+      "en": {
+        "t": "Open your account menu",
+        "d": "Click your initials at the top-right corner of the screen."
+      }
+    },
+    {
+      "img": "screenshots/11.png",
+      "ar": 1.54,
+      "section": "Inviting",
+      "cx": 89,
+      "cy": 24,
+      "w": 13,
+      "h": 5.5,
+      "z": 1.5,
+      "static": false,
+      "en": {
+        "t": "Go to Club Settings",
+        "d": "Select \"Club Settings\" from the dropdown menu."
+      }
+    },
+    {
+      "img": "screenshots/12.png",
+      "ar": 1.83,
+      "section": "Inviting",
+      "cx": 20.6,
+      "cy": 32.5,
+      "w": 16,
+      "h": 6,
+      "z": 1.6,
+      "static": false,
+      "en": {
+        "t": "Open My Coaches",
+        "d": "In the left sidebar under My Club, click \"My Coaches\" — this is where you invite and manage everyone."
+      }
+    },
+    {
+      "img": "screenshots/12.png",
+      "ar": 1.83,
+      "section": "Inviting",
+      "cx": 84.6,
+      "cy": 26,
+      "w": 6,
+      "h": 6,
+      "z": 1.7,
+      "static": false,
+      "en": {
+        "t": "Start an invite",
+        "d": "Click the \"Invite\" button at the top-right of the coaches panel."
+      }
+    },
+    {
+      "img": "screenshots/08.png",
+      "ar": 3.64,
+      "section": "Inviting",
+      "cx": 85,
+      "cy": 62,
+      "w": 12,
+      "h": 44,
+      "z": 1.4,
+      "static": false,
+      "en": {
+        "t": "Choose Email",
+        "d": "Select \"Email\" to invite coaches by their email address. (Use \"CSV\" to upload a large list at once.)"
+      }
+    },
+    {
+      "img": "screenshots/09.png",
+      "ar": 1.62,
+      "section": "Inviting",
+      "cx": 49,
+      "cy": 48,
+      "w": 92,
+      "h": 34,
+      "z": 1,
+      "static": true,
+      "noSpot": true,
+      "en": {
+        "t": "Enter email addresses",
+        "d": "Type one or more coach emails, separated by commas or new lines. You can invite several at once."
+      }
+    },
+    {
+      "img": "screenshots/10.png",
+      "ar": 1.47,
+      "section": "Inviting",
+      "cx": 46,
+      "cy": 73,
+      "w": 78,
+      "h": 30,
+      "z": 1,
+      "static": false,
+      "en": {
+        "t": "Set the role and send",
+        "d": "Choose the role — \"Coach\" or \"Admin\" — then click \"Invite\". New invites are added to the queue."
+      }
+    },
+    {
+      "img": "screenshots/12.png",
+      "ar": 1.83,
+      "section": "Managing",
+      "cx": 50,
+      "cy": 55,
+      "w": 90,
+      "h": 45,
+      "z": 1,
+      "static": true,
+      "noSpot": true,
+      "en": {
+        "t": "Your coach is invited",
+        "d": "Back in the list, invited coaches show as \"Pending\" until they accept; those who've joined show as \"Active\". This list is also where you manage everyone."
+      }
+    },
+    {
+      "img": "screenshots/13.png",
+      "ar": 1.86,
+      "section": "Managing",
+      "cx": 87,
+      "cy": 58,
+      "w": 5,
+      "h": 5,
+      "z": 1.9,
+      "static": false,
+      "en": {
+        "t": "Open a coach's menu",
+        "d": "Next to any coach, click the \"…\" button to open its actions menu."
+      }
+    },
+    {
+      "img": "screenshots/13.png",
+      "ar": 1.86,
+      "section": "Managing",
+      "cx": 83,
+      "cy": 66,
+      "w": 13,
+      "h": 13,
+      "z": 1.5,
+      "static": false,
+      "en": {
+        "t": "Resend or remove",
+        "d": "For a pending coach you can \"Resend Invite\" or \"Remove Invite\". For an active coach, the same menu lets you change their role or remove them from your club."
+      }
+    },
+    {
+      "img": "screenshots/02.png",
+      "ar": 1.76,
+      "section": "Coach groups",
+      "cx": 79,
+      "cy": 26,
+      "w": 13,
+      "h": 6,
+      "z": 1.6,
+      "static": false,
+      "en": {
+        "t": "Organise coaches into groups",
+        "d": "You can also group coaches by team, age or squad. Open \"Coach Groups\" and click \"Create Group\"."
+      }
+    },
+    {
+      "img": "screenshots/04.png",
+      "ar": 1.58,
+      "section": "Coach groups",
+      "cx": 51,
+      "cy": 39,
+      "w": 36,
+      "h": 6,
+      "z": 1.3,
+      "static": false,
+      "en": {
+        "t": "Name and create the group",
+        "d": "Give it a name — like \"Under 12's\" — and click \"Create\". You can then add coaches and assign content to the whole group at once."
+      }
+    }
+  ],
+  "ui": {
+    "en": {
+      "doneT": "You're set up to manage your coaches!",
+      "doneD": "You can now invite coaches by email, set their roles, resend or remove invites, and organise everyone into groups. Repeat the invite step any time you add new coaches.",
+      "lead": "For club admins. Invite coaches by email, manage their status and roles, and organise them into groups."
+    }
+  }
+}
