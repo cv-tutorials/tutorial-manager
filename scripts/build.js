@@ -300,6 +300,13 @@ for (const t of tutorials) {
 
 console.log(`\nDone — ${built} tutorial(s) built.`);
 
+// Written-article version of each tutorial (preferred format for Freshdesk)
+try {
+  execSync(`node "${path.join(__dirname, 'article.js')}"`, { stdio: 'inherit' });
+} catch (e) {
+  console.error('Article generation failed (tutorials built fine):', e.message);
+}
+
 // Visual highlight-box editors (one per tutorial) — used by the team to fix boxes without code
 try {
   execSync(`node "${path.join(__dirname, 'editor.js')}"`, { stdio: 'inherit' });
