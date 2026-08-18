@@ -3,7 +3,7 @@
   "partner": "cv",
   "flow": "uploading-content",
   "title": {
-    "en": "Uploading your own content"
+    "en": "Uploading and publishing your content"
   },
   "steps": [
     {
@@ -127,13 +127,150 @@
         "t": "Set the pass mark and save",
         "d": "Use \"Percentage To Pass\" to set how much of the unit a coach must complete, then click \"Create Unit\". You can Preview it first, exactly as a coach would see it."
       }
+    },
+    {
+      "img": "screenshots/rail-01-rails-list.png",
+      "ar": 2.114,
+      "section": "Add it to a rail",
+      "cx": 50,
+      "cy": 50,
+      "w": 60,
+      "h": 40,
+      "z": 1,
+      "static": true,
+      "noSpot": true,
+      "en": {
+        "t": "Your module is built — now get it in front of coaches",
+        "d": "Publishing a module doesn't make it visible on its own. Coaches see content through Content Rails — themed rows shown together under one title. Manage them under Club Settings → Content Rails."
+      }
+    },
+    {
+      "img": "screenshots/rail-01-rails-list.png",
+      "ar": 2.114,
+      "section": "Add it to a rail",
+      "cx": 78.2,
+      "cy": 24.4,
+      "w": 9,
+      "h": 5.5,
+      "z": 1.5,
+      "static": false,
+      "en": {
+        "t": "Start a new rail",
+        "d": "Click \"Create Content Rail\" — or reuse an existing one if you already have a home for this kind of content."
+      }
+    },
+    {
+      "img": "screenshots/rail-02-create-form.png",
+      "ar": 2.114,
+      "section": "Add it to a rail",
+      "cx": 61,
+      "cy": 43,
+      "w": 46,
+      "h": 55,
+      "z": 1.05,
+      "static": false,
+      "en": {
+        "t": "Name and describe it",
+        "d": "Give the rail a clear title and description — coaches won't see the description, it's just for your reference. An image is optional."
+      }
+    },
+    {
+      "img": "screenshots/rail-02-create-form.png",
+      "ar": 2.114,
+      "section": "Add it to a rail",
+      "cx": 81.3,
+      "cy": 92.3,
+      "w": 8,
+      "h": 6,
+      "z": 1.5,
+      "static": false,
+      "en": {
+        "t": "Create it",
+        "d": "Click \"Create\". The rail starts as Unpublished — you'll add your module and publish it next."
+      }
+    },
+    {
+      "img": "screenshots/rail-03-add-activity-menu.png",
+      "ar": 2.114,
+      "section": "Publish it",
+      "cx": 34,
+      "cy": 46,
+      "w": 21,
+      "h": 15,
+      "z": 1.4,
+      "static": false,
+      "en": {
+        "t": "Add your module as an activity",
+        "d": "On the \"Activities\" tab, click \"Add Activity\" and choose \"Module\" — you can also add Events, Exams, or even another Rail nested inside this one."
+      }
+    },
+    {
+      "img": "screenshots/rail-04-module-picker.png",
+      "ar": 2.114,
+      "section": "Publish it",
+      "cx": 50,
+      "cy": 30,
+      "w": 76,
+      "h": 22,
+      "z": 1.1,
+      "static": false,
+      "en": {
+        "t": "Search and select your module",
+        "d": "Search by name and tick the module you just built. You can select several at once if you're adding more than one."
+      }
+    },
+    {
+      "img": "screenshots/rail-04-module-picker.png",
+      "ar": 2.114,
+      "section": "Publish it",
+      "cx": 71.7,
+      "cy": 88.9,
+      "w": 9,
+      "h": 6,
+      "z": 1.5,
+      "static": false,
+      "en": {
+        "t": "Confirm your selection",
+        "d": "Click \"Add\" to bring the selected items into the rail."
+      }
+    },
+    {
+      "img": "screenshots/rail-05-activities-list.png",
+      "ar": 2.114,
+      "section": "Publish it",
+      "cx": 50,
+      "cy": 50,
+      "w": 60,
+      "h": 40,
+      "z": 1,
+      "static": true,
+      "noSpot": true,
+      "en": {
+        "t": "Your module now lives on the rail",
+        "d": "Each item shows its type and status. Drag the handle on the left to reorder them, or click \"Add Activity\" again any time to add more."
+      }
+    },
+    {
+      "img": "screenshots/rail-06-publish.png",
+      "ar": 2.114,
+      "section": "Publish it",
+      "cx": 68,
+      "cy": 34.1,
+      "w": 24,
+      "h": 8,
+      "z": 1.4,
+      "static": false,
+      "en": {
+        "t": "Set the rail to Published",
+        "d": "Back on the \"Details\" tab, change Status to \"Published\", then click \"Update\" to save."
+      }
     }
   ],
   "ui": {
     "en": {
-      "doneT": "Your content is ready to publish!",
-      "doneD": "Set the module's status to \"Published\" when you're happy. To make it visible to coaches, add it to a Content Rail and place that rail on your page in Page Builder — that's what builds their home screen.",
-      "lead": "For club admins. Create your own modules — units, lessons, videos, questions, even SCORM — and award CPD for completing them."
+      "doneT": "Your content is live",
+      "doneD": "You've built a module and published it through a rail — that's what gets it in front of coaches. Whether it appears on the coach homepage from here depends on your Page Builder setup — if it doesn't show up automatically, check with your Coaches' Voice contact about adding it to your homepage layout.",
+      "lead": "For club admins. Build your own modules — units, lessons, videos, questions, even SCORM — then publish them to coaches by adding them to a rail."
     }
   }
 }
