@@ -11,9 +11,9 @@
       "ar": 2.114,
       "section": "Create a module",
       "cx": 22.5,
-      "cy": 65.4,
-      "w": 13,
-      "h": 4.8,
+      "cy": 66.6,
+      "w": 13.3,
+      "h": 6.1,
       "z": 1.5,
       "static": false,
       "en": {
@@ -70,10 +70,10 @@
       "img": "screenshots/04-form-lower.png",
       "ar": 2.114,
       "section": "Build the unit",
-      "cx": 80,
-      "cy": 67,
-      "w": 8,
-      "h": 5.5,
+      "cx": 80.3,
+      "cy": 66.9,
+      "w": 7.4,
+      "h": 6.8,
       "z": 1.4,
       "static": false,
       "en": {
@@ -297,7 +297,7 @@
       "img": "screenshots/pb-07.png",
       "ar": 1.649,
       "section": "Put it on the homepage",
-      "cx": 90.75,
+      "cx": 90.8,
       "cy": 47.8,
       "w": 2.6,
       "h": 4,
@@ -387,22 +387,22 @@
       "img": "screenshots/pb-12.png",
       "ar": 1.66,
       "section": "Put it on the homepage",
-      "cx": 15.1,
-      "cy": 42.7,
-      "w": 21,
-      "h": 4.2,
+      "cx": 50.2,
+      "cy": 59.6,
+      "w": 91.9,
+      "h": 43.3,
       "z": 1.4,
       "static": false,
       "en": {
         "t": "That's it — your content is live",
-        "d": "Your rail now sits on the coach homepage, with everything you added inside it."
+        "d": "Your rail now sits on the coach homepage, with everything you added inside it. From here on it's quicker: add another module to this rail and coaches see it straight away — you don't need to publish anything again or come back to Page Builder."
       }
     }
   ],
   "ui": {
     "en": {
       "doneT": "Your content is live",
-      "doneD": "You've built a module, published it through a rail, and placed that rail on the coach homepage. Repeat the last section any time you want to add, reorder or remove a row — and remember nothing changes for coaches until you click Update.",
+      "doneD": "You've built a module, published it through a rail, and placed that rail on the coach homepage. Next time you only need the first half: drop a new module into a rail that's already live and coaches see it immediately. You'll come back to Page Builder only when you want a brand-new rail on the page — and remember nothing changes there until you click Update.",
       "lead": "For club admins. Build your own modules — units, lessons, videos, questions, even SCORM — then publish them to coaches and put them on the homepage."
     }
   }
