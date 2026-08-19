@@ -264,13 +264,133 @@
         "t": "Set the rail to Published",
         "d": "Back on the \"Details\" tab, change Status to \"Published\", then click \"Update\" to save."
       }
+    },
+    {
+      "img": "screenshots/pb-05.png",
+      "ar": 1.645,
+      "section": "Put it on the homepage",
+      "cx": 32.1,
+      "cy": 40.5,
+      "w": 12.5,
+      "h": 3.8,
+      "z": 1.5,
+      "static": false,
+      "en": {
+        "t": "One last step — put the rail on the page",
+        "d": "A published rail still needs a home. Go to Club Settings → Page Builder and open your page — it's usually called \"My Learning Content\". This is the coach homepage."
+      }
+    },
+    {
+      "img": "screenshots/pb-07.png",
+      "ar": 1.649,
+      "section": "Put it on the homepage",
+      "cx": 90.75,
+      "cy": 47.8,
+      "w": 2.6,
+      "h": 4,
+      "z": 1.8,
+      "static": false,
+      "en": {
+        "t": "Add a new block",
+        "d": "Hover over any row in the Content list — a \"+\" appears on the right. Click it. The new block lands directly below the row you hovered."
+      }
+    },
+    {
+      "img": "screenshots/pb-07.png",
+      "ar": 1.649,
+      "section": "Put it on the homepage",
+      "cx": 85,
+      "cy": 73,
+      "w": 14.5,
+      "h": 4.4,
+      "z": 1.5,
+      "static": false,
+      "en": {
+        "t": "Choose \"Rail\"",
+        "d": "You can add a Paragraph, Header, List, Image or Divider too — but to show your content, pick \"Rail\"."
+      }
+    },
+    {
+      "img": "screenshots/pb-09.png",
+      "ar": 1.676,
+      "section": "Put it on the homepage",
+      "cx": 49.9,
+      "cy": 54.4,
+      "w": 66,
+      "h": 5.8,
+      "z": 1.2,
+      "static": false,
+      "en": {
+        "t": "Find and tick your rail",
+        "d": "Search by name if the list is long, then tick the rail you just published. Only published rails will show to coaches."
+      }
+    },
+    {
+      "img": "screenshots/pb-09.png",
+      "ar": 1.676,
+      "section": "Put it on the homepage",
+      "cx": 79.4,
+      "cy": 83.8,
+      "w": 7,
+      "h": 4.6,
+      "z": 1.6,
+      "static": false,
+      "en": {
+        "t": "Add it to the page",
+        "d": "Click \"Add\" to drop the rail into the page."
+      }
+    },
+    {
+      "img": "screenshots/pb-10.png",
+      "ar": 1.676,
+      "section": "Put it on the homepage",
+      "cx": 58,
+      "cy": 15.3,
+      "w": 62,
+      "h": 5,
+      "z": 1.2,
+      "static": false,
+      "en": {
+        "t": "Put it in the right order",
+        "d": "The order here is the order coaches see. Use the handle on the right of any row to move it up or down — top of the list means top of their homepage."
+      }
+    },
+    {
+      "img": "screenshots/pb-10.png",
+      "ar": 1.676,
+      "section": "Put it on the homepage",
+      "cx": 90.6,
+      "cy": 80.3,
+      "w": 6.5,
+      "h": 4.8,
+      "z": 1.6,
+      "static": false,
+      "en": {
+        "t": "Save the page",
+        "d": "Click \"Update\". Nothing changes for coaches until you do."
+      }
+    },
+    {
+      "img": "screenshots/pb-12.png",
+      "ar": 1.66,
+      "section": "Put it on the homepage",
+      "cx": 15.1,
+      "cy": 42.7,
+      "w": 21,
+      "h": 4.2,
+      "z": 1.4,
+      "static": false,
+      "en": {
+        "t": "That's it — your content is live",
+        "d": "Your rail now sits on the coach homepage, with everything you added inside it."
+      }
     }
   ],
   "ui": {
     "en": {
       "doneT": "Your content is live",
-      "doneD": "You've built a module and published it through a rail — that's what gets it in front of coaches. Whether it appears on the coach homepage from here depends on your Page Builder setup — if it doesn't show up automatically, check with your Coaches' Voice contact about adding it to your homepage layout.",
-      "lead": "For club admins. Build your own modules — units, lessons, videos, questions, even SCORM — then publish them to coaches by adding them to a rail."
+      "doneD": "You've built a module, published it through a rail, and placed that rail on the coach homepage. Repeat the last section any time you want to add, reorder or remove a row — and remember nothing changes for coaches until you click Update.",
+      "lead": "For club admins. Build your own modules — units, lessons, videos, questions, even SCORM — then publish them to coaches and put them on the homepage."
     }
   }
 }
