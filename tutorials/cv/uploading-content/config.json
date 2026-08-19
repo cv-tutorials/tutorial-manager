@@ -10,16 +10,15 @@
       "img": "screenshots/01-modules-list.png",
       "ar": 2.114,
       "section": "Create a module",
-      "cx": 50,
-      "cy": 50,
-      "w": 60,
-      "h": 40,
-      "z": 1,
-      "static": true,
-      "noSpot": true,
+      "cx": 22.5,
+      "cy": 65.4,
+      "w": 13,
+      "h": 4.8,
+      "z": 1.5,
+      "static": false,
       "en": {
         "t": "Modules are your building blocks",
-        "d": "A module is a course your coaches complete — made of units, which are made of lessons. Manage them all under Club Settings → Modules."
+        "d": "A module is a course your coaches complete — made of units, which are made of lessons. Everything in this guide lives in the left-hand menu of Club Settings. Start by clicking \"Modules\"."
       }
     },
     {
@@ -132,16 +131,15 @@
       "img": "screenshots/rail-01-rails-list.png",
       "ar": 2.114,
       "section": "Add it to a rail",
-      "cx": 50,
-      "cy": 50,
-      "w": 60,
-      "h": 40,
-      "z": 1,
-      "static": true,
-      "noSpot": true,
+      "cx": 22.3,
+      "cy": 56.8,
+      "w": 12.8,
+      "h": 4.8,
+      "z": 1.5,
+      "static": false,
       "en": {
         "t": "Your module is built — now get it in front of coaches",
-        "d": "Publishing a module doesn't make it visible on its own. Coaches see content through Content Rails — themed rows shown together under one title. Manage them under Club Settings → Content Rails."
+        "d": "Publishing a module doesn't make it visible on its own. Coaches see content through Content Rails — themed rows shown together under one title. Back in the left menu, click \"Content Rails\"."
       }
     },
     {
@@ -269,15 +267,30 @@
       "img": "screenshots/pb-05.png",
       "ar": 1.645,
       "section": "Put it on the homepage",
-      "cx": 32.1,
-      "cy": 40.5,
-      "w": 12.5,
-      "h": 3.8,
+      "cx": 13.8,
+      "cy": 54.8,
+      "w": 17,
+      "h": 5.2,
       "z": 1.5,
       "static": false,
       "en": {
         "t": "One last step — put the rail on the page",
-        "d": "A published rail still needs a home. Go to Club Settings → Page Builder and open your page — it's usually called \"My Learning Content\". This is the coach homepage."
+        "d": "A published rail still needs a home. In the same left menu, click \"Page Builder\" — this is where the coach homepage is built."
+      }
+    },
+    {
+      "img": "screenshots/pb-05.png",
+      "ar": 1.645,
+      "section": "Put it on the homepage",
+      "cx": 32.1,
+      "cy": 40.5,
+      "w": 12.5,
+      "h": 3.8,
+      "z": 1.6,
+      "static": false,
+      "en": {
+        "t": "Open your page",
+        "d": "You'll usually have just one page, called \"My Learning Content\". Click it to edit what coaches see."
       }
     },
     {
