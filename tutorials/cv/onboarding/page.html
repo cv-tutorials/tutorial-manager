@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Getting started · Coaches' Voice</title>
+<style>
+ :root{ --navy:#333F48; --navy-dk:#232B31; --accent:#FF6600; --accent-dk:#d95500;
+   --ink:#11161A; --slate:#333F48; --muted:#5E6B76; --line:#D8DEE3; --surf:#F4F6F8;
+   --font:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+ *{box-sizing:border-box; margin:0; padding:0}
+ body{font-family:var(--font); color:var(--ink); background:var(--navy-dk);
+   min-height:100vh; display:flex; align-items:flex-start; justify-content:center; padding:24px; -webkit-font-smoothing:antialiased}
+ .shell{width:100%; max-width:960px; background:#fff; border-radius:16px; overflow:hidden; box-shadow:0 30px 70px -28px rgba(0,0,0,.6)}
+ .top{display:flex; align-items:center; gap:14px; padding:15px 24px; border-bottom:1px solid var(--line)}
+ .top>img{height:26px; flex:none}
+ .top .div{width:1px; height:26px; background:var(--line); flex:none}
+ .ttl h1{font-size:15.5px; font-weight:700; letter-spacing:-.3px; color:var(--navy); line-height:1.15}
+ .ttl p{font-size:11px; color:var(--muted); margin-top:3px; text-transform:uppercase; letter-spacing:.7px}
+ .hero{padding:26px 24px 6px}
+ .eyebrow{font-size:11.5px; font-weight:800; letter-spacing:1.4px; text-transform:uppercase; color:var(--accent)}
+ .hero h2{font-size:26px; font-weight:800; letter-spacing:-.7px; color:var(--navy); margin:8px 0 6px; line-height:1.1}
+ .hero .lead{font-size:14.5px; line-height:1.6; color:var(--slate); max-width:60ch}
+ .video{position:relative; margin:18px 0 0; border-radius:12px; overflow:hidden; background:#1b2228; aspect-ratio:16/9}
+ .video iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+ .poster{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:brightness(.5)}
+ .posterOv{position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; color:#fff; text-align:center; padding:20px}
+ .playdot{width:60px; height:60px; border-radius:50%; background:var(--accent); display:grid; place-items:center}
+ .playdot svg{width:26px; height:26px; fill:#fff; margin-left:3px}
+ .posterOv .note{font-size:12.5px; color:#FFD2B0; max-width:44ch; line-height:1.5}
+ .chaps{display:flex; flex-wrap:wrap; gap:8px; padding:12px 24px 4px; align-items:center}
+ .chaps .lbl{font-size:12px; color:var(--muted); font-weight:700}
+ .chap{font-size:12px; border:1px solid var(--line); background:#fff; color:var(--navy); border-radius:999px; padding:6px 12px; cursor:pointer; font-weight:600; transition:.15s}
+ .chap:hover{border-color:var(--navy)}
+ .chap.on{background:var(--navy); color:#fff; border-color:var(--navy)}
+ .list{padding:20px 24px 6px}
+ .lhd{display:flex; align-items:center; justify-content:space-between; margin-bottom:8px}
+ .lhd h3{font-size:16px; font-weight:800; color:var(--navy)}
+ .lhd .cnt{font-size:12.5px; color:var(--muted); font-weight:700}
+ .bar{height:6px; background:var(--surf); border-radius:999px; overflow:hidden; margin-bottom:16px}
+ .bar>i{display:block; height:100%; width:0; background:var(--accent); border-radius:999px; transition:width .3s}
+ .grp{font-size:11px; text-transform:uppercase; letter-spacing:.6px; color:var(--muted); font-weight:800; margin:14px 0 8px}
+ .item{display:flex; align-items:flex-start; gap:13px; border:1px solid var(--line); border-radius:12px; padding:13px 15px; margin-bottom:9px; cursor:pointer; transition:.15s; background:#fff}
+ .item:hover{border-color:var(--navy)}
+ .item .box{width:21px; height:21px; border-radius:6px; border:1.6px solid #BFC8CE; flex:none; margin-top:1px; display:grid; place-items:center}
+ .item .box svg{width:13px; height:13px; stroke:#fff; stroke-width:3; fill:none; opacity:0; transition:.15s}
+ .item.done .box{background:var(--accent); border-color:var(--accent)}
+ .item.done .box svg{opacity:1}
+ .item .t{font-size:14px; font-weight:700; color:var(--navy)}
+ .item.done .t{text-decoration:line-through; color:var(--muted)}
+ .item .d{font-size:13px; color:var(--slate); margin-top:2px; line-height:1.45}
+ .item .act{font-size:12px; font-weight:700; color:var(--accent); white-space:nowrap; align-self:center; margin-left:auto}
+ .foot{margin:18px 24px 20px; padding-top:14px; border-top:1px solid var(--line); display:flex; flex-wrap:wrap; gap:12px; justify-content:space-between; align-items:center}
+ .foot .p{font-size:11px; color:var(--muted); text-transform:uppercase; letter-spacing:.6px; font-weight:700}
+ .foot .h{font-size:13px; color:var(--slate); font-weight:600}
+ .foot .h a{color:var(--accent); font-weight:700; text-decoration:none}
+ @media (max-width:620px){ body{padding:10px} .hero h2{font-size:22px} .item .act{margin-left:0; width:100%; margin-top:6px} }
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="top">
+    <img src="logo.svg" alt="Coaches' Voice">
+    <div class="div"></div>
+    <div class="ttl"><h1>Getting started with your learning platform</h1><p>Coaches' Voice · Onboarding</p></div>
+  </div>
+
+  <div class="hero">
+    <div class="eyebrow">Welcome</div>
+    <h2>Everything you need to get going</h2>
+    <p class="lead">Watch the short walkthrough to see what's on the platform and how to find it, then work through your checklist below. Coaches: start learning and build your CPD. Admins: set up your club and get your coaches on board.</p>
+    <div class="video" id="video"></div>
+  </div>
+
+  <div class="chaps" id="chaps"><span class="lbl">Chapters:</span></div>
+
+  <div class="list">
+    <div class="lhd">
+      <h3>Your getting-started checklist</h3>
+      <div class="cnt"><span id="cnt">0</span> of <span id="tot">8</span> done</div>
+    </div>
+    <div class="bar"><i id="bar"></i></div>
+
+    <div class="grp">For coaches</div>
+    <div id="coachList"></div>
+
+    <div class="grp">For club admins</div>
+    <div id="adminList"></div>
+  </div>
+
+  <div class="foot">
+    <span class="p">Powered by Coaches' Voice</span>
+    <span class="h">Need more help? Email <a href="mailto:support@coachesvoice.com">support@coachesvoice.com</a></span>
+  </div>
+</div>
+
+<script>
+ const YOUTUBE_ID = "OY40xtD0TWE";
+
+ const CHAPTERS = [
+   { label:"Welcome", t:0 },
+   { label:"Your CPD points", t:2 },
+   { label:"Who the content comes from", t:9 },
+   { label:"Browse the library", t:23 },
+   { label:"Inside a masterclass", t:40 },
+   { label:"Search & filter", t:67 },
+   { label:"Pick up where you left off", t:93 }
+ ];
+ const COACH = [
+   { id:"tour", t:"Watch the walkthrough", d:"Two minutes on where everything lives and how to start.", chapter:0 },
+   { id:"cpd", t:"Find your CPD points", d:"Your season target sits at the top right of My Learning — every unit you complete counts towards it.", chapter:2 },
+   { id:"library", t:"Explore the library", d:"Masterclasses, on-the-grass sessions, webinars and downloadable session plans by age group and theme.", chapter:23 },
+   { id:"module", t:"Start your first module", d:"Each one breaks down the how and the why, lesson by lesson.", chapter:40 },
+   { id:"search", t:"Try a search", d:"Look up any topic or coach, then narrow it down by category.", chapter:67 }
+ ];
+ const ADMIN = [
+   { id:"club", t:"Set up your club", d:"Your club details, branding and season settings.", href:"../setting-up-your-club/" },
+   { id:"invite", t:"Invite your coaches", d:"Add people by email and organise them into groups.", href:"../inviting-managing-coaches/" },
+   { id:"reporting", t:"Check your reporting", d:"Track licence usage, CPD progress and every coach's activity.", href:"../reporting/" }
+ ];
+
+ const TOTAL = COACH.length + ADMIN.length;
+ document.getElementById("tot").textContent = TOTAL;
+
+ /* ── video (YouTube IFrame API) ── */
+ let player = null, playerReady = false;
+ const isPlaceholder = YOUTUBE_ID.indexOf("REPLACE") !== -1;
+ const vbox = document.getElementById("video");
+ if (isPlaceholder) {
+   vbox.innerHTML = '<img class="poster" src="poster.png" alt="">'
+     + '<div class="posterOv"><div class="playdot"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>'
+     + '<div class="note">Paste your unlisted YouTube video ID in page.html (YOUTUBE_ID) to activate the video.</div></div>';
+ } else {
+   vbox.innerHTML = '<div id="ytframe"></div>';
+   window.onYouTubeIframeAPIReady = function(){
+     player = new YT.Player("ytframe", {
+       videoId: YOUTUBE_ID,
+       playerVars: { rel:0, modestbranding:1, iv_load_policy:3, playsinline:1 },
+       events: { onReady: function(){ playerReady = true; } }
+     });
+   };
+   const s = document.createElement("script"); s.src = "https://www.youtube.com/iframe_api";
+   document.body.appendChild(s);
+ }
+
+ function seek(t, el){
+   document.querySelectorAll(".chap").forEach(c=>c.classList.remove("on"));
+   if (el) el.classList.add("on");
+   if (player && playerReady){ player.seekTo(t, true); player.playVideo(); }
+   vbox.scrollIntoView({ behavior:"smooth", block:"center" });
+ }
+
+ const chaps = document.getElementById("chaps");
+ CHAPTERS.forEach(c=>{
+   const b = document.createElement("button");
+   b.className = "chap"; b.textContent = c.label;
+   b.onclick = ()=>seek(c.t, b);
+   chaps.appendChild(b);
+ });
+
+ /* ── checklist + progress (saved in the browser) ── */
+ const KEY = "cv-onboarding-done";
+ let doneSet = new Set();
+ try { doneSet = new Set(JSON.parse(localStorage.getItem(KEY) || "[]")); } catch(e){}
+
+ function refresh(){
+   const n = document.querySelectorAll(".item.done").length;
+   document.getElementById("cnt").textContent = n;
+   document.getElementById("bar").style.width = Math.round(n / TOTAL * 100) + "%";
+ }
+ function save(){ try { localStorage.setItem(KEY, JSON.stringify([...doneSet])); } catch(e){} }
+
+ function makeItem(x){
+   const d = document.createElement("div");
+   d.className = "item" + (doneSet.has(x.id) ? " done" : "");
+   const act = x.href ? "Open guide →" : "Watch ▸";
+   d.innerHTML = '<div class="box"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>'
+     + '<div><div class="t">'+x.t+'</div><div class="d">'+x.d+'</div></div>'
+     + '<div class="act">'+act+'</div>';
+   d.querySelector(".box").onclick = (e)=>{
+     e.stopPropagation();
+     const on = d.classList.toggle("done");
+     if (on) doneSet.add(x.id); else doneSet.delete(x.id);
+     save(); refresh();
+   };
+   d.onclick = ()=>{
+     if (x.href) { window.location.href = x.href; }
+     else if (typeof x.chapter === "number") { seek(x.chapter); }
+   };
+   return d;
+ }
+ const cl = document.getElementById("coachList"), al = document.getElementById("adminList");
+ COACH.forEach(x=>cl.appendChild(makeItem(x)));
+ ADMIN.forEach(x=>al.appendChild(makeItem(x)));
+ refresh();
+</script>
+<script>
+ /* broadcast height to a parent frame (e.g. Freshdesk) for auto-resize */
+ (function(){
+   if(window.parent === window) return;
+   function send(){ var s=document.querySelector('.shell'); if(s) parent.postMessage({tutorialHeight:s.scrollHeight+32},'*'); }
+   send(); window.addEventListener('load',send); window.addEventListener('resize',send);
+   new MutationObserver(send).observe(document.body,{childList:true,subtree:true,attributes:true});
+ })();
+</script>
+</body>
+</html>
