@@ -17,9 +17,10 @@
     --ink:#15171a;--line:#e3e5e8;--surface:#f6f8fa;
     --font:"Roboto",-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;}
   *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
   body{font-family:var(--font);color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased}
   .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  :focus-visible{outline:3px solid var(--royal);outline-offset:3px;border-radius:4px}
 
   nav{position:sticky;top:0;z-index:60;background:rgba(0,0,0,.94);backdrop-filter:blur(8px);
     border-bottom:1px solid #191919}
@@ -27,10 +28,10 @@
   .navlogo{height:25px;width:auto;flex:none}
   nav a{color:rgba(255,255,255,.8);text-decoration:none;font-size:12.5px;font-weight:500;
     letter-spacing:.09em;text-transform:uppercase;transition:.15s;white-space:nowrap}
-  nav a:hover{color:#fff}
+  nav a:hover,nav a:focus-visible{color:#fff}
   .navspacer{flex:1}
   .navcv{height:16px;width:auto;opacity:.55;flex:none}
-  @media(max-width:640px){.navin{gap:15px}nav a{font-size:11px}.navcv{display:none}}
+  @media(max-width:640px){.navin{gap:14px;padding:0 16px}nav a{font-size:11px;letter-spacing:.05em}.navcv{display:none}}
 
   header{position:relative;min-height:400px;display:flex;align-items:center;justify-content:center;
     text-align:center;color:#fff;padding:66px 24px 62px;overflow:hidden;background:var(--black)}
@@ -44,7 +45,7 @@
     filter:drop-shadow(0 2px 14px rgba(0,0,0,.55))}
   .eyebrow{margin-top:24px;font-size:10.5px;font-weight:700;letter-spacing:.34em;
     text-transform:uppercase;color:var(--valor)}
-  h1{margin-top:11px;font-size:clamp(31px,5.6vw,52px);font-weight:900;text-transform:uppercase;
+  h1{margin-top:11px;font-size:clamp(30px,5.6vw,52px);font-weight:900;text-transform:uppercase;
     line-height:1;letter-spacing:-.012em;text-shadow:0 2px 18px rgba(0,0,0,.4)}
   header p{margin:16px auto 0;font-size:15px;line-height:1.65;color:rgba(255,255,255,.86);max-width:560px}
 
@@ -55,7 +56,7 @@
   .searchwrap{display:flex;justify-content:center}
   .searchbox{position:relative;width:100%;max-width:460px}
   #q{width:100%;border:1px solid #cbd2d9;background:var(--surface);border-radius:4px;
-    padding:14px 20px 14px 46px;font-size:15px;font-family:inherit;color:var(--ink);outline:none;transition:.15s}
+    padding:14px 20px 14px 46px;font-size:16px;font-family:inherit;color:var(--ink);outline:none;transition:.15s}
   #q:focus{border-color:var(--royal);box-shadow:0 0 0 3px rgba(0,112,199,.2);background:#fff}
   #q::placeholder{color:var(--silver)}
   .searchbox svg{position:absolute;left:16px;top:50%;transform:translateY(-50%);
@@ -67,20 +68,35 @@
   .grp[hidden]{display:none}
   .gl{font-size:11px;font-weight:900;color:var(--royal);letter-spacing:.2em;
     margin-bottom:9px;padding-left:2px}
-  .grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(296px,1fr))}
-  .card{display:flex;align-items:center;gap:14px;border:1px solid var(--line);background:#fff;
-    border-radius:4px;padding:14px 16px;text-decoration:none;color:inherit;transition:.14s}
+  .grid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+
+  .card{position:relative;display:flex;align-items:center;gap:14px;border:1px solid var(--line);
+    background:#fff;border-radius:4px;transition:.14s}
   .card[hidden]{display:none}
-  .card:hover{border-color:var(--royal);background:var(--surface);
+  .card:hover,.card:focus-within{border-color:var(--royal);background:var(--surface);
     box-shadow:0 3px 12px -5px rgba(0,53,154,.45)}
-  .card:hover .arw{color:var(--royal);transform:translateX(3px)}
   .card:hover .ini{background:var(--royal)}
+  .go{display:flex;align-items:center;gap:14px;flex:1;min-width:0;
+    padding:14px 4px 14px 16px;text-decoration:none;color:inherit}
   .ini{flex:none;width:44px;height:44px;display:flex;align-items:center;justify-content:center;
     border-radius:3px;background:var(--surf-blue);color:#fff;font-weight:700;font-size:14.5px;transition:.14s}
   .txt{flex:1;min-width:0}
-  .nm{display:block;font-size:15px;font-weight:500;line-height:1.25;margin-bottom:2px}
+  .nm{display:block;font-size:15px;font-weight:500;line-height:1.3;margin-bottom:2px}
   .dm{display:block;font-size:11.5px;color:var(--silver);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .arw{flex:none;color:var(--silver);font-size:21px;line-height:1;transition:.14s}
+  .arw{flex:none;color:var(--silver);font-size:21px;line-height:1;transition:.14s;padding-right:4px}
+  .card:hover .arw{color:var(--royal);transform:translateX(3px)}
+
+  .copy{flex:none;width:38px;height:38px;margin-right:9px;display:flex;align-items:center;justify-content:center;
+    background:transparent;border:1px solid transparent;border-radius:4px;cursor:pointer;
+    color:var(--silver);transition:.14s}
+  .copy:hover{background:#fff;border-color:var(--line);color:var(--surf-blue)}
+  .copy svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2;
+    stroke-linecap:round;stroke-linejoin:round}
+  .copy.done{color:#0a7d33;border-color:#bfe3c9;background:#f2fbf5}
+  .copy .tick{display:none}
+  .copy.done .tick{display:block}
+  .copy.done .pages{display:none}
+
   .empty{padding:42px 0;text-align:center;color:var(--dark-gray)}
   .empty[hidden]{display:none}
 
@@ -88,17 +104,36 @@
   .tgrid{display:grid;gap:10px;grid-template-columns:repeat(auto-fill,minmax(272px,1fr))}
   .tut{display:block;border:1px solid var(--line);border-left:3px solid var(--royal);
     border-radius:4px;padding:16px 18px;text-decoration:none;color:inherit;transition:.14s;background:#fff}
-  .tut:hover{background:var(--surface);border-left-color:var(--surf-blue);
+  .tut:hover,.tut:focus-visible{background:var(--surface);border-left-color:var(--surf-blue);
     box-shadow:0 3px 12px -5px rgba(0,53,154,.45)}
   .who{display:block;font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
     color:var(--silver);margin-bottom:6px}
-  .tt{display:block;font-size:15.5px;font-weight:700;line-height:1.25;margin-bottom:4px}
+  .tt{display:block;font-size:15.5px;font-weight:700;line-height:1.3;margin-bottom:4px}
   .td{display:block;font-size:13px;line-height:1.5;color:var(--dark-gray)}
 
   footer{margin-top:66px;background:var(--black);color:rgba(255,255,255,.58);padding:30px 24px;text-align:center}
   .cvlogo{width:146px;height:auto}
   footer p{margin-top:10px;font-size:11.5px;letter-spacing:.05em}
-  @media(max-width:620px){header{min-height:330px;padding:50px 20px 46px}main{padding-top:32px}}
+
+  /* aviso flotante al copiar */
+  #toast{position:fixed;left:50%;bottom:26px;transform:translate(-50%,14px);opacity:0;pointer-events:none;
+    background:var(--black);color:#fff;font-size:13px;padding:11px 18px;border-radius:4px;
+    box-shadow:0 8px 26px -8px rgba(0,0,0,.6);transition:.2s;z-index:99;max-width:92vw}
+  #toast.on{opacity:1;transform:translate(-50%,0)}
+
+  @media(max-width:620px){
+    header{min-height:300px;padding:44px 18px 40px}
+    .wrap{padding:0 16px}
+    main{padding-top:30px}
+    .grid,.tgrid{grid-template-columns:1fr}
+    .go{padding:13px 4px 13px 13px;gap:12px}
+    .ini{width:40px;height:40px;font-size:13.5px}
+    .nm{font-size:14.5px}
+    .arw{display:none}
+    .copy{width:42px;height:42px;margin-right:6px}
+    footer{margin-top:48px}
+  }
+  @media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
@@ -129,464 +164,890 @@
   <section id="clubs" class="wrap" style="scroll-margin-top:76px">
     <div class="searchwrap">
       <div class="searchbox">
-        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
         <input id="q" type="text" placeholder="Search club or domain&hellip;" aria-label="Search clubs" autocomplete="off">
       </div>
     </div>
-    <p class="count" id="count">71 clubs across Surf Nation</p>
+    <p class="count" id="count" role="status">71 clubs across Surf Nation</p>
       <section class="grp" data-letter="A">
         <h3 class="gl">A</h3>
         <div class="grid">
-          <a class="card" href="https://arizonasurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="arizona surf" data-d="arizonasurf.coachesvoice.com">
-            <span class="ini">AR</span>
-            <span class="txt"><span class="nm">Arizona Surf</span><span class="dm">arizonasurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
+          <div class="card" data-n="arizona surf" data-d="arizonasurf.coachesvoice.com">
+            <a class="go" href="https://arizonasurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">AR</span>
+              <span class="txt"><span class="nm">Arizona Surf</span><span class="dm">arizonasurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://arizonasurf.coachesvoice.com/" aria-label="Copy link for Arizona Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
         </div>
       </section>
       <section class="grp" data-letter="B">
         <h3 class="gl">B</h3>
         <div class="grid">
-          <a class="card" href="https://backmountainsurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="back mountain surf" data-d="backmountainsurf.coachesvoice.com">
-            <span class="ini">BM</span>
-            <span class="txt"><span class="nm">Back Mountain Surf</span><span class="dm">backmountainsurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://surf-bayarea.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="bay area surf" data-d="surf-bayarea.coachesvoice.com">
-            <span class="ini">BA</span>
-            <span class="txt"><span class="nm">Bay Area Surf</span><span class="dm">surf-bayarea.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
+          <div class="card" data-n="back mountain surf" data-d="backmountainsurf.coachesvoice.com">
+            <a class="go" href="https://backmountainsurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">BM</span>
+              <span class="txt"><span class="nm">Back Mountain Surf</span><span class="dm">backmountainsurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://backmountainsurf.coachesvoice.com/" aria-label="Copy link for Back Mountain Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="bay area surf" data-d="surf-bayarea.coachesvoice.com">
+            <a class="go" href="https://surf-bayarea.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">BA</span>
+              <span class="txt"><span class="nm">Bay Area Surf</span><span class="dm">surf-bayarea.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://surf-bayarea.coachesvoice.com/" aria-label="Copy link for Bay Area Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
         </div>
       </section>
       <section class="grp" data-letter="C">
         <h3 class="gl">C</h3>
         <div class="grid">
-          <a class="card" href="https://carshieldsurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="carshield surf" data-d="carshieldsurf.coachesvoice.com">
-            <span class="ini">CA</span>
-            <span class="txt"><span class="nm">CarShield Surf</span><span class="dm">carshieldsurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://centralcoastsurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="central coast surf" data-d="centralcoastsurf.coachesvoice.com">
-            <span class="ini">CC</span>
-            <span class="txt"><span class="nm">Central Coast Surf</span><span class="dm">centralcoastsurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://costaricasurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="costa rica surf" data-d="costaricasurf.coachesvoice.com">
-            <span class="ini">CR</span>
-            <span class="txt"><span class="nm">Costa Rica Surf</span><span class="dm">costaricasurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
+          <div class="card" data-n="carshield surf" data-d="carshieldsurf.coachesvoice.com">
+            <a class="go" href="https://carshieldsurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">CA</span>
+              <span class="txt"><span class="nm">CarShield Surf</span><span class="dm">carshieldsurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://carshieldsurf.coachesvoice.com/" aria-label="Copy link for CarShield Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="central coast surf" data-d="centralcoastsurf.coachesvoice.com">
+            <a class="go" href="https://centralcoastsurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">CC</span>
+              <span class="txt"><span class="nm">Central Coast Surf</span><span class="dm">centralcoastsurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://centralcoastsurf.coachesvoice.com/" aria-label="Copy link for Central Coast Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="costa rica surf" data-d="costaricasurf.coachesvoice.com">
+            <a class="go" href="https://costaricasurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">CR</span>
+              <span class="txt"><span class="nm">Costa Rica Surf</span><span class="dm">costaricasurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://costaricasurf.coachesvoice.com/" aria-label="Copy link for Costa Rica Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
         </div>
       </section>
       <section class="grp" data-letter="D">
         <h3 class="gl">D</h3>
         <div class="grid">
-          <a class="card" href="https://surf-dallas.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="dallas surf" data-d="surf-dallas.coachesvoice.com">
-            <span class="ini">DA</span>
-            <span class="txt"><span class="nm">Dallas Surf</span><span class="dm">surf-dallas.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://desertempiresurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="desert empire surf" data-d="desertempiresurf.coachesvoice.com">
-            <span class="ini">DE</span>
-            <span class="txt"><span class="nm">Desert Empire Surf</span><span class="dm">desertempiresurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://dixhillsestsurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="dix hills est surf" data-d="dixhillsestsurf.coachesvoice.com">
-            <span class="ini">DH</span>
-            <span class="txt"><span class="nm">Dix Hills EST Surf</span><span class="dm">dixhillsestsurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
+          <div class="card" data-n="dallas surf" data-d="surf-dallas.coachesvoice.com">
+            <a class="go" href="https://surf-dallas.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">DA</span>
+              <span class="txt"><span class="nm">Dallas Surf</span><span class="dm">surf-dallas.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://surf-dallas.coachesvoice.com/" aria-label="Copy link for Dallas Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="desert empire surf" data-d="desertempiresurf.coachesvoice.com">
+            <a class="go" href="https://desertempiresurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">DE</span>
+              <span class="txt"><span class="nm">Desert Empire Surf</span><span class="dm">desertempiresurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://desertempiresurf.coachesvoice.com/" aria-label="Copy link for Desert Empire Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="dix hills est surf" data-d="dixhillsestsurf.coachesvoice.com">
+            <a class="go" href="https://dixhillsestsurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">DH</span>
+              <span class="txt"><span class="nm">Dix Hills EST Surf</span><span class="dm">dixhillsestsurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://dixhillsestsurf.coachesvoice.com/" aria-label="Copy link for Dix Hills EST Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
         </div>
       </section>
       <section class="grp" data-letter="E">
         <h3 class="gl">E</h3>
         <div class="grid">
-          <a class="card" href="https://eastcoastsurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="east coast surf" data-d="eastcoastsurf.coachesvoice.com">
-            <span class="ini">EC</span>
-            <span class="txt"><span class="nm">East Coast Surf</span><span class="dm">eastcoastsurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://elpasosurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="el paso surf" data-d="elpasosurf.coachesvoice.com">
-            <span class="ini">EP</span>
-            <span class="txt"><span class="nm">El Paso Surf</span><span class="dm">elpasosurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://elkgrovesurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="elk grove surf" data-d="elkgrovesurf.coachesvoice.com">
-            <span class="ini">EG</span>
-            <span class="txt"><span class="nm">Elk Grove Surf</span><span class="dm">elkgrovesurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://elmhurstcitysurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="elmhurst city surf" data-d="elmhurstcitysurf.coachesvoice.com">
-            <span class="ini">EC</span>
-            <span class="txt"><span class="nm">Elmhurst City Surf</span><span class="dm">elmhurstcitysurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://surf-empire.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="empire surf" data-d="surf-empire.coachesvoice.com">
-            <span class="ini">EM</span>
-            <span class="txt"><span class="nm">Empire Surf</span><span class="dm">surf-empire.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
+          <div class="card" data-n="east coast surf" data-d="eastcoastsurf.coachesvoice.com">
+            <a class="go" href="https://eastcoastsurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">EC</span>
+              <span class="txt"><span class="nm">East Coast Surf</span><span class="dm">eastcoastsurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://eastcoastsurf.coachesvoice.com/" aria-label="Copy link for East Coast Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="el paso surf" data-d="elpasosurf.coachesvoice.com">
+            <a class="go" href="https://elpasosurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">EP</span>
+              <span class="txt"><span class="nm">El Paso Surf</span><span class="dm">elpasosurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://elpasosurf.coachesvoice.com/" aria-label="Copy link for El Paso Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="elk grove surf" data-d="elkgrovesurf.coachesvoice.com">
+            <a class="go" href="https://elkgrovesurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">EG</span>
+              <span class="txt"><span class="nm">Elk Grove Surf</span><span class="dm">elkgrovesurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://elkgrovesurf.coachesvoice.com/" aria-label="Copy link for Elk Grove Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="elmhurst city surf" data-d="elmhurstcitysurf.coachesvoice.com">
+            <a class="go" href="https://elmhurstcitysurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">EC</span>
+              <span class="txt"><span class="nm">Elmhurst City Surf</span><span class="dm">elmhurstcitysurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://elmhurstcitysurf.coachesvoice.com/" aria-label="Copy link for Elmhurst City Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="empire surf" data-d="surf-empire.coachesvoice.com">
+            <a class="go" href="https://surf-empire.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">EM</span>
+              <span class="txt"><span class="nm">Empire Surf</span><span class="dm">surf-empire.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://surf-empire.coachesvoice.com/" aria-label="Copy link for Empire Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
         </div>
       </section>
       <section class="grp" data-letter="F">
         <h3 class="gl">F</h3>
         <div class="grid">
-          <a class="card" href="https://fcathleticosurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="fc athletico surf" data-d="fcathleticosurf.coachesvoice.com">
-            <span class="ini">AT</span>
-            <span class="txt"><span class="nm">FC Athletico Surf</span><span class="dm">fcathleticosurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://fcdutchmensurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="fc dutchmen surf" data-d="fcdutchmensurf.coachesvoice.com">
-            <span class="ini">DU</span>
-            <span class="txt"><span class="nm">FC Dutchmen Surf</span><span class="dm">fcdutchmensurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://surf-folsomlake.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="folsom lake surf" data-d="surf-folsomlake.coachesvoice.com">
-            <span class="ini">FL</span>
-            <span class="txt"><span class="nm">Folsom Lake Surf</span><span class="dm">surf-folsomlake.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
+          <div class="card" data-n="fc athletico surf" data-d="fcathleticosurf.coachesvoice.com">
+            <a class="go" href="https://fcathleticosurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">AT</span>
+              <span class="txt"><span class="nm">FC Athletico Surf</span><span class="dm">fcathleticosurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://fcathleticosurf.coachesvoice.com/" aria-label="Copy link for FC Athletico Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="fc dutchmen surf" data-d="fcdutchmensurf.coachesvoice.com">
+            <a class="go" href="https://fcdutchmensurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">DU</span>
+              <span class="txt"><span class="nm">FC Dutchmen Surf</span><span class="dm">fcdutchmensurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://fcdutchmensurf.coachesvoice.com/" aria-label="Copy link for FC Dutchmen Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="folsom lake surf" data-d="surf-folsomlake.coachesvoice.com">
+            <a class="go" href="https://surf-folsomlake.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">FL</span>
+              <span class="txt"><span class="nm">Folsom Lake Surf</span><span class="dm">surf-folsomlake.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://surf-folsomlake.coachesvoice.com/" aria-label="Copy link for Folsom Lake Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
         </div>
       </section>
       <section class="grp" data-letter="G">
         <h3 class="gl">G</h3>
         <div class="grid">
-          <a class="card" href="https://glaciersurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="glacier surf" data-d="glaciersurf.coachesvoice.com">
-            <span class="ini">GL</span>
-            <span class="txt"><span class="nm">Glacier Surf</span><span class="dm">glaciersurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://greaterbayareasurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="greater bay area surf" data-d="greaterbayareasurf.coachesvoice.com">
-            <span class="ini">GB</span>
-            <span class="txt"><span class="nm">Greater Bay Area Surf</span><span class="dm">greaterbayareasurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
+          <div class="card" data-n="glacier surf" data-d="glaciersurf.coachesvoice.com">
+            <a class="go" href="https://glaciersurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">GL</span>
+              <span class="txt"><span class="nm">Glacier Surf</span><span class="dm">glaciersurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://glaciersurf.coachesvoice.com/" aria-label="Copy link for Glacier Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="greater bay area surf" data-d="greaterbayareasurf.coachesvoice.com">
+            <a class="go" href="https://greaterbayareasurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">GB</span>
+              <span class="txt"><span class="nm">Greater Bay Area Surf</span><span class="dm">greaterbayareasurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://greaterbayareasurf.coachesvoice.com/" aria-label="Copy link for Greater Bay Area Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
         </div>
       </section>
       <section class="grp" data-letter="H">
         <h3 class="gl">H</h3>
         <div class="grid">
-          <a class="card" href="https://surf-hawaii.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="hawaii surf" data-d="surf-hawaii.coachesvoice.com">
-            <span class="ini">HA</span>
-            <span class="txt"><span class="nm">Hawaii Surf</span><span class="dm">surf-hawaii.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://houstonsurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="houston surf" data-d="houstonsurf.coachesvoice.com">
-            <span class="ini">HO</span>
-            <span class="txt"><span class="nm">Houston Surf</span><span class="dm">houstonsurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
+          <div class="card" data-n="hawaii surf" data-d="surf-hawaii.coachesvoice.com">
+            <a class="go" href="https://surf-hawaii.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">HA</span>
+              <span class="txt"><span class="nm">Hawaii Surf</span><span class="dm">surf-hawaii.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://surf-hawaii.coachesvoice.com/" aria-label="Copy link for Hawaii Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="houston surf" data-d="houstonsurf.coachesvoice.com">
+            <a class="go" href="https://houstonsurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">HO</span>
+              <span class="txt"><span class="nm">Houston Surf</span><span class="dm">houstonsurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://houstonsurf.coachesvoice.com/" aria-label="Copy link for Houston Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
         </div>
       </section>
       <section class="grp" data-letter="I">
         <h3 class="gl">I</h3>
         <div class="grid">
-          <a class="card" href="https://idahosurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="idaho surf" data-d="idahosurf.coachesvoice.com">
-            <span class="ini">ID</span>
-            <span class="txt"><span class="nm">Idaho Surf</span><span class="dm">idahosurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://inlandsurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="inland surf" data-d="inlandsurf.coachesvoice.com">
-            <span class="ini">IN</span>
-            <span class="txt"><span class="nm">Inland Surf</span><span class="dm">inlandsurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
+          <div class="card" data-n="idaho surf" data-d="idahosurf.coachesvoice.com">
+            <a class="go" href="https://idahosurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">ID</span>
+              <span class="txt"><span class="nm">Idaho Surf</span><span class="dm">idahosurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://idahosurf.coachesvoice.com/" aria-label="Copy link for Idaho Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="inland surf" data-d="inlandsurf.coachesvoice.com">
+            <a class="go" href="https://inlandsurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">IN</span>
+              <span class="txt"><span class="nm">Inland Surf</span><span class="dm">inlandsurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://inlandsurf.coachesvoice.com/" aria-label="Copy link for Inland Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
         </div>
       </section>
       <section class="grp" data-letter="K">
         <h3 class="gl">K</h3>
         <div class="grid">
-          <a class="card" href="https://surf-kansascity.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="kansas city" data-d="surf-kansascity.coachesvoice.com">
-            <span class="ini">KC</span>
-            <span class="txt"><span class="nm">Kansas City</span><span class="dm">surf-kansascity.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
+          <div class="card" data-n="kansas city" data-d="surf-kansascity.coachesvoice.com">
+            <a class="go" href="https://surf-kansascity.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">KC</span>
+              <span class="txt"><span class="nm">Kansas City</span><span class="dm">surf-kansascity.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://surf-kansascity.coachesvoice.com/" aria-label="Copy link for Kansas City" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
         </div>
       </section>
       <section class="grp" data-letter="L">
         <h3 class="gl">L</h3>
         <div class="grid">
-          <a class="card" href="https://surf-la.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="la surf" data-d="surf-la.coachesvoice.com">
-            <span class="ini">LA</span>
-            <span class="txt"><span class="nm">LA Surf</span><span class="dm">surf-la.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://lasvegassurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="las vegas surf" data-d="lasvegassurf.coachesvoice.com">
-            <span class="ini">LV</span>
-            <span class="txt"><span class="nm">Las Vegas Surf</span><span class="dm">lasvegassurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://lincolnsurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="lincoln surf" data-d="lincolnsurf.coachesvoice.com">
-            <span class="ini">LIN</span>
-            <span class="txt"><span class="nm">Lincoln Surf</span><span class="dm">lincolnsurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://livingstonsurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="livingston surf" data-d="livingstonsurf.coachesvoice.com">
-            <span class="ini">LIV</span>
-            <span class="txt"><span class="nm">Livingston Surf</span><span class="dm">livingstonsurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
+          <div class="card" data-n="la surf" data-d="surf-la.coachesvoice.com">
+            <a class="go" href="https://surf-la.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">LA</span>
+              <span class="txt"><span class="nm">LA Surf</span><span class="dm">surf-la.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://surf-la.coachesvoice.com/" aria-label="Copy link for LA Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="las vegas surf" data-d="lasvegassurf.coachesvoice.com">
+            <a class="go" href="https://lasvegassurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">LV</span>
+              <span class="txt"><span class="nm">Las Vegas Surf</span><span class="dm">lasvegassurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://lasvegassurf.coachesvoice.com/" aria-label="Copy link for Las Vegas Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="lincoln surf" data-d="lincolnsurf.coachesvoice.com">
+            <a class="go" href="https://lincolnsurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">LIN</span>
+              <span class="txt"><span class="nm">Lincoln Surf</span><span class="dm">lincolnsurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://lincolnsurf.coachesvoice.com/" aria-label="Copy link for Lincoln Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="livingston surf" data-d="livingstonsurf.coachesvoice.com">
+            <a class="go" href="https://livingstonsurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">LIV</span>
+              <span class="txt"><span class="nm">Livingston Surf</span><span class="dm">livingstonsurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://livingstonsurf.coachesvoice.com/" aria-label="Copy link for Livingston Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
         </div>
       </section>
       <section class="grp" data-letter="M">
         <h3 class="gl">M</h3>
         <div class="grid">
-          <a class="card" href="https://manhattankcsurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="manhattan kc surf" data-d="manhattankcsurf.coachesvoice.com">
-            <span class="ini">MK</span>
-            <span class="txt"><span class="nm">Manhattan KC Surf</span><span class="dm">manhattankcsurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://surf-matchfit.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="match fit surf" data-d="surf-matchfit.coachesvoice.com">
-            <span class="ini">MF</span>
-            <span class="txt"><span class="nm">Match Fit Surf</span><span class="dm">surf-matchfit.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://surf-matchfitsouthjersey.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="match fit surf south jersey" data-d="surf-matchfitsouthjersey.coachesvoice.com">
-            <span class="ini">MFS</span>
-            <span class="txt"><span class="nm">Match Fit Surf South Jersey</span><span class="dm">surf-matchfitsouthjersey.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://surf-mississippi.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="mississippi surf" data-d="surf-mississippi.coachesvoice.com">
-            <span class="ini">MIS</span>
-            <span class="txt"><span class="nm">Mississippi Surf</span><span class="dm">surf-mississippi.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://surf-missoula.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="missoula surf" data-d="surf-missoula.coachesvoice.com">
-            <span class="ini">MIS</span>
-            <span class="txt"><span class="nm">Missoula Surf</span><span class="dm">surf-missoula.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://montanasurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="montana surf" data-d="montanasurf.coachesvoice.com">
-            <span class="ini">MON</span>
-            <span class="txt"><span class="nm">Montana Surf</span><span class="dm">montanasurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://surf-monterey.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="monterey surf" data-d="surf-monterey.coachesvoice.com">
-            <span class="ini">MON</span>
-            <span class="txt"><span class="nm">Monterey Surf</span><span class="dm">surf-monterey.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
+          <div class="card" data-n="manhattan kc surf" data-d="manhattankcsurf.coachesvoice.com">
+            <a class="go" href="https://manhattankcsurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">MK</span>
+              <span class="txt"><span class="nm">Manhattan KC Surf</span><span class="dm">manhattankcsurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://manhattankcsurf.coachesvoice.com/" aria-label="Copy link for Manhattan KC Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="match fit surf" data-d="surf-matchfit.coachesvoice.com">
+            <a class="go" href="https://surf-matchfit.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">MF</span>
+              <span class="txt"><span class="nm">Match Fit Surf</span><span class="dm">surf-matchfit.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://surf-matchfit.coachesvoice.com/" aria-label="Copy link for Match Fit Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="match fit surf south jersey" data-d="surf-matchfitsouthjersey.coachesvoice.com">
+            <a class="go" href="https://surf-matchfitsouthjersey.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">MFS</span>
+              <span class="txt"><span class="nm">Match Fit Surf South Jersey</span><span class="dm">surf-matchfitsouthjersey.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://surf-matchfitsouthjersey.coachesvoice.com/" aria-label="Copy link for Match Fit Surf South Jersey" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="mississippi surf" data-d="surf-mississippi.coachesvoice.com">
+            <a class="go" href="https://surf-mississippi.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">MIS</span>
+              <span class="txt"><span class="nm">Mississippi Surf</span><span class="dm">surf-mississippi.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://surf-mississippi.coachesvoice.com/" aria-label="Copy link for Mississippi Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="missoula surf" data-d="surf-missoula.coachesvoice.com">
+            <a class="go" href="https://surf-missoula.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">MIS</span>
+              <span class="txt"><span class="nm">Missoula Surf</span><span class="dm">surf-missoula.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://surf-missoula.coachesvoice.com/" aria-label="Copy link for Missoula Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="montana surf" data-d="montanasurf.coachesvoice.com">
+            <a class="go" href="https://montanasurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">MON</span>
+              <span class="txt"><span class="nm">Montana Surf</span><span class="dm">montanasurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://montanasurf.coachesvoice.com/" aria-label="Copy link for Montana Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="monterey surf" data-d="surf-monterey.coachesvoice.com">
+            <a class="go" href="https://surf-monterey.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">MON</span>
+              <span class="txt"><span class="nm">Monterey Surf</span><span class="dm">surf-monterey.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://surf-monterey.coachesvoice.com/" aria-label="Copy link for Monterey Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
         </div>
       </section>
       <section class="grp" data-letter="N">
         <h3 class="gl">N</h3>
         <div class="grid">
-          <a class="card" href="https://surf-newengland.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="new england surf" data-d="surf-newengland.coachesvoice.com">
-            <span class="ini">NE</span>
-            <span class="txt"><span class="nm">New England Surf</span><span class="dm">surf-newengland.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://newjerseysurfmercersouthwwpsa.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="new jersey surf mercer/south/wwpsa" data-d="newjerseysurfmercersouthwwpsa.coachesvoice.com">
-            <span class="ini">NJ</span>
-            <span class="txt"><span class="nm">New Jersey Surf Mercer/South/WWPSA</span><span class="dm">newjerseysurfmercersouthwwpsa.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://niagarasurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="niagara surf" data-d="niagarasurf.coachesvoice.com">
-            <span class="ini">NIA</span>
-            <span class="txt"><span class="nm">Niagara Surf</span><span class="dm">niagarasurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://surf-nlsa.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="nlsa surf" data-d="surf-nlsa.coachesvoice.com">
-            <span class="ini">NL</span>
-            <span class="txt"><span class="nm">NLSA Surf</span><span class="dm">surf-nlsa.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://northsurfsoccerclub.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="north surf soccer club" data-d="northsurfsoccerclub.coachesvoice.com">
-            <span class="ini">NO</span>
-            <span class="txt"><span class="nm">North Surf Soccer Club</span><span class="dm">northsurfsoccerclub.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://northwestindianasurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="northwest indiana surf" data-d="northwestindianasurf.coachesvoice.com">
-            <span class="ini">NI</span>
-            <span class="txt"><span class="nm">Northwest Indiana Surf</span><span class="dm">northwestindianasurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
+          <div class="card" data-n="new england surf" data-d="surf-newengland.coachesvoice.com">
+            <a class="go" href="https://surf-newengland.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">NE</span>
+              <span class="txt"><span class="nm">New England Surf</span><span class="dm">surf-newengland.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://surf-newengland.coachesvoice.com/" aria-label="Copy link for New England Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="new jersey surf mercer/south/wwpsa" data-d="newjerseysurfmercersouthwwpsa.coachesvoice.com">
+            <a class="go" href="https://newjerseysurfmercersouthwwpsa.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">NJ</span>
+              <span class="txt"><span class="nm">New Jersey Surf Mercer/South/WWPSA</span><span class="dm">newjerseysurfmercersouthwwpsa.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://newjerseysurfmercersouthwwpsa.coachesvoice.com/" aria-label="Copy link for New Jersey Surf Mercer/South/WWPSA" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="niagara surf" data-d="niagarasurf.coachesvoice.com">
+            <a class="go" href="https://niagarasurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">NIA</span>
+              <span class="txt"><span class="nm">Niagara Surf</span><span class="dm">niagarasurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://niagarasurf.coachesvoice.com/" aria-label="Copy link for Niagara Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="nlsa surf" data-d="surf-nlsa.coachesvoice.com">
+            <a class="go" href="https://surf-nlsa.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">NL</span>
+              <span class="txt"><span class="nm">NLSA Surf</span><span class="dm">surf-nlsa.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://surf-nlsa.coachesvoice.com/" aria-label="Copy link for NLSA Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="north surf soccer club" data-d="northsurfsoccerclub.coachesvoice.com">
+            <a class="go" href="https://northsurfsoccerclub.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">NO</span>
+              <span class="txt"><span class="nm">North Surf Soccer Club</span><span class="dm">northsurfsoccerclub.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://northsurfsoccerclub.coachesvoice.com/" aria-label="Copy link for North Surf Soccer Club" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="northwest indiana surf" data-d="northwestindianasurf.coachesvoice.com">
+            <a class="go" href="https://northwestindianasurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">NI</span>
+              <span class="txt"><span class="nm">Northwest Indiana Surf</span><span class="dm">northwestindianasurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://northwestindianasurf.coachesvoice.com/" aria-label="Copy link for Northwest Indiana Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
         </div>
       </section>
       <section class="grp" data-letter="O">
         <h3 class="gl">O</h3>
         <div class="grid">
-          <a class="card" href="https://okanagansurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="okanagan surf" data-d="okanagansurf.coachesvoice.com">
-            <span class="ini">OK</span>
-            <span class="txt"><span class="nm">Okanagan Surf</span><span class="dm">okanagansurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://omahasurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="omaha surf" data-d="omahasurf.coachesvoice.com">
-            <span class="ini">OM</span>
-            <span class="txt"><span class="nm">Omaha Surf</span><span class="dm">omahasurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://surf-oregon.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="oregon surf" data-d="surf-oregon.coachesvoice.com">
-            <span class="ini">OR</span>
-            <span class="txt"><span class="nm">Oregon Surf</span><span class="dm">surf-oregon.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://ottawacitysoccerclub.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="ottawa city soccer club" data-d="ottawacitysoccerclub.coachesvoice.com">
-            <span class="ini">OC</span>
-            <span class="txt"><span class="nm">Ottawa City Soccer Club</span><span class="dm">ottawacitysoccerclub.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
+          <div class="card" data-n="okanagan surf" data-d="okanagansurf.coachesvoice.com">
+            <a class="go" href="https://okanagansurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">OK</span>
+              <span class="txt"><span class="nm">Okanagan Surf</span><span class="dm">okanagansurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://okanagansurf.coachesvoice.com/" aria-label="Copy link for Okanagan Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="omaha surf" data-d="omahasurf.coachesvoice.com">
+            <a class="go" href="https://omahasurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">OM</span>
+              <span class="txt"><span class="nm">Omaha Surf</span><span class="dm">omahasurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://omahasurf.coachesvoice.com/" aria-label="Copy link for Omaha Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="oregon surf" data-d="surf-oregon.coachesvoice.com">
+            <a class="go" href="https://surf-oregon.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">OR</span>
+              <span class="txt"><span class="nm">Oregon Surf</span><span class="dm">surf-oregon.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://surf-oregon.coachesvoice.com/" aria-label="Copy link for Oregon Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="ottawa city soccer club" data-d="ottawacitysoccerclub.coachesvoice.com">
+            <a class="go" href="https://ottawacitysoccerclub.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">OC</span>
+              <span class="txt"><span class="nm">Ottawa City Soccer Club</span><span class="dm">ottawacitysoccerclub.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://ottawacitysoccerclub.coachesvoice.com/" aria-label="Copy link for Ottawa City Soccer Club" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
         </div>
       </section>
       <section class="grp" data-letter="P">
         <h3 class="gl">P</h3>
         <div class="grid">
-          <a class="card" href="https://philadelphiasurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="philadelphia surf" data-d="philadelphiasurf.coachesvoice.com">
-            <span class="ini">PH</span>
-            <span class="txt"><span class="nm">Philadelphia Surf</span><span class="dm">philadelphiasurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://puertoricosurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="puerto rico surf" data-d="puertoricosurf.coachesvoice.com">
-            <span class="ini">PR</span>
-            <span class="txt"><span class="nm">Puerto Rico Surf</span><span class="dm">puertoricosurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
+          <div class="card" data-n="philadelphia surf" data-d="philadelphiasurf.coachesvoice.com">
+            <a class="go" href="https://philadelphiasurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">PH</span>
+              <span class="txt"><span class="nm">Philadelphia Surf</span><span class="dm">philadelphiasurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://philadelphiasurf.coachesvoice.com/" aria-label="Copy link for Philadelphia Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="puerto rico surf" data-d="puertoricosurf.coachesvoice.com">
+            <a class="go" href="https://puertoricosurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">PR</span>
+              <span class="txt"><span class="nm">Puerto Rico Surf</span><span class="dm">puertoricosurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://puertoricosurf.coachesvoice.com/" aria-label="Copy link for Puerto Rico Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
         </div>
       </section>
       <section class="grp" data-letter="R">
         <h3 class="gl">R</h3>
         <div class="grid">
-          <a class="card" href="https://surf-readingrage.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="reading rage surf" data-d="surf-readingrage.coachesvoice.com">
-            <span class="ini">RR</span>
-            <span class="txt"><span class="nm">Reading Rage Surf</span><span class="dm">surf-readingrage.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://rhodeislandsurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="rhode island surf" data-d="rhodeislandsurf.coachesvoice.com">
-            <span class="ini">RI</span>
-            <span class="txt"><span class="nm">Rhode Island Surf</span><span class="dm">rhodeislandsurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://surf-ripcity.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="rip city surf" data-d="surf-ripcity.coachesvoice.com">
-            <span class="ini">RC</span>
-            <span class="txt"><span class="nm">RIP City Surf</span><span class="dm">surf-ripcity.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
+          <div class="card" data-n="reading rage surf" data-d="surf-readingrage.coachesvoice.com">
+            <a class="go" href="https://surf-readingrage.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">RR</span>
+              <span class="txt"><span class="nm">Reading Rage Surf</span><span class="dm">surf-readingrage.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://surf-readingrage.coachesvoice.com/" aria-label="Copy link for Reading Rage Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="rhode island surf" data-d="rhodeislandsurf.coachesvoice.com">
+            <a class="go" href="https://rhodeislandsurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">RI</span>
+              <span class="txt"><span class="nm">Rhode Island Surf</span><span class="dm">rhodeislandsurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://rhodeislandsurf.coachesvoice.com/" aria-label="Copy link for Rhode Island Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="rip city surf" data-d="surf-ripcity.coachesvoice.com">
+            <a class="go" href="https://surf-ripcity.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">RC</span>
+              <span class="txt"><span class="nm">RIP City Surf</span><span class="dm">surf-ripcity.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://surf-ripcity.coachesvoice.com/" aria-label="Copy link for RIP City Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
         </div>
       </section>
       <section class="grp" data-letter="S">
         <h3 class="gl">S</h3>
         <div class="grid">
-          <a class="card" href="https://surf-sanclemente.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="san clemente surf" data-d="surf-sanclemente.coachesvoice.com">
-            <span class="ini">SC</span>
-            <span class="txt"><span class="nm">San Clemente Surf</span><span class="dm">surf-sanclemente.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://sandiegonorthsurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="san diego north surf" data-d="sandiegonorthsurf.coachesvoice.com">
-            <span class="ini">SDN</span>
-            <span class="txt"><span class="nm">San Diego North Surf</span><span class="dm">sandiegonorthsurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://surf-sandiego.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="san diego surf" data-d="surf-sandiego.coachesvoice.com">
-            <span class="ini">SD</span>
-            <span class="txt"><span class="nm">San Diego Surf</span><span class="dm">surf-sandiego.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://sdscescondido.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="sdsc escondido" data-d="sdscescondido.coachesvoice.com">
-            <span class="ini">SE</span>
-            <span class="txt"><span class="nm">SDSC Escondido</span><span class="dm">sdscescondido.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://surf-sdsc.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="sdsc surf" data-d="surf-sdsc.coachesvoice.com">
-            <span class="ini">SDS</span>
-            <span class="txt"><span class="nm">SDSC Surf</span><span class="dm">surf-sdsc.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://surf-sierra.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="sierra surf" data-d="surf-sierra.coachesvoice.com">
-            <span class="ini">SI</span>
-            <span class="txt"><span class="nm">Sierra Surf</span><span class="dm">surf-sierra.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://surf-solano.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="solano surf" data-d="surf-solano.coachesvoice.com">
-            <span class="ini">SO</span>
-            <span class="txt"><span class="nm">Solano Surf</span><span class="dm">surf-solano.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://surf-southcarolina.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="south carolina surf" data-d="surf-southcarolina.coachesvoice.com">
-            <span class="ini">SC</span>
-            <span class="txt"><span class="nm">South Carolina Surf</span><span class="dm">surf-southcarolina.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://southvalleysurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="south valley surf" data-d="southvalleysurf.coachesvoice.com">
-            <span class="ini">SV</span>
-            <span class="txt"><span class="nm">South Valley Surf</span><span class="dm">southvalleysurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://stanislaussurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="stanislaus surf" data-d="stanislaussurf.coachesvoice.com">
-            <span class="ini">ST</span>
-            <span class="txt"><span class="nm">Stanislaus Surf</span><span class="dm">stanislaussurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
+          <div class="card" data-n="san clemente surf" data-d="surf-sanclemente.coachesvoice.com">
+            <a class="go" href="https://surf-sanclemente.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">SC</span>
+              <span class="txt"><span class="nm">San Clemente Surf</span><span class="dm">surf-sanclemente.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://surf-sanclemente.coachesvoice.com/" aria-label="Copy link for San Clemente Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="san diego north surf" data-d="sandiegonorthsurf.coachesvoice.com">
+            <a class="go" href="https://sandiegonorthsurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">SDN</span>
+              <span class="txt"><span class="nm">San Diego North Surf</span><span class="dm">sandiegonorthsurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://sandiegonorthsurf.coachesvoice.com/" aria-label="Copy link for San Diego North Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="san diego surf" data-d="surf-sandiego.coachesvoice.com">
+            <a class="go" href="https://surf-sandiego.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">SD</span>
+              <span class="txt"><span class="nm">San Diego Surf</span><span class="dm">surf-sandiego.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://surf-sandiego.coachesvoice.com/" aria-label="Copy link for San Diego Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="sdsc escondido" data-d="sdscescondido.coachesvoice.com">
+            <a class="go" href="https://sdscescondido.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">SE</span>
+              <span class="txt"><span class="nm">SDSC Escondido</span><span class="dm">sdscescondido.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://sdscescondido.coachesvoice.com/" aria-label="Copy link for SDSC Escondido" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="sdsc surf" data-d="surf-sdsc.coachesvoice.com">
+            <a class="go" href="https://surf-sdsc.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">SDS</span>
+              <span class="txt"><span class="nm">SDSC Surf</span><span class="dm">surf-sdsc.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://surf-sdsc.coachesvoice.com/" aria-label="Copy link for SDSC Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="sierra surf" data-d="surf-sierra.coachesvoice.com">
+            <a class="go" href="https://surf-sierra.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">SI</span>
+              <span class="txt"><span class="nm">Sierra Surf</span><span class="dm">surf-sierra.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://surf-sierra.coachesvoice.com/" aria-label="Copy link for Sierra Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="solano surf" data-d="surf-solano.coachesvoice.com">
+            <a class="go" href="https://surf-solano.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">SO</span>
+              <span class="txt"><span class="nm">Solano Surf</span><span class="dm">surf-solano.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://surf-solano.coachesvoice.com/" aria-label="Copy link for Solano Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="south carolina surf" data-d="surf-southcarolina.coachesvoice.com">
+            <a class="go" href="https://surf-southcarolina.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">SC</span>
+              <span class="txt"><span class="nm">South Carolina Surf</span><span class="dm">surf-southcarolina.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://surf-southcarolina.coachesvoice.com/" aria-label="Copy link for South Carolina Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="south valley surf" data-d="southvalleysurf.coachesvoice.com">
+            <a class="go" href="https://southvalleysurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">SV</span>
+              <span class="txt"><span class="nm">South Valley Surf</span><span class="dm">southvalleysurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://southvalleysurf.coachesvoice.com/" aria-label="Copy link for South Valley Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="stanislaus surf" data-d="stanislaussurf.coachesvoice.com">
+            <a class="go" href="https://stanislaussurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">ST</span>
+              <span class="txt"><span class="nm">Stanislaus Surf</span><span class="dm">stanislaussurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://stanislaussurf.coachesvoice.com/" aria-label="Copy link for Stanislaus Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
         </div>
       </section>
       <section class="grp" data-letter="U">
         <h3 class="gl">U</h3>
         <div class="grid">
-          <a class="card" href="https://surf-utah.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="utah surf" data-d="surf-utah.coachesvoice.com">
-            <span class="ini">UTA</span>
-            <span class="txt"><span class="nm">Utah Surf</span><span class="dm">surf-utah.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://uticasurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="utica surf" data-d="uticasurf.coachesvoice.com">
-            <span class="ini">UTI</span>
-            <span class="txt"><span class="nm">Utica Surf</span><span class="dm">uticasurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
+          <div class="card" data-n="utah surf" data-d="surf-utah.coachesvoice.com">
+            <a class="go" href="https://surf-utah.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">UTA</span>
+              <span class="txt"><span class="nm">Utah Surf</span><span class="dm">surf-utah.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://surf-utah.coachesvoice.com/" aria-label="Copy link for Utah Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="utica surf" data-d="uticasurf.coachesvoice.com">
+            <a class="go" href="https://uticasurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">UTI</span>
+              <span class="txt"><span class="nm">Utica Surf</span><span class="dm">uticasurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://uticasurf.coachesvoice.com/" aria-label="Copy link for Utica Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
         </div>
       </section>
       <section class="grp" data-letter="V">
         <h3 class="gl">V</h3>
         <div class="grid">
-          <a class="card" href="https://surf-valley.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="valley surf" data-d="surf-valley.coachesvoice.com">
-            <span class="ini">VA</span>
-            <span class="txt"><span class="nm">Valley Surf</span><span class="dm">surf-valley.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://surf-ventura.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="ventura surf" data-d="surf-ventura.coachesvoice.com">
-            <span class="ini">VE</span>
-            <span class="txt"><span class="nm">Ventura Surf</span><span class="dm">surf-ventura.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://visaliasurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="visalia surf" data-d="visaliasurf.coachesvoice.com">
-            <span class="ini">VI</span>
-            <span class="txt"><span class="nm">Visalia Surf</span><span class="dm">visaliasurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
+          <div class="card" data-n="valley surf" data-d="surf-valley.coachesvoice.com">
+            <a class="go" href="https://surf-valley.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">VA</span>
+              <span class="txt"><span class="nm">Valley Surf</span><span class="dm">surf-valley.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://surf-valley.coachesvoice.com/" aria-label="Copy link for Valley Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="ventura surf" data-d="surf-ventura.coachesvoice.com">
+            <a class="go" href="https://surf-ventura.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">VE</span>
+              <span class="txt"><span class="nm">Ventura Surf</span><span class="dm">surf-ventura.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://surf-ventura.coachesvoice.com/" aria-label="Copy link for Ventura Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="visalia surf" data-d="visaliasurf.coachesvoice.com">
+            <a class="go" href="https://visaliasurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">VI</span>
+              <span class="txt"><span class="nm">Visalia Surf</span><span class="dm">visaliasurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://visaliasurf.coachesvoice.com/" aria-label="Copy link for Visalia Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
         </div>
       </section>
       <section class="grp" data-letter="W">
         <h3 class="gl">W</h3>
         <div class="grid">
-          <a class="card" href="https://surf-walnutcreek.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="walnut creek surf" data-d="surf-walnutcreek.coachesvoice.com">
-            <span class="ini">WC</span>
-            <span class="txt"><span class="nm">Walnut Creek Surf</span><span class="dm">surf-walnutcreek.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://washingtoneastsurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="washington east surf" data-d="washingtoneastsurf.coachesvoice.com">
-            <span class="ini">WE</span>
-            <span class="txt"><span class="nm">Washington East Surf</span><span class="dm">washingtoneastsurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://westchestersurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="westchester surf" data-d="westchestersurf.coachesvoice.com">
-            <span class="ini">WES</span>
-            <span class="txt"><span class="nm">Westchester Surf</span><span class="dm">westchestersurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://westerniowasurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="western iowa surf" data-d="westerniowasurf.coachesvoice.com">
-            <span class="ini">WI</span>
-            <span class="txt"><span class="nm">Western Iowa Surf</span><span class="dm">westerniowasurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://westernwashingtonsurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="western washington surf" data-d="westernwashingtonsurf.coachesvoice.com">
-            <span class="ini">WW</span>
-            <span class="txt"><span class="nm">Western Washington Surf</span><span class="dm">westernwashingtonsurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
-          <a class="card" href="https://wichitasurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer" data-n="wichita surf" data-d="wichitasurf.coachesvoice.com">
-            <span class="ini">WIC</span>
-            <span class="txt"><span class="nm">Wichita Surf</span><span class="dm">wichitasurf.coachesvoice.com</span></span>
-            <span class="arw">&rsaquo;</span>
-          </a>
+          <div class="card" data-n="walnut creek surf" data-d="surf-walnutcreek.coachesvoice.com">
+            <a class="go" href="https://surf-walnutcreek.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">WC</span>
+              <span class="txt"><span class="nm">Walnut Creek Surf</span><span class="dm">surf-walnutcreek.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://surf-walnutcreek.coachesvoice.com/" aria-label="Copy link for Walnut Creek Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="washington east surf" data-d="washingtoneastsurf.coachesvoice.com">
+            <a class="go" href="https://washingtoneastsurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">WE</span>
+              <span class="txt"><span class="nm">Washington East Surf</span><span class="dm">washingtoneastsurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://washingtoneastsurf.coachesvoice.com/" aria-label="Copy link for Washington East Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="westchester surf" data-d="westchestersurf.coachesvoice.com">
+            <a class="go" href="https://westchestersurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">WES</span>
+              <span class="txt"><span class="nm">Westchester Surf</span><span class="dm">westchestersurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://westchestersurf.coachesvoice.com/" aria-label="Copy link for Westchester Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="western iowa surf" data-d="westerniowasurf.coachesvoice.com">
+            <a class="go" href="https://westerniowasurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">WI</span>
+              <span class="txt"><span class="nm">Western Iowa Surf</span><span class="dm">westerniowasurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://westerniowasurf.coachesvoice.com/" aria-label="Copy link for Western Iowa Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="western washington surf" data-d="westernwashingtonsurf.coachesvoice.com">
+            <a class="go" href="https://westernwashingtonsurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">WW</span>
+              <span class="txt"><span class="nm">Western Washington Surf</span><span class="dm">westernwashingtonsurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://westernwashingtonsurf.coachesvoice.com/" aria-label="Copy link for Western Washington Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
+          <div class="card" data-n="wichita surf" data-d="wichitasurf.coachesvoice.com">
+            <a class="go" href="https://wichitasurf.coachesvoice.com/" target="_blank" rel="noopener noreferrer">
+              <span class="ini">WIC</span>
+              <span class="txt"><span class="nm">Wichita Surf</span><span class="dm">wichitasurf.coachesvoice.com</span></span>
+              <span class="arw">&rsaquo;</span>
+            </a>
+            <button class="copy" type="button" data-url="https://wichitasurf.coachesvoice.com/" aria-label="Copy link for Wichita Surf" title="Copy link">
+              <svg class="pages" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+              <svg class="tick" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            </button>
+          </div>
         </div>
       </section>
     <p class="empty" id="empty" hidden>No clubs match your search.</p>
@@ -639,23 +1100,50 @@
   <p>Coach education powered by Coaches&rsquo; Voice</p>
 </footer>
 
+<div id="toast" role="status" aria-live="polite"></div>
+
 <script>
   var TOTAL=71,q=document.getElementById('q'),
       cards=[].slice.call(document.querySelectorAll('.card')),
       grps=[].slice.call(document.querySelectorAll('.grp')),
-      count=document.getElementById('count'),empty=document.getElementById('empty');
+      count=document.getElementById('count'),empty=document.getElementById('empty'),
+      toast=document.getElementById('toast'),tid;
+
   q.addEventListener('input',function(){
     var v=q.value.trim().toLowerCase(),n=0;
     cards.forEach(function(c){
       var hit=!v||c.dataset.n.indexOf(v)>-1||c.dataset.d.indexOf(v)>-1;
       c.hidden=!hit; if(hit)n++;
     });
-    grps.forEach(function(g){
-      g.hidden=!g.querySelector('.card:not([hidden])');
-    });
+    grps.forEach(function(g){ g.hidden=!g.querySelector('.card:not([hidden])'); });
     count.textContent=v?n+' of '+TOTAL+' clubs across Surf Nation'
                        :TOTAL+' clubs across Surf Nation';
     empty.hidden=n>0;
+  });
+
+  function say(msg){
+    toast.textContent=msg; toast.classList.add('on');
+    clearTimeout(tid); tid=setTimeout(function(){toast.classList.remove('on')},2600);
+  }
+  function copyText(t){
+    if(navigator.clipboard && window.isSecureContext) return navigator.clipboard.writeText(t);
+    return new Promise(function(res,rej){
+      var ta=document.createElement('textarea');
+      ta.value=t; ta.setAttribute('readonly',''); ta.style.position='fixed'; ta.style.top='-999px';
+      document.body.appendChild(ta); ta.select();
+      try{ document.execCommand('copy')?res():rej(); }catch(e){ rej(e); }
+      document.body.removeChild(ta);
+    });
+  }
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('.copy'); if(!b) return;
+    e.preventDefault();
+    var url=b.dataset.url;
+    copyText(url).then(function(){
+      b.classList.add('done');
+      say('Link copied — ' + url);
+      setTimeout(function(){b.classList.remove('done')},1800);
+    }).catch(function(){ say(url); });
   });
 </script>
 </body>
