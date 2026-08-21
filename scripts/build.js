@@ -298,6 +298,13 @@ for (const t of tutorials) {
   built++;
 }
 
+// copy shared static assets (portal icons, logos) verbatim
+const assetsSrc = path.join(ROOT, 'assets');
+if (fs.existsSync(assetsSrc)) {
+  fs.cpSync(assetsSrc, path.join(DIST_DIR, 'assets'), { recursive: true });
+  console.log('    \u2713 dist/assets/');
+}
+
 console.log(`\nDone — ${built} tutorial(s) built.`);
 
 // Written-article version of each tutorial (preferred format for Freshdesk)
