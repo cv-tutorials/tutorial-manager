@@ -10,7 +10,7 @@ content/core/*.json               the answers that are true for EVERY partner
 partners/<slug>/partner.json      name, colours, logo, support email
 helpcentres/<slug>/<flow>.json    what this partner includes, omits, overrides, adds
         ↓  npm run build   (or npm run helpcentre)
-dist/<slug>/<flow>/index.html     one self-contained file, ~85KB, no external assets
+dist/<slug>/<flow>/index.html     one self-contained file, ~200KB (Gotham is embedded)
 ```
 
 ## Why it works this way
@@ -76,9 +76,9 @@ labels, not in anchor ids.
 `{{club}}`, `{{lmsUrl}}`, `{{supportEmail}}` and anything else in `vars` are substituted
 everywhere, including inside core content. `supportEmail` falls back to `partner.json`.
 
-Colours and logo come from `partner.json`; `primary` / `ink` in the config override them.
-The logo is inlined as a data URI and downscaled to 300px first — a full-size crest doubles the
-page weight, because it is inlined twice.
+The crest comes from `partner.json`, inlined as a data URI and downscaled to 300px first — a
+full-size crest doubles the page weight, because it is inlined twice. See **Brand** above for how
+colour is handled.
 
 ## Sections and blocks
 
@@ -91,7 +91,7 @@ A section is `{ id, title, note?, lead?, blocks[] }`. It becomes a nav item auto
 | `steps` | Numbered cards | `steps[]` of `{ h, p, small }` |
 | `cards` | Link cards | `cards[]` — a string reuses a shared card, an object defines one |
 | `videos` | Video cards | `codes` (a set name or list), `numbered`, `copy{}`, `heading` |
-| `callout` | Red-edged box | `text` or `use` (a shared callout) |
+| `callout` | Box edged in the club's colour | `text` or `use` (a shared callout) |
 | `prose` | A lead paragraph | `text` |
 
 ### Bending a shared FAQ
@@ -115,9 +115,6 @@ time — a typo in `omit` or `after` fails the build rather than silently doing 
 | `session-planner-videos.json` | All 33 Session Planner tutorial codes, by section, plus the `coachStarter` and `clubAdmin` sets |
 | `admin-cards.json` | The Freshdesk article cards and the callouts support repeats to every club |
 
-**Session Planner naming:** it is *Session Planner*. Never "Sport Session Planner", never "SSP" —
-not in prose, not in nav labels, not in anchor ids.
-
 **Session Planner videos:** its in-product help centre needs a login, but every tutorial is a
 public video on the official SportSessionPlanner YouTube channel. All 33 codes were verified via
 oEmbed on 30/08/2026. Reference them from `session-planner-videos.json`; never paste codes into a
@@ -140,5 +137,9 @@ partner config.
 
 - `sportsessionplanner.com` deep links point at the help centre as a whole, not per article — its
   tutorials open in a modal and have no individual URLs.
-- Publishing to Freshdesk needs a Forest category + folder in `scripts/freshdesk-map.json`, then
-  `npm run iframe forest/help-centre`. Every page already posts its height to the parent frame.
+- Forest is deliberately **not** synced to the Freshdesk portal (`"freshdesk": false` in both
+  configs). The portal is organised by audience — *For coaches* / *For club admins* — not by
+  partner, so the generic walkthroughs live there once and every partner page links to them.
+- A custom domain is not set up yet. `help.coachesvoice.com` is taken by a Freshdesk vanity
+  domain; `guides.coachesvoice.com` is free (there is a `*.coachesvoice.com` wildcard, so DNS
+  resolving does not mean a subdomain is taken — check for a real record).
