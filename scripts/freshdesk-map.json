@@ -5,7 +5,8 @@
     "efl": 103000260359,
     "n1": 103000260360,
     "rush": 103000260367,
-    "cv": 103000260394
+    "cv": 103000260394,
+    "forest": 103000260447
   },
   "folders": {
     "asc": 103000652870,
@@ -13,7 +14,8 @@
     "efl": 103000652872,
     "n1": 103000652873,
     "rush": 103000652927,
-    "cv": 103000653062
+    "cv": 103000653062,
+    "forest": 103000653257
   },
   "articles": {
     "asc/invite-coaches": 103000409872,
@@ -30,6 +32,7 @@
     "cv/inviting-managing-coaches": 103000411228,
     "cv/reporting": 103000411229,
     "cv/setting-up-your-club": 103000411230,
-    "cv/uploading-content": 103000411231
+    "cv/uploading-content": 103000411231,
+    "forest/help-centre": 103000415813
   }
 }

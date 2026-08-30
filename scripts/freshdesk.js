@@ -116,7 +116,11 @@ function partnerName(slug) {
 function articleBody(t) {
   const url = `${PAGES_BASE}/${t.partner}/${t.flow}/`;
   const embed = t.type === 'tutorial' ? url + 'embed.html' : url;
-  const h = t.type === 'page' ? 1500 : 720;   // fallback height (auto-resizes if the portal snippet is installed)
+  // Fallback height. Freshdesk strips scrolling="no", so an iframe shorter than the page
+  // gets its own inner scrollbar — which reads as broken. A help centre runs ~3100px at
+  // desktop width and taller in a narrow portal column, so err tall: trailing white space
+  // is far less bad than a nested scrollbar. Auto-resizes if the portal snippet is installed.
+  const h = t.type === 'page' ? 3400 : 720;
   return `<iframe class="cv-tutorial" src="${embed}" width="100%" height="${h}" frameborder="0" scrolling="no" style="border:0;width:100%;border-radius:12px" loading="lazy"></iframe>
 <p style="text-align:center"><a href="${url}" target="_blank" rel="noopener">Open the full guide in a new tab ↗</a></p>`;
 }
