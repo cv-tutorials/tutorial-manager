@@ -15,9 +15,10 @@
     },
     {
       "id": "what",
-      "q": "What can I actually do in it?",
+      "q": "Why use this instead of a whiteboard?",
       "a": [
-        "<p>Draw a session, animate it in 3D so your players can see the movement rather than read a diagram, store it, and adapt it later instead of rebuilding it. You can share a session by email, web link, QR code or WhatsApp &mdash; which is what replaces the whiteboard and the printouts.</p>"
+        "<p>A whiteboard drawing lasts about ninety seconds. This one you keep.</p>",
+        "<p>Build the session once and adapt it next week rather than redrawing it. Animate it in 3D so your players watch the movement instead of trying to read arrows on a diagram. Then send it to them &mdash; email, web link, QR code or WhatsApp &mdash; so they arrive at the session already knowing what it is.</p>"
       ]
     },
     {
@@ -31,7 +32,7 @@
   ],
 
   "blurbs": {
-    "coachIntro": "Session Planner is a separate tool that sits alongside your learning platform. It is where you draw up a session, animate it and share it with your staff and players.",
+    "coachIntro": "Build a session, animate it in 3D so your players see the movement rather than read a diagram, and send it to them before they get to the ground. Next week, adapt it instead of starting again. It is a separate tool from your learning platform, with its own login.",
     "adminIntro": "Session Planner has its own club administration, unconnected to the learning platform. Adding a coach to one does <strong>not</strong> add them to the other, and the accounts are not linked &mdash; there is no single sign-on between them. Budget for doing both.",
     "adminOffboard": "<strong>When someone leaves, revoke both.</strong> Removing a coach from the learning platform leaves their Session Planner access untouched, and vice versa. Two products, two off-boarding steps."
   },

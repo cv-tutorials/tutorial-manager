@@ -8,7 +8,7 @@
   "fdTitle": "Coach Development help centre",
   "eyebrow": "Nottingham Forest F.C. &middot; Academy",
   "h1": "Coach Development help centre",
-  "lead": "Everything you need to get going on your two tools: the <strong>learning platform</strong>, where your Forest modules and the Coaches&rsquo; Voice library live, and the <strong>Session Planner</strong>, where you build and share your sessions.",
+  "lead": "Two tools come with coaching here. The <strong>learning platform</strong> &mdash; the Forest game model, alongside masterclasses and on-the-grass sessions from some of the best coaches in the game. And <strong>Session Planner</strong> &mdash; where you build a session, animate it, and send it to your players before they reach the ground. Here is how to get the most out of both.",
   "footer": "Nottingham Forest F.C. &middot; Coach Development",
 
   "vars": {
@@ -52,7 +52,7 @@
     {
       "id": "learning",
       "title": "Your learning",
-      "note": "The Coaches&rsquo; Voice platform",
+      "note": "Your CPD, the game model and the library",
       "lead": "The questions coaches ask most in their first fortnight.",
       "blocks": [
         {
@@ -81,8 +81,8 @@
     {
       "id": "planner",
       "title": "Session Planner",
-      "note": "Planning and sharing your sessions",
-      "lead": "Session Planner is a separate tool that sits alongside your learning platform. It is where you draw up a session, animate it and share it with your staff and players.",
+      "note": "Build it, animate it, send it to your players",
+      "lead": "Build a session, animate it in 3D so your players see the movement rather than read a diagram, and send it to them before they get to the ground. Next week, adapt it instead of starting again. It is a separate tool from your learning platform, with its own login.",
       "blocks": [
         { "type": "faq", "include": "session-planner-faq", "open": "open" },
         {
