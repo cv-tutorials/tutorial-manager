@@ -23,6 +23,7 @@ const ENGINE = path.join(ROOT, 'engine', 'helpcentre.template.html');
 const CORE_DIR = path.join(ROOT, 'content', 'core');
 const HC_DIR = path.join(ROOT, 'helpcentres');
 const PARTNERS_DIR = path.join(ROOT, 'partners');
+const BRAND_DIR = path.join(ROOT, 'engine', 'brand');
 const DIST_DIR = path.join(ROOT, 'dist');
 
 // ── helpers ──
@@ -68,6 +69,28 @@ function dataUri(file, maxWidth = 300) {
     } catch { /* sips unavailable (non-macOS) — ship it as-is */ }
   }
   return `data:${mime};base64,${buf.toString('base64')}`;
+}
+
+/**
+ * Gotham Medium is the CV display face and is licensed — it is not on any font CDN,
+ * so it has to travel inside the page. 103KB of OTF becomes ~137KB of base64; that is
+ * the price of the brand rendering correctly rather than silently falling back to Inter.
+ */
+function gothamFace() {
+  const otf = path.join(BRAND_DIR, 'Gotham-Medium.otf');
+  if (!fs.existsSync(otf)) {
+    console.warn('  ! Gotham-Medium.otf missing — headings will fall back to Inter');
+    return '/* Gotham not bundled */';
+  }
+  const b64 = fs.readFileSync(otf).toString('base64');
+  return `@font-face{font-family:"Gotham";src:url("data:font/otf;base64,${b64}") format("opentype");font-weight:500;font-style:normal;font-display:swap}`;
+}
+
+/** The CV wordmark, white variant — the nav and footer both sit on dark slate. */
+function cvLogo() {
+  const svg = path.join(BRAND_DIR, 'cv-primary-white.svg');
+  if (!fs.existsSync(svg)) fail(`CV logo missing: ${svg}`);
+  return dataUri(svg);
 }
 
 function loadPartner(slug) {
@@ -134,7 +157,7 @@ function resolveFaq(block, v) {
     const open = (block.open === it.id || (block.open === true && i === 0)) ? ' open' : '';
     const body = (Array.isArray(it.a) ? it.a : [it.a]).map((p) => vars(p, v)).join('\n          ');
     return `      <details${open}>
-        <summary><span class="qn">?</span>${vars(it.q, v)}
+        <summary><span class="qn" aria-hidden="true"></span>${vars(it.q, v)}
           ${chev}</summary>
         <div class="ans">
           ${body}
@@ -278,14 +301,13 @@ function build(configFile) {
     .join('\n');
 
   const sections = cfg.sections.map((s) => renderSection(s, v)).join('\n\n');
-  const primary = cfg.primary || partner.primary || '#DD0000';
-
   let html = fs.readFileSync(ENGINE, 'utf8');
   const tokens = {
     __LANG__: cfg.lang || 'en-GB',
     __TITLE__: cfg.title,
-    __STYLE__: '',            // already inlined in the template
     __LOGO__: partner._logo,
+    __CV_LOGO__: cvLogo(),
+    __GOTHAM_FACE__: gothamFace(),
     __PARTNER_NAME__: partner.name,
     __EYEBROW__: vars(cfg.eyebrow || partner.name, v),
     __H1__: vars(cfg.h1, v),
@@ -293,9 +315,8 @@ function build(configFile) {
     __NAV__: nav,
     __SECTIONS__: sections,
     __FOOTER__: vars(cfg.footer || partner.name, v),
-    __PRIMARY__: primary,
-    __PRIMARY_DK__: cfg.primaryDark || darken(primary),
-    __INK__: cfg.ink || '#0E1726',
+    // CV slate + orange carry the page. The club colour is a marker, not the theme.
+    __PARTNER_COLOR__: cfg.partnerColor || partner.primary || '#FF6600',
   };
   for (const [k, val] of Object.entries(tokens)) html = html.split(k).join(val);
 

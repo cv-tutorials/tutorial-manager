@@ -1,0 +1,369 @@
+/* ============================================================
+   Coaches' Voice — Colors & Type
+   ------------------------------------------------------------
+   Source of truth: CV Brand Guidelines 2026.
+   Display family is Gotham Medium 500 — licensed OTF in /fonts.
+   Body family is Inter (variable, weights 100–900 + italics) — shipped in /fonts.
+   Resolve Sans OTF remains in /fonts but is not wired up (archived reference).
+   ============================================================ */
+
+/* ---------- Fonts ---------- */
+@font-face {
+  font-family: "Inter";
+  src: url("../brand/fonts/Inter-VariableFont.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: url("../brand/fonts/Inter-Italic-VariableFont.ttf") format("truetype-variations");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Gotham — licensed display family (CV Brand Guidelines).
+   Only Medium 500 is used in the system. */
+@font-face {
+  font-family: "Gotham";
+  src: url("../brand/fonts/Gotham-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gotham";
+  src: url("../brand/fonts/Gotham-MediumItalic.otf") format("opentype");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* JetBrains Mono for any monospace surfaces (codes, IDs, pills) */
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+
+:root {
+  /* ---------- Brand palette (CV Brand Guidelines p40) ---------- */
+  --cv-slate:           #333F48;  /* Coaches' Voice Slate Grey — PRIMARY */
+  --cv-orange:          #FF6600;  /* Coaches' Voice Vibrant Orange — PRIMARY accent */
+  --cv-jade:            #17B569;  /* Session Planner Jade Green */
+  --cv-blue:            #00B1EB;  /* School Bright Blue */
+  --cv-yellow:          #FFC800;  /* Tours Mikado Yellow */
+
+  /* ---------- Slate tint scale (p41) ---------- */
+  --cv-slate-lightest:  #FAFBFC;
+  --cv-slate-light:     #EBEEF1;
+  --cv-slate-default:   #333F48;
+  --cv-slate-dark:      #1F272C;
+  --cv-slate-darkest:   #08090B;
+
+  /* ---------- Neutral working scale (derived; for UI density) ---------- */
+  --cv-neutral-50:      #FAFBFC;
+  --cv-neutral-100:     #F4F6F8;
+  --cv-neutral-200:     #EBEEF1;   /* = slate light */
+  --cv-neutral-300:     #D8DEE3;
+  --cv-neutral-400:     #B7C0C7;
+  --cv-neutral-500:     #8791A0;
+  --cv-neutral-600:     #5E6B76;
+  --cv-neutral-700:     #49545E;
+  --cv-neutral-800:     #333F48;   /* = slate default */
+  --cv-neutral-900:     #1F272C;   /* = slate dark */
+  --cv-neutral-950:     #08090B;   /* = slate darkest */
+
+  /* ---------- Orange scale (derived; for hover/press/highlight) ---------- */
+  --cv-orange-25:       #FFFAF5;
+  --cv-orange-50:       #FFF3EB;
+  --cv-orange-100:      #FFE4D1;
+  --cv-orange-200:      #FFC5A3;
+  --cv-orange-300:      #FFA570;
+  --cv-orange-400:      #FF8833;
+  --cv-orange-500:      #FF6600;   /* brand */
+  --cv-orange-600:      #E65700;
+  --cv-orange-700:      #BF4600;
+  --cv-orange-800:      #8F3400;
+  --cv-orange-900:      #5C2100;
+  --cv-orange-950:      #331200;
+
+  /* ---------- Jade scale (Session Planner) ---------- */
+  --cv-jade-25:         #F5FCF8;
+  --cv-jade-50:         #E8F8EE;
+  --cv-jade-100:        #C9F0D7;
+  --cv-jade-200:        #93E0B0;
+  --cv-jade-300:        #5CCE89;
+  --cv-jade-400:        #32C176;
+  --cv-jade-500:        #17B569;   /* brand */
+  --cv-jade-600:        #0F9657;
+  --cv-jade-700:        #0B7A47;
+  --cv-jade-800:        #085933;
+  --cv-jade-900:        #053A21;
+  --cv-jade-950:        #021F11;
+
+  /* ---------- Blue scale (CV School) ---------- */
+  --cv-blue-25:         #F5FCFF;
+  --cv-blue-50:         #E6F7FE;
+  --cv-blue-100:        #C2ECFC;
+  --cv-blue-200:        #85D8F8;
+  --cv-blue-300:        #47C4F3;
+  --cv-blue-400:        #1FBAEF;
+  --cv-blue-500:        #00B1EB;   /* brand */
+  --cv-blue-600:        #0094C4;
+  --cv-blue-700:        #00779E;
+  --cv-blue-800:        #005976;
+  --cv-blue-900:        #003A4D;
+  --cv-blue-950:        #001F29;
+
+  /* ---------- Yellow scale (CV Tours) ---------- */
+  --cv-yellow-25:       #FFFDF5;
+  --cv-yellow-50:       #FFF9E0;
+  --cv-yellow-100:      #FFF0B0;
+  --cv-yellow-200:      #FFE070;
+  --cv-yellow-300:      #FFD233;
+  --cv-yellow-400:      #FFCC14;
+  --cv-yellow-500:      #FFC800;   /* brand */
+  --cv-yellow-600:      #D6A700;
+  --cv-yellow-700:      #A38000;
+  --cv-yellow-800:      #735A00;
+  --cv-yellow-900:      #4A3A00;
+  --cv-yellow-950:      #261E00;
+
+  /* ---------- Semantic foreground / background ---------- */
+  --fg-1:               var(--cv-slate);          /* primary text */
+  --fg-2:               var(--cv-neutral-600);    /* secondary text */
+  --fg-3:               var(--cv-neutral-500);    /* tertiary / meta */
+  --fg-inverse:         #FFFFFF;
+  --fg-accent:          var(--cv-orange);
+  --fg-link:            var(--cv-orange);
+  --fg-link-hover:      var(--cv-orange-600);
+
+  --bg-1:               #FFFFFF;                  /* canvas */
+  --bg-2:               var(--cv-slate-lightest); /* subtle surface */
+  --bg-3:               var(--cv-slate-light);    /* muted surface */
+  --bg-inverse:         var(--cv-slate);
+  --bg-inverse-darker:  var(--cv-slate-dark);
+
+  --border-1:           var(--cv-neutral-200);
+  --border-2:           var(--cv-neutral-300);
+  --border-strong:      var(--cv-neutral-400);
+  --border-focus:       var(--cv-orange);
+
+  /* ---------- Semantic status ---------- */
+  /* Success scale -> aliased to Jade (Session Planner) */
+  --success-25:  var(--cv-jade-25);
+  --success-50:  var(--cv-jade-50);
+  --success-100: var(--cv-jade-100);
+  --success-200: var(--cv-jade-200);
+  --success-300: var(--cv-jade-300);
+  --success-400: var(--cv-jade-400);
+  --success-500: var(--cv-jade-500);
+  --success-600: var(--cv-jade-600);
+  --success-700: var(--cv-jade-700);
+  --success-800: var(--cv-jade-800);
+  --success-900: var(--cv-jade-900);
+  --success-950: var(--cv-jade-950);
+  --success:     var(--cv-jade-500);
+
+  /* Info scale -> aliased to Blue (CV School) */
+  --info-25:  var(--cv-blue-25);
+  --info-50:  var(--cv-blue-50);
+  --info-100: var(--cv-blue-100);
+  --info-200: var(--cv-blue-200);
+  --info-300: var(--cv-blue-300);
+  --info-400: var(--cv-blue-400);
+  --info-500: var(--cv-blue-500);
+  --info-600: var(--cv-blue-600);
+  --info-700: var(--cv-blue-700);
+  --info-800: var(--cv-blue-800);
+  --info-900: var(--cv-blue-900);
+  --info-950: var(--cv-blue-950);
+  --info:     var(--cv-blue-500);
+
+  /* Warning scale -> aliased to Yellow (CV Tours) */
+  --warning-25:  var(--cv-yellow-25);
+  --warning-50:  var(--cv-yellow-50);
+  --warning-100: var(--cv-yellow-100);
+  --warning-200: var(--cv-yellow-200);
+  --warning-300: var(--cv-yellow-300);
+  --warning-400: var(--cv-yellow-400);
+  --warning-500: var(--cv-yellow-500);
+  --warning-600: var(--cv-yellow-600);
+  --warning-700: var(--cv-yellow-700);
+  --warning-800: var(--cv-yellow-800);
+  --warning-900: var(--cv-yellow-900);
+  --warning-950: var(--cv-yellow-950);
+  --warning:     var(--cv-yellow-500);
+
+  /* Danger scale (derived — no brand red, but needed) */
+  --danger-25:   #FFF5F6;
+  --danger-50:   #FDECEF;
+  --danger-100:  #F9CFD5;
+  --danger-200:  #F29EAB;
+  --danger-300:  #EA6C80;
+  --danger-400:  #E04155;
+  --danger-500:  #D7263D;   /* brand-adjacent */
+  --danger-600:  #B41A2F;
+  --danger-700:  #8C1325;
+  --danger-800:  #660D1B;
+  --danger-900:  #410812;
+  --danger-950:  #230309;
+  --danger:      var(--danger-500);
+
+  /* ---------- Type families ---------- */
+  --font-sans:          "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-display:       "Gotham", "Inter", -apple-system, BlinkMacSystemFont, sans-serif; /* CV display face — licensed */
+  --font-mono:          "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* ---------- Type scale (tracking/leading per brand spec) ---------- */
+  /* Display (Gotham Medium): sentence case, tracking -0.05em, leading 95% */
+  --t-display-2xl:      clamp(56px, 9vw, 128px); /* @kind font */
+  --t-display-xl:       clamp(48px, 7vw, 96px); /* @kind font */
+  --t-display-lg:       clamp(40px, 5.5vw, 72px); /* @kind font */
+
+  /* Headlines (Inter 500/600, tracking -1 to -2%, leading 100-110%) */
+  --t-h1:               clamp(36px, 4.5vw, 56px); /* @kind font */
+  --t-h2:               clamp(28px, 3.2vw, 40px); /* @kind font */
+  --t-h3:               24px;
+  --t-h4:               20px;
+  --t-h5:               17px;
+  --t-h6:               14px;
+
+  /* Body (Inter 400, tracking -0.5%, leading 140%) */
+  --t-body-lg:          18px;
+  --t-body:             16px;
+  --t-body-sm:          14px;
+  --t-caption:          12px;
+  --t-micro:            11px;
+
+  /* ---------- Spacing (4px base; Apple/Google-ish) ---------- */
+  --s-0:                0; /* @kind spacing */
+  --s-1:                4px;
+  --s-2:                8px;
+  --s-3:                12px;
+  --s-4:                16px;
+  --s-5:                20px;
+  --s-6:                24px;
+  --s-7:                32px;
+  --s-8:                40px;
+  --s-9:                48px;
+  --s-10:               64px;
+  --s-11:               80px;
+  --s-12:               96px;
+  --s-13:               128px;
+
+  /* ---------- Radii (soft, Apple-esque; no pill unless asked) ---------- */
+  --r-xs:               4px;
+  --r-sm:               8px;
+  --r-md:               12px;
+  --r-lg:               16px;
+  --r-xl:               24px;
+  --r-2xl:              32px;
+  --r-pill:             999px;
+
+  /* ---------- Elevation (crisp, low-spread; not fluffy) ---------- */
+  --shadow-1:           0 1px 2px rgba(8, 9, 11, 0.06),
+                        0 1px 1px rgba(8, 9, 11, 0.04);
+  --shadow-2:           0 2px 4px rgba(8, 9, 11, 0.06),
+                        0 4px 12px rgba(8, 9, 11, 0.06);
+  --shadow-3:           0 6px 16px rgba(8, 9, 11, 0.08),
+                        0 12px 32px rgba(8, 9, 11, 0.06);
+  --shadow-4:           0 16px 40px rgba(8, 9, 11, 0.12),
+                        0 4px 12px rgba(8, 9, 11, 0.06);
+  --shadow-focus:       0 0 0 3px rgba(255, 102, 0, 0.25);
+
+  /* ---------- Motion ---------- */
+  --ease-standard:      cubic-bezier(0.2, 0, 0, 1); /* @kind other */
+  --ease-emphasis:      cubic-bezier(0.3, 0, 0, 1); /* @kind other */
+  --ease-exit:          cubic-bezier(0.4, 0, 1, 1); /* @kind other */
+  --dur-fast:           120ms; /* @kind other */
+  --dur-base:           200ms; /* @kind other */
+  --dur-slow:           320ms; /* @kind other */
+
+  /* ---------- Layout ---------- */
+  --container-xs:       560px;
+  --container-sm:       720px;
+  --container-md:       960px;
+  --container-lg:       1200px;
+  --container-xl:       1360px;
+  --container-2xl:      1440px;
+  --grid-gutter:        24px;
+}
+
+
+/* ============================================================
+   Semantic text styles — attach to an element to get the style.
+   ============================================================ */
+
+.cv-display-2xl,
+.cv-display-xl,
+.cv-display-lg {
+  font-family: var(--font-display);
+  font-weight: 500;                 /* Gotham Medium — only display weight */
+  letter-spacing: -0.05em;
+  line-height: 0.95;
+  color: var(--fg-1);
+}
+.cv-display-2xl { font-size: var(--t-display-2xl); }
+.cv-display-xl  { font-size: var(--t-display-xl); }
+.cv-display-lg  { font-size: var(--t-display-lg); }
+
+.cv-h1, .cv-h2, .cv-h3, .cv-h4, .cv-h5, .cv-h6 {
+  font-family: var(--font-sans);
+  font-weight: 500;                 /* Inter Medium */
+  color: var(--fg-1);
+  text-wrap: balance;
+}
+.cv-h1 { font-family: var(--font-display); font-size: var(--t-h1); letter-spacing: -0.025em; line-height: 1.02; }
+.cv-h2 { font-size: var(--t-h2); letter-spacing: -0.02em; line-height: 1.08; }
+.cv-h3 { font-size: var(--t-h3); letter-spacing: -0.015em; line-height: 1.15; }
+.cv-h4 { font-size: var(--t-h4); letter-spacing: -0.012em; line-height: 1.25; }
+.cv-h5 { font-size: var(--t-h5); letter-spacing: -0.01em;  line-height: 1.3; }
+.cv-h6 {
+  font-size: var(--t-h6);
+  font-weight: 700;                 /* Inter Bold for eyebrow emphasis */
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  text-transform: uppercase;
+  color: var(--fg-2);
+}
+
+.cv-body-lg, .cv-body, .cv-body-sm, .cv-caption, .cv-micro {
+  font-family: var(--font-sans);
+  font-weight: 400;                 /* Inter Regular */
+  color: var(--fg-1);
+  letter-spacing: -0.005em;         /* ~ -10 tracking */
+  line-height: 1.4;                 /* 140% per p49 */
+  text-wrap: pretty;
+}
+.cv-body-lg { font-size: var(--t-body-lg); line-height: 1.5; }
+.cv-body    { font-size: var(--t-body); }
+.cv-body-sm { font-size: var(--t-body-sm); }
+.cv-caption { font-size: var(--t-caption); color: var(--fg-2); }
+.cv-micro   { font-size: var(--t-micro);   color: var(--fg-3); letter-spacing: 0.04em; text-transform: uppercase; }
+
+.cv-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--cv-orange);
+}
+
+.cv-mono {
+  font-family: var(--font-mono);
+  font-size: var(--t-body-sm);
+  letter-spacing: 0;
+}
+
+/* ============================================================
+   Base reset helpers (opt-in)
+   ============================================================ */
+.cv-reset, .cv-reset * { box-sizing: border-box; }
+.cv-reset {
+  font-family: var(--font-sans);
+  color: var(--fg-1);
+  background: var(--bg-1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
