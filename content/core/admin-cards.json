@@ -42,9 +42,10 @@
     "coachTour": {
       "who": "Video &middot; 2 min",
       "tt": "A tour of your platform",
-      "td": "Rather watch than read? The same ground, in two minutes.",
+      "td": "Rather watch than read? Two minutes on how the platform works. It is filmed on a standard Coaches&rsquo; Voice platform, so the colours and the club content differ from yours &mdash; everything it shows you works the same way.",
       "href": "https://cechelp.coachesvoice.com/support/solutions/articles/103000411620"
     },
+    "_gettingStarted_note": "Available, but think before using it on a branded club page: the screenshots are of an unbranded platform (white nav, no crest, no Session Planner button), so a club coach sees a platform that is not theirs. Its 11 steps also duplicate lms-faq almost one to one.",
     "gettingStarted": {
       "who": "Walkthrough &middot; 11 steps",
       "tt": "Getting started, step by step",

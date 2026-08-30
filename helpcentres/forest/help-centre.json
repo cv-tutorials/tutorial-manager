@@ -74,7 +74,7 @@
             }
           ]
         },
-        { "type": "cards", "heading": "Prefer to be shown?", "cards": ["coachTour", "gettingStarted"] }
+        { "type": "cards", "cards": ["coachTour"] }
       ]
     },
 
