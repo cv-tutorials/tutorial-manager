@@ -149,6 +149,14 @@ function articleBody(t) {
     if (!map.folders[partner]) {
       const f = await api('POST', `/solutions/categories/${map.categories[partner]}/folders`, { name: 'Guides', description: 'How-to guides', visibility: VISIBILITY });
       map.folders[partner] = f.id; save(); console.log(`+ folder Guides (${f.id})`);
+    } else if (process.env.FD_VISIBILITY) {
+      // Visibility used to be set only at creation, so an existing folder kept whatever it
+      // was made with. Setting FD_VISIBILITY now updates it. 1 all · 2 logged in · 3 agents.
+      const cur = await api('GET', `/solutions/folders/${map.folders[partner]}`);
+      if (cur.visibility !== VISIBILITY) {
+        await api('PUT', `/solutions/folders/${map.folders[partner]}`, { visibility: VISIBILITY });
+        console.log(`~ folder visibility ${cur.visibility} → ${VISIBILITY}`);
+      }
     }
     for (const t of byPartner[partner]) {
       const key = `${t.partner}/${t.flow}`;
