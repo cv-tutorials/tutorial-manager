@@ -5,9 +5,10 @@
   "_naming": "It is 'Session Planner' in all partner-facing copy. Never 'Sport Session Planner', never 'SSP'.",
   "_watch": "https://www.youtube.com/watch?v=",
 
+  "_coachStarter": "Ordered as the job actually runs: open the tool, move around, clone something that exists, save it, animate it, save that too, share it, and recover your password. 'Saving an Animation' is a different action from 'Saving a Session' — leaving it out strands a coach who has just animated.",
   "coachStarter": [
-    "0GbOM0SNh7c", "0mvgiT-sdBQ", "-FAnt-giZ8E",
-    "T3H9eZp78Nw", "Nxiwjevvxjs", "hqpUJQim5MM", "3p_dipZk1oc"
+    "0GbOM0SNh7c", "0mvgiT-sdBQ", "T3H9eZp78Nw", "Nxiwjevvxjs",
+    "-FAnt-giZ8E", "iXrRWCxqyTs", "hqpUJQim5MM", "3p_dipZk1oc"
   ],
   "clubAdmin": ["dJCN-1mfOhY", "pgWc0yZtUCg", "GSSweJZ0yCA", "Wou9pmeXwJ8"],
 

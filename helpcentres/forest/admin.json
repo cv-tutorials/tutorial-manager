@@ -75,6 +75,7 @@
             "pgWc0yZtUCg": { "d": "Where the Forest age-group folders will live once they are built." }
           }
         },
+        { "type": "cards", "cards": ["sessionPlannerHelp"] },
         {
           "type": "callout",
           "text": "<strong>When someone leaves Forest, revoke both.</strong> Removing a coach from the learning platform leaves their Session Planner access untouched, and vice versa. Two products, two off-boarding steps."

@@ -86,7 +86,7 @@
         { "type": "faq", "include": "session-planner-faq", "open": "open" },
         {
           "type": "videos",
-          "heading": "Start with these seven",
+          "heading": "Start with these eight",
           "codes": "coachStarter",
           "numbered": true,
           "copy": {
