@@ -2,6 +2,7 @@
   "version": 1,
   "partner": "forest",
   "flow": "help-centre",
+  "freshdesk": false,
 
   "title": "Nottingham Forest F.C. — Coach Development help centre",
   "fdTitle": "Coach Development help centre",
@@ -73,7 +74,7 @@
             }
           ]
         },
-        { "type": "cards", "cards": ["coachTour"] }
+        { "type": "cards", "heading": "Prefer to be shown?", "cards": ["coachTour", "gettingStarted"] }
       ]
     },
 
