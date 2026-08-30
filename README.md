@@ -85,11 +85,20 @@ The Coaches' Voice "Powered by" logo and favicon are baked into the engine.
 
 ## Embedding in Freshdesk
 
-Host `embed.html` publicly (GitHub Pages), then in the article code view insert:
+The deploy workflow uploads `dist/` **as the Pages root**, so the live path has no `/dist/`
+segment. Let `npm run iframe <partner>/<flow>` print the snippet rather than writing it by hand:
+
 ```html
-<iframe src="https://<you>.github.io/tutorial-manager/dist/<partner>/<flow>/embed.html"
+<!-- tutorial -->
+<iframe src="https://cv-tutorials.github.io/tutorial-manager/<partner>/<flow>/embed.html"
         width="100%" height="720" style="border:0" loading="lazy"></iframe>
+
+<!-- help centre — one long page, no embed.html -->
+<iframe src="https://cv-tutorials.github.io/tutorial-manager/<partner>/<flow>/"
+        width="100%" height="2400" style="border:0" loading="lazy"></iframe>
 ```
+
+A help centre usually reads better as a plain link than in an iframe — send the URL itself.
 
 Deep-link a step: append `#step-4` to the src URL.
 

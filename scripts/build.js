@@ -237,8 +237,23 @@ const cmd = process.argv[2];
 if (cmd === 'iframe') {
   const target = process.argv[3];
   if (!target) { console.error('Usage: node build.js iframe <partner>/<flow>'); process.exit(1); }
-  const base = process.env.PAGES_BASE || 'https://<user>.github.io/tutorial-manager';
-  console.log(`<iframe src="${base}/dist/${target}/embed.html" width="100%" height="720" style="border:0" loading="lazy"></iframe>`);
+
+  // The workflow uploads dist/ AS the Pages root, so the live path has no /dist/ segment.
+  const base = (process.env.PAGES_BASE || 'https://cv-tutorials.github.io/tutorial-manager')
+    .replace(/\/+$/, '');
+
+  // Tutorials build an iframe-optimised embed.html; help centres are a single index.html.
+  const isHelpCentre = fs.existsSync(path.join(ROOT, 'helpcentres', ...target.split('/'))) ||
+                       fs.existsSync(path.join(ROOT, 'helpcentres', `${target}.json`)) ||
+                       fs.existsSync(path.join(ROOT, 'helpcentres', `${target.split('/')[0]}`, `${target.split('/')[1]}.json`));
+  const page = isHelpCentre ? '' : '/embed.html';
+  const height = isHelpCentre ? 2400 : 720;
+
+  const url = `${base}/${target}/${page ? page.slice(1) : ''}`;
+  console.log(`<iframe src="${url}" width="100%" height="${height}" style="border:0" loading="lazy"></iframe>`);
+  if (isHelpCentre) {
+    console.log(`\nHelp centre — it also stands on its own, which is usually the better link to send:\n  ${url}`);
+  }
   process.exit(0);
 }
 
