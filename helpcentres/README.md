@@ -27,6 +27,33 @@ this, each page was hand-written HTML — two Forest pages alone were 39% identi
 **The rule: nothing club-specific ever goes in `content/core/`.** If it names a club, a module or
 a domain, it belongs in that partner's config, or behind a `{{var}}`.
 
+## Brand
+
+The pages use the **Coaches' Voice design system** (CV Brand Guidelines 2026), not a per-club
+theme. That is deliberate: a coach should read the page as *Coaches' Voice, for my club* rather
+than a club microsite that happens to mention CV.
+
+- **Chrome** — nav, hero and footer in CV Slate Dark `#1F272C`; eyebrows, links, step numbers and
+  active states in CV Vibrant Orange `#FF6600`.
+- **The club colour** appears in exactly two places: the crest, and the left border of callouts
+  (which carry club-specific facts, so they speak in the club's voice). Set it with `partnerColor`
+  in the config; it falls back to `partner.primary`.
+- **Type** — Gotham Medium for display and headings, Inter for body, JetBrains Mono for URLs.
+  Gotham is licensed and on no CDN, so `helpcentre.js` embeds `engine/brand/Gotham-Medium.otf`
+  as a data URI (~137KB). That is most of the page weight and it earns it: without it the headings
+  fall back to Inter silently and the page stops looking like CV.
+- **Partner lockup** — CV wordmark, hairline rule, club crest, sized for *equal spatial footprint*
+  rather than equal height (brand rule), with the gap set to the width of "COAC".
+
+Brand assets live in `engine/brand/`, lifted from the CV design system package.
+`cv-tokens-reference.css` is the full token file, kept for reference — the engine inlines only the
+tokens these pages use.
+
+## Naming
+
+It is **Session Planner**. Never "Sport Session Planner", never "SSP" — not in copy, not in nav
+labels, not in anchor ids.
+
 ## A minimal config
 
 ```json
