@@ -2,6 +2,7 @@
   "version": 1,
   "partner": "forest",
   "flow": "admin",
+  "freshdesk": false,
 
   "title": "Nottingham Forest F.C. — Running the platform (club admin)",
   "eyebrow": "Nottingham Forest F.C. &middot; Club administration",

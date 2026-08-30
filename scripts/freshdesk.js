@@ -13,6 +13,7 @@
  *   FRESHDESK_API_KEY=xxx node scripts/freshdesk.js              # create/update as DRAFT
  *   FRESHDESK_API_KEY=xxx FD_PUBLISH=1 node scripts/freshdesk.js # publish live
  *   FRESHDESK_API_KEY=xxx FD_DRYRUN=1 node scripts/freshdesk.js  # print plan, no writes
+ *   FD_ONLY=forest node scripts/freshdesk.js                     # limit to one partner
  *
  * Optional env:
  *   FRESHDESK_DOMAIN  (default coachesvoice.freshdesk.com)
@@ -25,6 +26,7 @@ const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 const TUTORIALS_DIR = path.join(ROOT, 'tutorials');
+const HELPCENTRES_DIR = path.join(ROOT, 'helpcentres');
 const PARTNERS_DIR = path.join(ROOT, 'partners');
 const MAP_FILE = path.join(__dirname, 'freshdesk-map.json');
 
@@ -34,6 +36,7 @@ const PAGES_BASE = (process.env.PAGES_BASE || 'https://cv-tutorials.github.io/tu
 const STATUS = process.env.FD_PUBLISH === '1' ? 2 : 1;      // 1 draft · 2 published
 const VISIBILITY = parseInt(process.env.FD_VISIBILITY || '1', 10);
 const DRYRUN = process.env.FD_DRYRUN === '1';
+const ONLY = (process.env.FD_ONLY || '').split(',').map(x => x.trim()).filter(Boolean);
 
 if (!KEY) { console.error('Missing FRESHDESK_API_KEY env var'); process.exit(1); }
 
@@ -82,6 +85,26 @@ function discover() {
       }
     }
   }
+
+  // Help centres (helpcentres/<partner>/<flow>.json). Same output shape as a hub page.
+  // A config with "freshdesk": false is skipped — some pages are deliberately not for
+  // the public portal, e.g. a club-admin page at a partner where only the club has admin.
+  if (fs.existsSync(HELPCENTRES_DIR)) {
+    for (const partner of fs.readdirSync(HELPCENTRES_DIR)) {
+      const pdir = path.join(HELPCENTRES_DIR, partner);
+      if (!fs.statSync(pdir).isDirectory()) continue;
+      for (const f of fs.readdirSync(pdir)) {
+        if (!f.endsWith('.json')) continue;
+        const cfg = JSON.parse(fs.readFileSync(path.join(pdir, f), 'utf8'));
+        const flow = cfg.flow || f.replace(/\.json$/, '');
+        if (cfg.freshdesk === false) {
+          console.log(`  (skipping ${partner}/${flow} — freshdesk:false)`);
+          continue;
+        }
+        out.push({ partner, flow, type: 'page', title: cfg.fdTitle || cfg.title || titleCase(flow) });
+      }
+    }
+  }
   return out;
 }
 
@@ -105,7 +128,11 @@ function articleBody(t) {
   console.log(`Freshdesk KB sync → ${DOMAIN}  (${STATUS === 2 ? 'PUBLISH' : 'draft'}${DRYRUN ? ' · DRY RUN' : ''})\n`);
 
   const byPartner = {};
-  for (const t of tutorials) (byPartner[t.partner] = byPartner[t.partner] || []).push(t);
+  for (const t of tutorials) {
+    if (ONLY.length && !ONLY.includes(t.partner)) continue;   // FD_ONLY=forest — touch one partner
+    (byPartner[t.partner] = byPartner[t.partner] || []).push(t);
+  }
+  if (ONLY.length) console.log(`Limited to: ${ONLY.join(', ')}\n`);
 
   for (const partner of Object.keys(byPartner).sort()) {
     const name = partnerName(partner);
