@@ -6,6 +6,7 @@
   "scripts": {
     "build": "node scripts/build.js",
     "iframe": "node scripts/build.js iframe",
-    "sync-builder": "node scripts/sync-builder.js"
+    "sync-builder": "node scripts/sync-builder.js",
+    "helpcentre": "node scripts/helpcentre.js"
   }
 }

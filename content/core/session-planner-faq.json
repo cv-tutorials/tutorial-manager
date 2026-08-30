@@ -1,0 +1,52 @@
+{
+  "id": "session-planner-faq",
+  "_note": "Shared Session Planner FAQ. True for every partner that has Session Planner alongside the LMS. Video codes live in session-planner-videos.json — reference them, never paste them into a partner config.",
+  "_naming": "It is 'Session Planner' in all partner-facing copy. Never 'Sport Session Planner', never 'SSP' — not in prose, not in anchors, not in nav labels.",
+
+  "items": [
+    {
+      "id": "open",
+      "q": "How do I open it, and why is it asking me to log in again?",
+      "a": [
+        "<p>Use the green <strong>Session Planner</strong> button at the top right of My Learning. It opens in a new tab and leaves your learning where it was.</p>",
+        "<p>Session Planner is a <strong>separate product with its own account</strong>, and it is not single sign-on. You log in with your Session Planner username and password, which are not the same as your learning platform ones and may well be a different password entirely. Worth saving both.</p>",
+        "<p>No Session Planner details yet, or they are not working? Email <a href=\"mailto:{{supportEmail}}\">{{supportEmail}}</a>.</p>"
+      ]
+    },
+    {
+      "id": "what",
+      "q": "What can I actually do in it?",
+      "a": [
+        "<p>Draw a session, animate it in 3D so your players can see the movement rather than read a diagram, store it, and adapt it later instead of rebuilding it. You can share a session by email, web link, QR code or WhatsApp &mdash; which is what replaces the whiteboard and the printouts.</p>"
+      ]
+    },
+    {
+      "id": "tutorials",
+      "q": "Where are the Session Planner tutorials?",
+      "a": [
+        "<p>Session Planner has its own help centre &mdash; thirty-three short videos covering the editor, the 3D space, animation and sharing. It lives inside the product, so log in first and it opens from the menu.</p>",
+        "<p>You do not need all thirty-three. The ones below are what get you working; come back for the rest when you want a specific trick.</p>"
+      ]
+    }
+  ],
+
+  "blurbs": {
+    "coachIntro": "Session Planner is a separate tool that sits alongside your learning platform. It is where you draw up a session, animate it and share it with your staff and players.",
+    "adminIntro": "Session Planner has its own club administration, unconnected to the learning platform. Adding a coach to one does <strong>not</strong> add them to the other, and the accounts are not linked &mdash; there is no single sign-on between them. Budget for doing both.",
+    "adminOffboard": "<strong>When someone leaves, revoke both.</strong> Removing a coach from the learning platform leaves their Session Planner access untouched, and vice versa. Two products, two off-boarding steps."
+  },
+
+  "videoCopy": {
+    "0GbOM0SNh7c": { "title": "Intro to the SessionBuilder", "d": "The tool itself. Watch this one first." },
+    "0mvgiT-sdBQ": { "title": "Navigating the 3D space", "d": "Moving the camera and finding your way around the pitch." },
+    "-FAnt-giZ8E": { "title": "Intro to animation", "d": "Turning a static drawing into movement your players can follow." },
+    "T3H9eZp78Nw": { "title": "Global library & cloning a session", "d": "Take an existing session and make it yours instead of starting blank." },
+    "Nxiwjevvxjs": { "title": "Saving a session", "d": "Where your work goes and how to find it again." },
+    "hqpUJQim5MM": { "title": "TeamSharing link", "d": "Getting the session in front of your staff and players." },
+    "3p_dipZk1oc": { "title": "Resetting your password", "d": "Separate account, separate password. Worth knowing where this is." },
+    "dJCN-1mfOhY": { "title": "Manage members", "d": "Adding and organising the coaches on your Session Planner account." },
+    "pgWc0yZtUCg": { "title": "Manage curriculum library", "d": "Where your club's age-group session folders are managed." },
+    "GSSweJZ0yCA": { "title": "Adding and revoking access", "d": "Turning access on and off when staff arrive or leave." },
+    "Wou9pmeXwJ8": { "title": "Edit club profile", "d": "Club details and branding inside Session Planner." }
+  }
+}

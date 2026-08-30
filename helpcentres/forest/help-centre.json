@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "partner": "forest",
+  "flow": "help-centre",
+
+  "title": "Nottingham Forest F.C. — Coach Development help centre",
+  "eyebrow": "Nottingham Forest F.C. &middot; Academy",
+  "h1": "Coach Development help centre",
+  "lead": "Everything you need to get going on your two tools: the <strong>learning platform</strong>, where your Forest modules and the Coaches&rsquo; Voice library live, and the <strong>Session Planner</strong>, where you build and share your sessions.",
+  "footer": "Nottingham Forest F.C. &middot; Coach Development",
+
+  "vars": {
+    "club": "Forest",
+    "lmsUrl": "https://nottingham-forest-fc.coachesvoice.com/",
+    "lmsHost": "nottingham-forest-fc.coachesvoice.com"
+  },
+
+  "sections": [
+    {
+      "id": "start",
+      "title": "Start here",
+      "note": "Three steps, about ten minutes",
+      "lead": "If you are new to Forest, or new to the platform, do these in order.",
+      "blocks": [
+        {
+          "type": "steps",
+          "steps": [
+            {
+              "h": "Accept your invitation",
+              "p": "You will get an email from Coaches&rsquo; Voice inviting you to the Nottingham Forest platform. Open it, click <strong>Accept invitation</strong> and set your own password.",
+              "small": "Nothing in your inbox? Check your junk folder first, then email <a href=\"mailto:{{supportEmail}}\">{{supportEmail}}</a> and we will resend it."
+            },
+            {
+              "h": "Log in",
+              "p": "From then on you log in at <a class=\"url\" id=\"lmsurl\" href=\"{{lmsUrl}}\">{{lmsHost}}</a> with your email and the password you just set. Worth bookmarking it.",
+              "small": "Forgotten it? Use <strong>Forgot password</strong> on the login screen &mdash; the reset email arrives in a couple of minutes."
+            },
+            {
+              "h": "Do these first",
+              "p": [
+                "Start with <strong>Nottingham Forest Introduction Video</strong> &mdash; the club&rsquo;s history and what it means to coach here, followed by eleven questions.",
+                "If you coach in the Youth Development Phase or above, move on to <strong>The 4 moments</strong>, our game model."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "id": "learning",
+      "title": "Your learning",
+      "note": "The Coaches&rsquo; Voice platform",
+      "lead": "The questions coaches ask most in their first fortnight.",
+      "blocks": [
+        {
+          "type": "faq",
+          "include": "lms-faq",
+          "add": [
+            {
+              "after": "module",
+              "item": {
+                "id": "learning-vs-reference",
+                "q": "What is the difference between &ldquo;The 4 moments&rdquo; and &ldquo;Game Model: Reference&rdquo;?",
+                "a": [
+                  "<p>Same game model, two different jobs.</p>",
+                  "<ul><li><strong>The 4 moments</strong> is the one you complete. It walks you through all four moments &mdash; In Possession, Transition to Defend, Out of Possession, Transition to Attack &mdash; and their pitch maps. Clips cannot be skipped, a pitch map only unlocks as complete once every clip on it has been watched, and the module is only finished when all seventy clips are done.</li><li><strong>Game Model: Reference</strong> is the one you come back to. The same eight pitch maps, grouped into In Possession, Out of Possession and Transitions, with no locks and no order. Jump straight to the clip you want, skip through it, close it.</li></ul>",
+                  "<p>They track separately. Dipping into the reference maps <strong>will not</strong> move your progress on the learning module, and it will not show up in anyone&rsquo;s report.</p>",
+                  "<p>The way to think about it: complete <em>The 4 moments</em> once, then live in <em>Reference</em> week to week.</p>"
+                ]
+              }
+            }
+          ]
+        },
+        { "type": "cards", "cards": ["coachTour"] }
+      ]
+    },
+
+    {
+      "id": "planner",
+      "title": "Session Planner",
+      "note": "Planning and sharing your sessions",
+      "lead": "Session Planner is a separate tool that sits alongside your learning platform. It is where you draw up a session, animate it and share it with your staff and players.",
+      "blocks": [
+        { "type": "faq", "include": "session-planner-faq", "open": "open" },
+        {
+          "type": "videos",
+          "heading": "Start with these seven",
+          "codes": "coachStarter",
+          "numbered": true,
+          "copy": {
+            "T3H9eZp78Nw": {
+              "d": "Take an existing session and make it yours instead of starting blank. This is how you will use the Forest curriculum folders."
+            }
+          }
+        },
+        {
+          "type": "callout",
+          "text": "<strong>The Forest curriculum folders are being built out.</strong> Once they are in, your age-group sessions will be waiting for you in Session Planner rather than something you build from scratch each week."
+        },
+        { "type": "cards", "cards": ["sessionPlannerHelp"] }
+      ]
+    },
+
+    {
+      "id": "help",
+      "title": "Still stuck?",
+      "nav": true,
+      "navLabel": "Help",
+      "lead": "Email <a href=\"mailto:{{supportEmail}}\" style=\"color:var(--red);font-weight:700;text-decoration:none\">{{supportEmail}}</a>. Tell us your name, the module or session you were in and what you saw on screen &mdash; it gets you an answer far quicker. Anything about the Forest content itself, speak to your Academy contact."
+    }
+  ]
+}

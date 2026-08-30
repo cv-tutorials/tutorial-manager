@@ -1,0 +1,78 @@
+{
+  "id": "lms-faq",
+  "_note": "The shared coach-facing FAQ for the Coaches' Voice LMS. TRUE FOR EVERY PARTNER — fix it here once and every help centre picks it up on the next build. Anything club-specific belongs in that partner's config under `add` or `override`, never in this file.",
+  "_vars": "{{club}}, {{lmsUrl}} and {{supportEmail}} are substituted from the partner config at build time.",
+
+  "items": [
+    {
+      "id": "where",
+      "q": "Where do I find my courses?",
+      "a": [
+        "<p>Everything sits under <strong>My Learning</strong> in the top bar &mdash; that is your home page. Your {{club}} modules and the Coaches&rsquo; Voice library are laid out as rows you scroll sideways through, using the arrows on the right of each row.</p>",
+        "<p><strong>My List</strong>, next to it, is your own saved shelf. See the question on saving below.</p>"
+      ]
+    },
+    {
+      "id": "cpd",
+      "q": "What are Season CPD Points, and how do I earn them?",
+      "a": [
+        "<p>The box at the top right of My Learning shows your <strong>Season CPD Points</strong>, your <strong>target</strong> for the season, and how much you have left to go.</p>",
+        "<p>You earn them by <strong>completing units</strong>, not by opening them. Each unit carries a value, and it lands in your total once the unit is finished. The bar underneath fills as you go.</p>",
+        "<p>Browsing reference material does not add points &mdash; that is deliberate, so you can dip into it as often as you like without it affecting anyone&rsquo;s record.</p>"
+      ]
+    },
+    {
+      "id": "module",
+      "q": "How does a module actually work?",
+      "a": [
+        "<p>A <strong>module</strong> is the course. Inside it are <strong>units</strong>, and inside each unit are <strong>lessons</strong> &mdash; a video, then a question about it.</p>",
+        "<p>The panel on the left lists every lesson with a circle beside it that ticks green as you go, so you can always see where you are. You need to <strong>watch each video through before the Continue button works</strong>; you cannot skip or fast-forward it.</p>",
+        "<p>The module page shows your <strong>progress percentage</strong> at the top, and an <strong>About</strong> tab next to Units if you want to know what the module covers before starting.</p>"
+      ]
+    },
+    {
+      "id": "resume",
+      "q": "Can I stop halfway through and pick it up later?",
+      "a": [
+        "<p>Yes, but <strong>finish the video you are on first</strong>.</p>",
+        "<p>Your place is saved lesson by lesson. Everything you have completed stays completed, and the module reopens where you left off, on any device. What does <strong>not</strong> save is a video you abandon part-way through &mdash; it only counts once it has run to the end, so if you close the tab mid-clip you will watch that one again from the start.</p>",
+        "<p>Short version: stop between lessons, not inside one.</p>"
+      ]
+    },
+    {
+      "id": "cv-content",
+      "q": "Where is the Coaches&rsquo; Voice content, and what is in it?",
+      "a": [
+        "<p>Scroll past your {{club}} modules on My Learning and you reach the Coaches&rsquo; Voice library, laid out in two rows.</p>",
+        "<ul><li><strong>Session Plans</strong>, sorted by who you coach: U8&ndash;U11, U12&ndash;U16, U17+ and Goalkeepers. Each plan carries the full detail &mdash; set-up, pitch dimensions, timings, and the coaching points worth focusing on in every practice.</li><li><strong>Content</strong>: Masterclasses, Coaching Sessions filmed on the grass, Webinars and Presentations, and Coaching Clinics.</li></ul>",
+        "<p>What sits behind those labels is worth knowing. The masterclasses are tactical breakdowns with coaches at the very top of the game &mdash; Jos&eacute; Mourinho, Xabi Alonso, Luis de la Fuente, Enzo Maresca and Emma Hayes among hundreds of others, across the men&rsquo;s and women&rsquo;s games. The on-the-grass sessions come from academies including Arsenal, Chelsea, Newcastle, Sevilla, Tottenham and Valencia, annotated so you can see the coaching points as they happen and hear the coach on why the session is built that way, what they were after and how they adapted it. Alongside them are presentations from specialists in strength and conditioning, psychology and leadership.</p>",
+        "<p>The point is the <em>how</em> and the <em>why</em>, not just the what. New content lands every week, so there is always a reason to come back.</p>",
+        "<p>It is there to be used, not completed. Take what is useful for the week you are planning.</p>"
+      ]
+    },
+    {
+      "id": "save",
+      "q": "How do I save something for later?",
+      "a": [
+        "<p>Use the save icon on a content card to add it to <strong>My List</strong>, the tab next to My Learning. It is your own shelf &mdash; nobody else sees it.</p>",
+        "<p>You can also send a link to another coach at your club. Copy the address from your browser and paste it to them; as long as they have an account, it opens straight on that piece of content.</p>"
+      ]
+    },
+    {
+      "id": "phone",
+      "q": "Can I use it on my phone?",
+      "a": [
+        "<p>Yes &mdash; it runs in the phone&rsquo;s browser, no app to install. Same login, and your progress is the same account, so you can watch a clip pitchside and finish the unit at home.</p>"
+      ]
+    },
+    {
+      "id": "video-stuck",
+      "q": "A video will not play, or Continue stays greyed out",
+      "a": [
+        "<p>Nine times out of ten it is one of these:</p>",
+        "<ul><li><strong>Continue is still greyed out</strong> &mdash; the video has not finished. It has to run to the end; scrubbing forward does not count.</li><li><strong>The video will not load</strong> &mdash; refresh the page, then try a different browser. Chrome and Safari are both fine.</li><li><strong>You are on the club network</strong> &mdash; a training ground firewall can block video. Try it on 4G or at home to rule it out.</li></ul>",
+        "<p>Still stuck? Email <a href=\"mailto:{{supportEmail}}\">{{supportEmail}}</a> and tell us the module, the unit and what you saw.</p>"
+      ]
+    }
+  ]
+}

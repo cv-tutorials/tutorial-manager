@@ -1,0 +1,91 @@
+{
+  "version": 1,
+  "partner": "forest",
+  "flow": "admin",
+
+  "title": "Nottingham Forest F.C. — Running the platform (club admin)",
+  "eyebrow": "Nottingham Forest F.C. &middot; Club administration",
+  "h1": "Running the Forest platform",
+  "lead": "For the people who administer the academy&rsquo;s platform rather than learn on it: adding coaches, publishing content and reading what the reporting tells you.",
+  "footer": "Nottingham Forest F.C. &middot; Club administration",
+
+  "sections": [
+    {
+      "id": "setup",
+      "title": "Where you work",
+      "nav": false,
+      "lead": "Everything below happens in <strong>Club Settings</strong>. Click your initials at the top right of the platform and choose it &mdash; that opens the admin area with its own sidebar down the left. Coaches never see any of it.",
+      "blocks": [
+        {
+          "type": "callout",
+          "text": "<strong>Admin access at Forest sits with the club, not with Coaches&rsquo; Voice.</strong> Anyone who needs it has to be given the Admin role on their account. If someone should have it and does not, ask whoever holds the club account rather than raising it with support."
+        }
+      ]
+    },
+
+    {
+      "id": "coaches",
+      "title": "Coaches",
+      "note": "Getting people on, and organising them",
+      "lead": "Start here in the week before an induction: get the invitations out early so nobody spends their first morning waiting on an email.",
+      "blocks": [
+        { "type": "cards", "cards": ["invite", "setup", "announcements"] }
+      ]
+    },
+
+    {
+      "id": "content",
+      "title": "Content",
+      "note": "Building it, and putting it in front of coaches",
+      "lead": "Content is built as <strong>modules</strong>, which hold <strong>units</strong>, which hold <strong>lessons</strong>. Publishing a module is not the last step &mdash; it also has to be added to a content rail before coaches see it on their home page.",
+      "blocks": [
+        { "type": "cards", "cards": ["content"] },
+        { "type": "callout", "use": "publishedNotVisible" }
+      ]
+    },
+
+    {
+      "id": "reporting",
+      "title": "Reporting",
+      "note": "What people have actually done",
+      "lead": "Reporting is where you check induction has landed: who has completed what, who has not started, and where each coach stands against the season CPD target.",
+      "blocks": [
+        { "type": "cards", "cards": ["reporting"] },
+        {
+          "type": "callout",
+          "text": "<strong>Reference material does not show up as progress.</strong> A coach can live in <em>Game Model: Reference</em> all season and it will not move a single number, by design. Only completed units count. Judge engagement on <em>The 4 moments</em> and the other modules, not on the reference maps."
+        }
+      ]
+    },
+
+    {
+      "id": "planner",
+      "title": "Session Planner",
+      "note": "A separate product, administered separately",
+      "lead": [
+        "Session Planner has its own club administration, unconnected to the learning platform. Adding a coach to one does <strong>not</strong> add them to the other, and the accounts are not linked &mdash; there is no single sign-on between them. Budget for doing both.",
+        "The four videos below are Session Planner&rsquo;s own, on their public channel. The <strong>curriculum library</strong> one is the relevant one for Forest: that is where the age-group folders are managed once they are built out."
+      ],
+      "blocks": [
+        {
+          "type": "videos",
+          "codes": "clubAdmin",
+          "copy": {
+            "pgWc0yZtUCg": { "d": "Where the Forest age-group folders will live once they are built." }
+          }
+        },
+        {
+          "type": "callout",
+          "text": "<strong>When someone leaves Forest, revoke both.</strong> Removing a coach from the learning platform leaves their Session Planner access untouched, and vice versa. Two products, two off-boarding steps."
+        }
+      ]
+    },
+
+    {
+      "id": "help",
+      "title": "Need a hand?",
+      "navLabel": "Help",
+      "lead": "Email <a href=\"mailto:{{supportEmail}}\" style=\"color:var(--red);font-weight:700;text-decoration:none\">{{supportEmail}}</a>, or go to your Coaches&rsquo; Voice contact for anything about the Forest content itself. Coaches looking for help with their own learning should be sent to the <a href=\"../help-centre/\" style=\"color:var(--red);font-weight:700;text-decoration:none\">coach help centre</a>."
+    }
+  ]
+}

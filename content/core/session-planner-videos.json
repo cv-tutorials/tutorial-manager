@@ -1,0 +1,59 @@
+{
+  "_source": "https://www.sportsessionplanner.com/my.mpl?a=help_center",
+  "_captured": "2026-08-30",
+  "_note": "Session Planner's in-product help centre sits behind a login, but every tutorial is a public video on the official SportSessionPlanner YouTube channel. All 33 codes below were verified via YouTube oEmbed on 2026-08-30 (author_name: SportSessionPlanner). Shared across every partner with Session Planner — Forest, Rush, Surf, Everton, Brentford, Vale, Utah, SLSG. Do not copy this list into a partner page; reference it.",
+  "_naming": "It is 'Session Planner' in all partner-facing copy. Never 'Sport Session Planner', never 'SSP'.",
+  "_watch": "https://www.youtube.com/watch?v=",
+
+  "coachStarter": [
+    "0GbOM0SNh7c", "0mvgiT-sdBQ", "-FAnt-giZ8E",
+    "T3H9eZp78Nw", "Nxiwjevvxjs", "hqpUJQim5MM", "3p_dipZk1oc"
+  ],
+  "clubAdmin": ["dJCN-1mfOhY", "pgWc0yZtUCg", "GSSweJZ0yCA", "Wou9pmeXwJ8"],
+
+  "sections": {
+    "Overview": [
+      { "code": "T3H9eZp78Nw", "title": "Global Library & Cloning a Session" },
+      { "code": "0GbOM0SNh7c", "title": "Intro to the SessionBuilder Tool" },
+      { "code": "-FAnt-giZ8E", "title": "Intro to Animation" },
+      { "code": "3p_dipZk1oc", "title": "Resetting Your Password" }
+    ],
+    "Club Accounts": [
+      { "code": "Wou9pmeXwJ8", "title": "Edit Club Profile - Club Admin" },
+      { "code": "pgWc0yZtUCg", "title": "Manage Curriculum Library - Club Admin" },
+      { "code": "dJCN-1mfOhY", "title": "Manage Members - Club Admin" },
+      { "code": "GSSweJZ0yCA", "title": "Adding and Revoking Access - Club Admin" }
+    ],
+    "Creating Content": [
+      { "code": "0mvgiT-sdBQ", "title": "Navigating the 3D Space" },
+      { "code": "AKDCCjvOVoQ", "title": "Players Tab" },
+      { "code": "ODt6fVD0sG0", "title": "Equipment Tab" },
+      { "code": "X3NHx9NzT9o", "title": "Lines Tab" },
+      { "code": "-dnOboDdHJU", "title": "Kits Tab" },
+      { "code": "__7K1ZzCKqM", "title": "Pitches Tab" }
+    ],
+    "Features, Tips & Tricks": [
+      { "code": "F6XGgVa1aew", "title": "Camera Position" },
+      { "code": "Y4MlTDS8siY", "title": "Switching Between Shapes and Avatars" },
+      { "code": "MgE6mUyRP5I", "title": "Customising Equipment" },
+      { "code": "7f7ue-uxAa0", "title": "Multiple Screens" },
+      { "code": "pX6RvEs1J68", "title": "Shaded Pitch Areas" },
+      { "code": "tV8wQW9cCRo", "title": "Pinning Lines" },
+      { "code": "TgXktpC6Vy0", "title": "Keyframe Duration" },
+      { "code": "F8bTFjE4b7Q", "title": "Object Tracing" },
+      { "code": "RJFn-q8Bnco", "title": "Syncing Camera Positions to Keyframes" },
+      { "code": "PVDkKqy5CmI", "title": "Syncing Objects to Keyframes" },
+      { "code": "Yyj6ySRJUck", "title": "Creating a Numbered Formation" },
+      { "code": "XJsLfbsskG4", "title": "Elevate the Ball" },
+      { "code": "F6QuiK66CmY", "title": "Mirroring Player Body Positions" }
+    ],
+    "Sharing & Finalizing Content": [
+      { "code": "Nxiwjevvxjs", "title": "Saving a Session" },
+      { "code": "kIlbWbU8ri0", "title": "Adjusting Sharing Status" },
+      { "code": "iXrRWCxqyTs", "title": "Saving an Animation" },
+      { "code": "fHKbT0n6ptw", "title": "Deleting a Session" },
+      { "code": "TeGr8nblAXE", "title": "Adding Videos or Images to a Session" },
+      { "code": "hqpUJQim5MM", "title": "TeamSharing Link" }
+    ]
+  }
+}

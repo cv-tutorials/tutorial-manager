@@ -22,6 +22,18 @@ hosted pages.
   must be synced via `npm run sync-builder` after any engine change.
 - **GitHub Actions** (`.github/workflows/deploy.yml`) — deploys `dist/` to Pages on push to main.
 
+### Help centres (second engine)
+- **Engine** (`engine/helpcentre.template.html`) + **shared content** (`content/core/*.json`) +
+  **per-partner config** (`helpcentres/<slug>/<flow>.json`) → `dist/<slug>/<flow>/index.html`.
+  Built by `scripts/helpcentre.js`, chained from `build.js`. Same philosophy as the tutorial
+  engine: the answers that are true for every partner live once in `content/core/`, and a partner
+  config includes / omits / overrides / adds. **Nothing club-specific in `content/core/`.**
+- Session Planner is called **Session Planner** in all partner-facing copy — never "SSP", never
+  "Sport Session Planner". Its 33 tutorials are public YouTube videos catalogued in
+  `content/core/session-planner-videos.json`; reference them, never paste codes into a config.
+- Partner logos are inlined twice per page, so `helpcentre.js` downscales them to 300px. Do not
+  bypass it — a 1500px crest doubles the page.
+
 ## Non-negotiables
 - **Engine is the single source of truth.** Change design/behaviour in the engine template,
   then run `npm run sync-builder` to update the builder's copy.

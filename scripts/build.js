@@ -314,6 +314,13 @@ try {
   console.error('Article generation failed (tutorials built fine):', e.message);
 }
 
+// Partner help centres (engine + content/core, see scripts/helpcentre.js)
+try {
+  execSync(`node "${path.join(__dirname, 'helpcentre.js')}"`, { stdio: 'inherit' });
+} catch (e) {
+  console.error('Help centre generation failed (tutorials built fine):', e.message);
+}
+
 // Visual highlight-box editors (one per tutorial) — used by the team to fix boxes without code
 try {
   execSync(`node "${path.join(__dirname, 'editor.js')}"`, { stdio: 'inherit' });

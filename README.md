@@ -9,7 +9,12 @@ re-branded per partner, and embed them in Freshdesk Knowledge Base articles.
 npm run build              # builds all tutorials → dist/
 npm run iframe efl/invite-users   # prints the Freshdesk <iframe> snippet
 npm run sync-builder       # syncs engine template into builder
+npm run helpcentre         # builds only the partner help centres
 ```
+
+Two engines live here: **tutorials** (guided click-throughs, `tutorials/`) and
+**help centres** (pages of answers, `helpcentres/` — see `helpcentres/README.md`).
+`npm run build` builds both.
 
 ## Project structure
 
@@ -27,9 +32,13 @@ builder/builder.html         # visual builder for PS staff (no-code)
 scripts/build.js             # build pipeline
 scripts/sync-builder.js      # syncs engine → builder embedded copy
 
+content/core/               # shared help-centre answers, inherited by every partner
+helpcentres/<partner>/
+  <flow>.json              # help centre config (sections + blocks)
+
 dist/<partner>/<flow>/
-  index.html               # standalone tutorial (full page)
-  embed.html               # iframe-optimised (no bg, auto-height)
+  index.html               # standalone tutorial or help centre (full page)
+  embed.html               # iframe-optimised (no bg, auto-height) — tutorials only
 ```
 
 ## Adding a new partner

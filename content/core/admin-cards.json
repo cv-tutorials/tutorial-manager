@@ -1,0 +1,55 @@
+{
+  "id": "admin-cards",
+  "_note": "The five generic Coaches' Voice club-admin articles on Freshdesk, plus the callouts support ends up repeating to every club. Shared across partners — if an article ID changes, change it here.",
+
+  "cards": {
+    "setup": {
+      "who": "Guide",
+      "tt": "Setting up your club",
+      "td": "Club name, timezone, brand colours and logo.",
+      "href": "https://cechelp.coachesvoice.com/support/solutions/articles/103000411230"
+    },
+    "invite": {
+      "who": "Guide",
+      "tt": "Inviting and managing coaches",
+      "td": "Invite one by one or by CSV, set roles, resend or remove an invitation, and see how many of your seats are used.",
+      "href": "https://cechelp.coachesvoice.com/support/solutions/articles/103000411228"
+    },
+    "content": {
+      "who": "Guide",
+      "tt": "Uploading and publishing content",
+      "td": "Build a module and its units, then get it onto your coaches&rsquo; home page.",
+      "href": "https://cechelp.coachesvoice.com/support/solutions/articles/103000411231"
+    },
+    "announcements": {
+      "who": "Guide",
+      "tt": "Creating announcements",
+      "td": "The message that greets coaches when they log in. Useful in induction week.",
+      "href": "https://cechelp.coachesvoice.com/support/solutions/articles/103000411226"
+    },
+    "reporting": {
+      "who": "Guide",
+      "tt": "Reviewing your coaches&rsquo; reports",
+      "td": "Seat usage, CPD progress and per-coach activity, with an export.",
+      "href": "https://cechelp.coachesvoice.com/support/solutions/articles/103000411229"
+    },
+    "sessionPlannerHelp": {
+      "who": "Help centre",
+      "tt": "Session Planner tutorials",
+      "td": "Every guide for the tool itself. Log in to Session Planner first.",
+      "href": "https://www.sportsessionplanner.com/my.mpl?a=help_center"
+    },
+    "coachTour": {
+      "who": "Video &middot; 2 min",
+      "tt": "A tour of your platform",
+      "td": "Rather watch than read? The same ground, in two minutes.",
+      "href": "https://cechelp.coachesvoice.com/support/solutions/articles/103000411620"
+    }
+  },
+
+  "callouts": {
+    "whereYouWork": "Everything below happens in <strong>Club Settings</strong>. Click your initials at the top right of the platform and choose it &mdash; that opens the admin area with its own sidebar down the left. Coaches never see any of it.",
+    "publishedNotVisible": "<strong>A module set to Published is not necessarily visible.</strong> It appears for coaches once it sits in a content rail that is itself published. If a coach says they cannot find something you just published, that is almost always why.",
+    "referenceNoProgress": "<strong>Reference material does not show up as progress.</strong> A coach can live in reference content all season and it will not move a single number, by design. Only completed units count. Judge engagement on the modules you set, not on the reference maps."
+  }
+}

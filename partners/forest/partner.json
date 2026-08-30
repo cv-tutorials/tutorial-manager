@@ -1,0 +1,9 @@
+{
+  "name": "Nottingham Forest F.C.",
+  "shortName": "Forest",
+  "primary": "#DD0000",
+  "accent": "#DD0000",
+  "email": "support@coachesvoice.com",
+  "logo": "logo.png",
+  "languages": ["en"]
+}
