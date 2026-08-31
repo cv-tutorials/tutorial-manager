@@ -1,0 +1,9 @@
+{
+  "name": "Coaches' Voice",
+  "shortName": "Interno",
+  "primary": "#333F48",
+  "accent": "#FF6600",
+  "email": "support@coachesvoice.com",
+  "logo": "logo.svg",
+  "languages": ["es"]
+}

@@ -1,0 +1,291 @@
+{
+  "version": 2,
+  "partner": "internal",
+  "flow": "crear-club",
+  "title": {
+    "es": "Cómo crear un club"
+  },
+  "steps": [
+    {
+      "img": "screenshots/01-clubes.png",
+      "ar": 2.005,
+      "section": "Antes de empezar",
+      "cx": 50,
+      "cy": 50,
+      "w": 60,
+      "h": 40,
+      "z": 1,
+      "static": true,
+      "noSpot": true,
+      "es": {
+        "t": "Cómo está organizada la plataforma",
+        "d": "Un centro (o hub) agrupa varios clubes que comparten características — por ejemplo ECNL, Proyecto Origen o Clubes LATAM. Dentro de cada centro viven los clubes: equipos, academias y federaciones. Todo club tiene que pertenecer a un centro."
+      }
+    },
+    {
+      "img": "screenshots/01-clubes.png",
+      "ar": 2.005,
+      "section": "Antes de empezar",
+      "cx": 33,
+      "cy": 17.4,
+      "w": 5.5,
+      "h": 5.5,
+      "z": 1.8,
+      "static": false,
+      "es": {
+        "t": "Entra en Clubes",
+        "d": "En el menú superior de app.coachesvoice.com, haz clic en \"Clubes\"."
+      }
+    },
+    {
+      "img": "screenshots/01-clubes.png",
+      "ar": 2.005,
+      "section": "Antes de empezar",
+      "cx": 87.8,
+      "cy": 52.3,
+      "w": 8.5,
+      "h": 6.5,
+      "z": 1.6,
+      "static": false,
+      "es": {
+        "t": "Empieza un club nuevo",
+        "d": "Sube un poco en la página y haz clic en \"Crear Club\", arriba a la derecha del listado."
+      }
+    },
+    {
+      "img": "screenshots/02-form-vacio.png",
+      "ar": 2.005,
+      "section": "Datos del club",
+      "cx": 55.5,
+      "cy": 26.5,
+      "w": 42,
+      "h": 6.5,
+      "z": 1.4,
+      "static": false,
+      "es": {
+        "t": "Elige el estado",
+        "d": "Por defecto viene \"Contract signed\". Cámbialo a \"Trial period\" si es una demo o una prueba — que es el caso habitual cuando le presentas la plataforma a un club que todavía no la ha comprado."
+      }
+    },
+    {
+      "img": "screenshots/03-titulo-subdominio.png",
+      "ar": 2.005,
+      "section": "Datos del club",
+      "cx": 55.5,
+      "cy": 12.0,
+      "w": 42,
+      "h": 17,
+      "z": 1.4,
+      "static": false,
+      "es": {
+        "t": "Título y subdominio",
+        "d": "Escribe el nombre del club. El subdominio se genera solo a partir del título, pero puedes editarlo — solo admite minúsculas, números y guiones. Es la dirección con la que entrarán: nombre.coachesvoice.com."
+      }
+    },
+    {
+      "img": "screenshots/03-titulo-subdominio.png",
+      "ar": 2.005,
+      "section": "Datos del club",
+      "cx": 55.5,
+      "cy": 30.0,
+      "w": 42,
+      "h": 7,
+      "z": 1.4,
+      "static": false,
+      "es": {
+        "t": "Zona horaria",
+        "d": "Viene en Europe/London por defecto. Cámbiala a la del club — por ejemplo América/Lima (PET)."
+      }
+    },
+    {
+      "img": "screenshots/03-titulo-subdominio.png",
+      "ar": 2.005,
+      "section": "Datos del club",
+      "cx": 41,
+      "cy": 57.5,
+      "w": 11,
+      "h": 6,
+      "z": 1.6,
+      "static": false,
+      "es": {
+        "t": "Genera la contraseña de soporte",
+        "d": "Haz clic en \"Generar contraseña\". No hace falta que la guardes: es la credencial interna de soporte de CV, no la del club."
+      }
+    },
+    {
+      "img": "screenshots/05-asientos.png",
+      "ar": 2.005,
+      "section": "Datos del club",
+      "cx": 55.5,
+      "cy": 28.5,
+      "w": 40,
+      "h": 6.5,
+      "z": 1.5,
+      "static": false,
+      "es": {
+        "t": "Asígnalo a un centro",
+        "d": "Abre \"Centro\" y elige el hub al que pertenece — por ejemplo Clubes LATAM. Este paso es obligatorio: un club siempre va dentro de un centro."
+      }
+    },
+    {
+      "img": "screenshots/05-asientos.png",
+      "ar": 2.005,
+      "section": "Datos del club",
+      "cx": 55.5,
+      "cy": 42.5,
+      "w": 40,
+      "h": 6.5,
+      "z": 1.5,
+      "static": false,
+      "es": {
+        "t": "Asientos máximos",
+        "d": "Es el tope de personas que el club puede invitar. Para una demo, pon 5 o 7 — suficiente para que prueben y para que quepa algún administrador extra, sin que inviten a medio club."
+      }
+    },
+    {
+      "img": "screenshots/06-funciones.png",
+      "ar": 2.005,
+      "section": "Funciones",
+      "cx": 50,
+      "cy": 50,
+      "w": 60,
+      "h": 40,
+      "z": 1,
+      "static": true,
+      "noSpot": true,
+      "es": {
+        "t": "Los colores del tema se dejan para después",
+        "d": "Más abajo aparecen los colores del banner y de la interfaz. No los toques ahora: se ajustan cuando el club te manda su logo y sus lineamientos de marca. Sigue hasta las funciones."
+      }
+    },
+    {
+      "img": "screenshots/06-funciones.png",
+      "ar": 2.005,
+      "section": "Funciones",
+      "cx": 50,
+      "cy": 50,
+      "w": 60,
+      "h": 40,
+      "z": 1,
+      "static": true,
+      "noSpot": true,
+      "es": {
+        "t": "Funciones del hub y del club",
+        "d": "Aquí están todos los subproductos de la plataforma. Unos son estéticos y otros dan capacidades reales — invitar, administrar, cobrar. En Estados Unidos se usan para definir el precio, así que vale la pena entender qué hace cada uno antes de activarlos a ojo."
+      }
+    },
+    {
+      "img": "screenshots/07-descubrir.png",
+      "ar": 2.005,
+      "section": "Funciones",
+      "cx": 40.5,
+      "cy": 36,
+      "w": 68,
+      "h": 9,
+      "z": 1.3,
+      "static": false,
+      "es": {
+        "t": "Apaga las dos pestañas \"Descubrir\"",
+        "d": "Desactiva \"Mostrar pestaña Descubrir: Eventos\" y \"Mostrar pestaña Descubrir: Módulos\". Si las dejas encendidas en un club recién creado, se ven vacías y queda mal."
+      }
+    },
+    {
+      "img": "screenshots/08-crear.png",
+      "ar": 2.005,
+      "section": "Funciones",
+      "cx": 33.5,
+      "cy": 47.5,
+      "w": 54,
+      "h": 8,
+      "z": 1.3,
+      "static": false,
+      "es": {
+        "t": "Activa Reglas y Traducciones",
+        "d": "\"Reglas\" habilita esa sección dentro de Club Admin. \"Habilitar traducciones\" permite que el club configure el sitio en otro idioma — imprescindible para clubes que no trabajan en inglés."
+      }
+    },
+    {
+      "img": "screenshots/08-crear.png",
+      "ar": 2.005,
+      "section": "Funciones",
+      "cx": 90.5,
+      "cy": 77.5,
+      "w": 6.5,
+      "h": 6,
+      "z": 1.9,
+      "static": false,
+      "es": {
+        "t": "Crea el club",
+        "d": "Haz clic en \"Crear\", abajo a la derecha. Te llegará un correo de confirmación de que el club quedó creado."
+      }
+    },
+    {
+      "img": "screenshots/09-club-creado.png",
+      "ar": 2.005,
+      "section": "Últimos pasos",
+      "cx": 24,
+      "cy": 45.4,
+      "w": 34,
+      "h": 5.5,
+      "z": 1.4,
+      "static": false,
+      "es": {
+        "t": "El club ya existe",
+        "d": "Ahora estás en \"Editar Club\" y aparecen pestañas nuevas: Gestor de Activos, Reglas, Usuarios y Facturación. Desde aquí terminas de configurarlo."
+      }
+    },
+    {
+      "img": "screenshots/10-activos.png",
+      "ar": 2.005,
+      "section": "Últimos pasos",
+      "cx": 87.5,
+      "cy": 47,
+      "w": 8.5,
+      "h": 5.5,
+      "z": 1.7,
+      "static": false,
+      "es": {
+        "t": "Sube el logo del club",
+        "d": "En \"Gestor de Activos\", borra el avatar que viene por defecto con los tres puntos → Eliminar, y crea uno nuevo con el logo del club. Ideal en PNG con fondo transparente. Pídeselo al club junto con sus lineamientos de marca: se ve mucho mejor y va más rápido que si lo hacen ellos."
+      }
+    },
+    {
+      "img": "screenshots/09-club-creado.png",
+      "ar": 2.005,
+      "section": "Últimos pasos",
+      "cx": 88.6,
+      "cy": 39.3,
+      "w": 10,
+      "h": 7,
+      "z": 1.6,
+      "static": false,
+      "es": {
+        "t": "Entra al club",
+        "d": "Haz clic en \"Access Club\" para abrir la plataforma como la verá el club. Si no abre a la primera, cierra la pestaña y vuelve a hacer clic."
+      }
+    },
+    {
+      "img": "screenshots/11-plataforma.png",
+      "ar": 2.005,
+      "section": "Últimos pasos",
+      "cx": 50,
+      "cy": 50,
+      "w": 60,
+      "h": 40,
+      "z": 1,
+      "static": true,
+      "noSpot": true,
+      "es": {
+        "t": "Listo — el club está creado",
+        "d": "La plataforma abre vacía, y eso es normal: todavía no tiene contenido. El siguiente paso es publicárselo con rails y módulos, que va en otro tutorial."
+      }
+    }
+  ],
+  "ui": {
+    "es": {
+      "doneT": "Club creado",
+      "doneD": "Ya tienes el club montado, asignado a su centro, con las funciones correctas y con su logo. Falta darle contenido: eso se hace desde Club Admin creando rails y módulos — mira el tutorial de subir y publicar contenido.",
+      "lead": "Uso interno. Cómo crear un club desde cero en app.coachesvoice.com: datos, centro, asientos, funciones y marca."
+    }
+  }
+}

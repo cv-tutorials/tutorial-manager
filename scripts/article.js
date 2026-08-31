@@ -43,8 +43,12 @@ function build({ partner, flow, dir }) {
   let brand = { name: partner.toUpperCase(), accent: '#FF6600', primary: '#333F48', email: '' };
   try { brand = { ...brand, ...JSON.parse(fs.readFileSync(path.join(PARTNERS_DIR, config.partner || partner, 'partner.json'), 'utf8')) }; } catch {}
 
-  const title = (config.title && (config.title.en || Object.values(config.title)[0])) || flow;
-  const ui = (config.ui && config.ui.en) || {};
+  // Prefer the partner's first declared language, falling back to English, then to
+  // whatever the config actually has — so Spanish-only tutorials render too.
+  const lang = (brand.languages && brand.languages[0]) || 'en';
+  const pick = (obj) => (obj && (obj[lang] || obj.en || Object.values(obj)[0])) || {};
+  const title = (config.title && (config.title[lang] || config.title.en || Object.values(config.title)[0])) || flow;
+  const ui = pick(config.ui);
   const lead = ui.lead || '';
   const { accent: acc, primary: nav } = brand;
   const steps = config.steps;
@@ -92,7 +96,7 @@ body{font-family:"Inter",-apple-system,"Segoe UI",Arial,sans-serif;color:${nav};
   let lastSec = null;
   steps.forEach((s, i) => {
     if (s.section && s.section !== lastSec) { html.push(`<div class="sec">${s.section}</div>`); lastSec = s.section; }
-    const loc = s.en || {};
+    const loc = pick(s);
     const img = dataUri(path.join(dir, s.img));
     let hl = '';
     if (!s.noSpot) {
