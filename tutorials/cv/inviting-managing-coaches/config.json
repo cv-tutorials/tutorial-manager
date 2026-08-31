@@ -3,7 +3,8 @@
   "partner": "cv",
   "flow": "inviting-managing-coaches",
   "title": {
-    "en": "Inviting and managing coaches"
+    "en": "Inviting and managing coaches",
+    "es": "Invitar y gestionar coaches"
   },
   "steps": [
     {
@@ -19,6 +20,10 @@
       "en": {
         "t": "Open your account menu",
         "d": "Click your initials at the top-right corner of the screen."
+      },
+      "es": {
+        "t": "Abre el menú de tu cuenta",
+        "d": "Haz clic en tus iniciales, en la esquina superior derecha de la pantalla."
       }
     },
     {
@@ -34,6 +39,10 @@
       "en": {
         "t": "Go to Club Settings",
         "d": "Select \"Club Settings\" from the dropdown menu."
+      },
+      "es": {
+        "t": "Ve a \"Club Settings\"",
+        "d": "Selecciona \"Club Settings\" en el menú desplegable."
       }
     },
     {
@@ -49,6 +58,10 @@
       "en": {
         "t": "Open My Coaches",
         "d": "In the left sidebar under My Club, click \"My Coaches\" — this is where you invite and manage everyone."
+      },
+      "es": {
+        "t": "Abre \"My Coaches\"",
+        "d": "En la barra lateral izquierda, bajo \"My Club\", haz clic en \"My Coaches\": aquí invitas y gestionas a todos."
       }
     },
     {
@@ -64,6 +77,10 @@
       "en": {
         "t": "Start an invite",
         "d": "Click the \"Invite\" button at the top-right of the coaches panel."
+      },
+      "es": {
+        "t": "Inicia una invitación",
+        "d": "Haz clic en el botón \"Invite\", arriba a la derecha del panel de coaches."
       }
     },
     {
@@ -79,6 +96,10 @@
       "en": {
         "t": "Choose Email",
         "d": "Select \"Email\" to invite coaches by their email address. (Use \"CSV\" to upload a large list at once.)"
+      },
+      "es": {
+        "t": "Elige \"Email\"",
+        "d": "Selecciona \"Email\" para invitar coaches por correo. (Usa \"CSV\" para subir una lista grande de una sola vez.)"
       }
     },
     {
@@ -94,6 +115,10 @@
       "en": {
         "t": "Enter email addresses",
         "d": "Type one or more coach emails, separated by commas or new lines. You can invite several at once."
+      },
+      "es": {
+        "t": "Ingresa los correos",
+        "d": "Escribe uno o más correos de coaches, separados por comas o saltos de línea. Puedes invitar a varios a la vez."
       }
     },
     {
@@ -109,6 +134,10 @@
       "en": {
         "t": "Set the role and send",
         "d": "Choose the role — \"Coach\" or \"Admin\" — then click \"Invite\". New invites are added to the queue."
+      },
+      "es": {
+        "t": "Define el rol y envía",
+        "d": "Elige el rol, \"Coach\" o \"Admin\", y haz clic en \"Invite\". Las nuevas invitaciones se suman a la cola."
       }
     },
     {
@@ -125,6 +154,10 @@
       "en": {
         "t": "Your coach is invited",
         "d": "Back in the list, invited coaches show as \"Pending\" until they accept; those who've joined show as \"Active\". This list is also where you manage everyone."
+      },
+      "es": {
+        "t": "Tu coach ya está invitado",
+        "d": "De vuelta en la lista, los coaches invitados aparecen como \"Pending\" hasta que aceptan; los que ya entraron figuran como \"Active\". Desde esta lista también gestionas a todos."
       }
     },
     {
@@ -140,6 +173,10 @@
       "en": {
         "t": "Open a coach's menu",
         "d": "Next to any coach, click the \"…\" button to open its actions menu."
+      },
+      "es": {
+        "t": "Abre el menú de un coach",
+        "d": "Junto a cualquier coach, haz clic en el botón \"…\" para abrir su menú de acciones."
       }
     },
     {
@@ -155,6 +192,10 @@
       "en": {
         "t": "Resend or remove",
         "d": "For a pending coach you can \"Resend Invite\" or \"Remove Invite\". For an active coach, the same menu lets you change their role or remove them from your club."
+      },
+      "es": {
+        "t": "Reenvía o elimina",
+        "d": "Para un coach pendiente puedes usar \"Resend Invite\" o \"Remove Invite\". Para un coach activo, el mismo menú te permite cambiar su rol o quitarlo de tu club."
       }
     },
     {
@@ -170,6 +211,10 @@
       "en": {
         "t": "Organise coaches into groups",
         "d": "You can also group coaches by team, age or squad. Open \"Coach Groups\" and click \"Create Group\"."
+      },
+      "es": {
+        "t": "Organiza a los coaches en grupos",
+        "d": "También puedes agrupar coaches por equipo, edad o plantel. Abre \"Coach Groups\" y haz clic en \"Create Group\"."
       }
     },
     {
@@ -185,6 +230,10 @@
       "en": {
         "t": "Name and create the group",
         "d": "Give it a name — like \"Under 12's\" — and click \"Create\". You can then add coaches and assign content to the whole group at once."
+      },
+      "es": {
+        "t": "Nombra y crea el grupo",
+        "d": "Ponle un nombre, como \"Under 12's\", y haz clic en \"Create\". Luego puedes añadir coaches y asignar contenido a todo el grupo de una vez."
       }
     }
   ],
@@ -193,6 +242,11 @@
       "doneT": "You're set up to manage your coaches!",
       "doneD": "You can now invite coaches by email, set their roles, resend or remove invites, and organise everyone into groups. Repeat the invite step any time you add new coaches.",
       "lead": "For club admins. Invite coaches by email, manage their status and roles, and organise them into groups."
+    },
+    "es": {
+      "doneT": "¡Ya puedes gestionar a tus coaches!",
+      "doneD": "Ahora puedes invitar coaches por correo, definir sus roles, reenviar o eliminar invitaciones y organizar a todos en grupos. Repite la invitación cada vez que sumes coaches nuevos.",
+      "lead": "Para admins de club. Invita coaches por correo, gestiona su estado y sus roles, y organízalos en grupos."
     }
   }
 }

@@ -3,7 +3,8 @@
   "partner": "cv",
   "flow": "setting-up-your-club",
   "title": {
-    "en": "Setting up your club"
+    "en": "Setting up your club",
+    "es": "Cómo configurar tu club"
   },
   "steps": [
     {
@@ -18,6 +19,10 @@
       "en": {
         "t": "Open Club Settings",
         "d": "Click your initials at the top-right, then select \"Club Settings\"."
+      },
+      "es": {
+        "t": "Abre \"Club Settings\"",
+        "d": "Haz clic en tus iniciales arriba a la derecha y selecciona \"Club Settings\"."
       }
     },
     {
@@ -32,6 +37,10 @@
       "en": {
         "t": "Name your club",
         "d": "In Organisation Settings, enter your club's name."
+      },
+      "es": {
+        "t": "Ponle nombre a tu club",
+        "d": "En \"Organisation Settings\", escribe el nombre de tu club."
       }
     },
     {
@@ -46,6 +55,10 @@
       "en": {
         "t": "Set your timezone",
         "d": "Choose your timezone so dates and deadlines show correctly for your coaches."
+      },
+      "es": {
+        "t": "Define tu zona horaria",
+        "d": "Elige tu zona horaria para que las fechas y los plazos se muestren correctamente a tus coaches."
       }
     },
     {
@@ -60,6 +73,10 @@
       "en": {
         "t": "Choose your brand colours",
         "d": "Set your theme colours. \"Primary\" is your main brand colour, used across the admin and your coaches' experience."
+      },
+      "es": {
+        "t": "Elige los colores de tu marca",
+        "d": "Configura los colores del tema. \"Primary\" es tu color principal de marca, y se usa en el panel de administración y en la experiencia de tus coaches."
       }
     },
     {
@@ -74,6 +91,10 @@
       "en": {
         "t": "Upload your club logo",
         "d": "Click to upload your logo (SVG, PNG or JPG), or drag and drop it. It replaces the placeholder across the platform."
+      },
+      "es": {
+        "t": "Sube el logo de tu club",
+        "d": "Haz clic para subir tu logo (SVG, PNG o JPG), o arrástralo y suéltalo. Reemplaza el logo genérico en toda la plataforma."
       }
     },
     {
@@ -88,6 +109,10 @@
       "en": {
         "t": "Save your settings",
         "d": "Once your details, colours and logo are set, click \"Update\" to save."
+      },
+      "es": {
+        "t": "Guarda tu configuración",
+        "d": "Cuando tus datos, colores y logo estén listos, haz clic en \"Update\" para guardar."
       }
     }
   ],
@@ -96,6 +121,11 @@
       "doneT": "Your club is set up!",
       "doneD": "Your club name, timezone, brand colours and logo are saved. You can update these from Club Settings at any time.",
       "lead": "For club admins. Add your club's name, timezone, brand colours and logo so the platform feels like yours."
+    },
+    "es": {
+      "doneT": "¡Tu club está configurado!",
+      "doneD": "El nombre de tu club, la zona horaria, los colores de marca y el logo quedaron guardados. Puedes actualizarlos en cualquier momento desde \"Club Settings\".",
+      "lead": "Para administradores de club. Añade el nombre, la zona horaria, los colores de marca y el logo de tu club para que la plataforma se sienta tuya."
     }
   }
 }

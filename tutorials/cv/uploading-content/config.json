@@ -3,7 +3,8 @@
   "partner": "cv",
   "flow": "uploading-content",
   "title": {
-    "en": "Uploading and publishing your content"
+    "en": "Uploading and publishing your content",
+    "es": "Cómo subir y publicar tu contenido"
   },
   "steps": [
     {
@@ -19,6 +20,10 @@
       "en": {
         "t": "Modules are your building blocks",
         "d": "A module is a course your coaches complete — made of units, which are made of lessons. Everything in this guide lives in the left-hand menu of Club Settings. Start by clicking \"Modules\"."
+      },
+      "es": {
+        "t": "Los módulos son tus bloques de construcción",
+        "d": "Un módulo es un curso que tus coaches completan: se compone de unidades, que a su vez se componen de lecciones. Todo lo de esta guía vive en el menú izquierdo de \"Club Settings\". Empieza haciendo clic en \"Modules\"."
       }
     },
     {
@@ -34,6 +39,10 @@
       "en": {
         "t": "Start a new module",
         "d": "Click \"Create Module\". Your work is saved as a draft automatically while you build."
+      },
+      "es": {
+        "t": "Crea un módulo nuevo",
+        "d": "Haz clic en \"Create Module\". Tu trabajo se guarda automáticamente como borrador mientras lo construyes."
       }
     },
     {
@@ -49,6 +58,10 @@
       "en": {
         "t": "Describe your module",
         "d": "Give it a clear title and a short description. You can credit a coach, and keep the status \"Unpublished\" until it's ready."
+      },
+      "es": {
+        "t": "Describe tu módulo",
+        "d": "Ponle un título claro y una descripción breve. Puedes acreditar a un coach, y mantener el estado en \"Unpublished\" hasta que esté listo."
       }
     },
     {
@@ -64,6 +77,10 @@
       "en": {
         "t": "Cover image, certificate and CPD",
         "d": "Upload a cover image (SVG, PNG or JPG), optionally award a certificate, and set CPD points — by default they total up automatically from each unit."
+      },
+      "es": {
+        "t": "Imagen de portada, certificado y CPD",
+        "d": "Sube una imagen de portada (SVG, PNG o JPG), otorga un certificado si quieres y define los puntos CPD; por defecto se suman automáticamente desde cada unidad."
       }
     },
     {
@@ -79,6 +96,10 @@
       "en": {
         "t": "Create your first unit",
         "d": "In the Units section, click \"Create Unit\" to open the unit builder."
+      },
+      "es": {
+        "t": "Crea tu primera unidad",
+        "d": "En la sección \"Units\", haz clic en \"Create Unit\" para abrir el constructor de unidades."
       }
     },
     {
@@ -94,6 +115,10 @@
       "en": {
         "t": "Set how the unit works",
         "d": "Give the unit its own CPD points and estimated duration. Optionally add a time limit, or enable \"Free navigation\" so coaches can move between lessons in any order — otherwise they complete them in sequence."
+      },
+      "es": {
+        "t": "Configura cómo funciona la unidad",
+        "d": "Asigna a la unidad sus propios puntos CPD y una duración estimada. Puedes añadir un límite de tiempo, o activar \"Free navigation\" para que los coaches se muevan entre lecciones en cualquier orden; si no, las completan en secuencia."
       }
     },
     {
@@ -109,6 +134,10 @@
       "en": {
         "t": "Build lessons from six content types",
         "d": "Add lessons, then fill each one with items: Question, Video, Article, PDF, External Video or SCORM. A typical lesson is a video followed by a question."
+      },
+      "es": {
+        "t": "Construye lecciones con seis tipos de contenido",
+        "d": "Añade lecciones y llena cada una con elementos: \"Question\", \"Video\", \"Article\", \"PDF\", \"External Video\" o \"SCORM\". Una lección típica es un video seguido de una pregunta."
       }
     },
     {
@@ -125,6 +154,10 @@
       "en": {
         "t": "Set the pass mark and save",
         "d": "Use \"Percentage To Pass\" to set how much of the unit a coach must complete, then click \"Create Unit\". You can Preview it first, exactly as a coach would see it."
+      },
+      "es": {
+        "t": "Define el porcentaje para aprobar y guarda",
+        "d": "Usa \"Percentage To Pass\" para definir cuánto de la unidad debe completar un coach, y luego haz clic en \"Create Unit\". Antes puedes verla con \"Preview\", exactamente como la vería un coach."
       }
     },
     {
@@ -140,6 +173,10 @@
       "en": {
         "t": "Your module is built — now get it in front of coaches",
         "d": "Publishing a module doesn't make it visible on its own. Coaches see content through Content Rails — themed rows shown together under one title. Back in the left menu, click \"Content Rails\"."
+      },
+      "es": {
+        "t": "Tu módulo está listo — ahora muéstraselo a los coaches",
+        "d": "Publicar un módulo no lo hace visible por sí solo. Los coaches ven el contenido a través de los rails de contenido: filas temáticas agrupadas bajo un mismo título. De vuelta en el menú izquierdo, haz clic en \"Content Rails\"."
       }
     },
     {
@@ -155,6 +192,10 @@
       "en": {
         "t": "Start a new rail",
         "d": "Click \"Create Content Rail\" — or reuse an existing one if you already have a home for this kind of content."
+      },
+      "es": {
+        "t": "Crea un rail nuevo",
+        "d": "Haz clic en \"Create Content Rail\" — o reutiliza uno existente si ya tienes un lugar para este tipo de contenido."
       }
     },
     {
@@ -170,6 +211,10 @@
       "en": {
         "t": "Name and describe it",
         "d": "Give the rail a clear title and description — coaches won't see the description, it's just for your reference. An image is optional."
+      },
+      "es": {
+        "t": "Nómbralo y descríbelo",
+        "d": "Ponle al rail un título y una descripción claros; los coaches no verán la descripción, es solo para tu referencia. La imagen es opcional."
       }
     },
     {
@@ -185,6 +230,10 @@
       "en": {
         "t": "Create it",
         "d": "Click \"Create\". The rail starts as Unpublished — you'll add your module and publish it next."
+      },
+      "es": {
+        "t": "Créalo",
+        "d": "Haz clic en \"Create\". El rail empieza en estado \"Unpublished\"; a continuación añadirás tu módulo y lo publicarás."
       }
     },
     {
@@ -200,6 +249,10 @@
       "en": {
         "t": "Add your module as an activity",
         "d": "On the \"Activities\" tab, click \"Add Activity\" and choose \"Module\" — you can also add Events, Exams, or even another Rail nested inside this one."
+      },
+      "es": {
+        "t": "Añade tu módulo como actividad",
+        "d": "En la pestaña \"Activities\", haz clic en \"Add Activity\" y elige \"Module\" — también puedes añadir eventos, exámenes o incluso otro rail anidado dentro de este."
       }
     },
     {
@@ -215,6 +268,10 @@
       "en": {
         "t": "Search and select your module",
         "d": "Search by name and tick the module you just built. You can select several at once if you're adding more than one."
+      },
+      "es": {
+        "t": "Busca y selecciona tu módulo",
+        "d": "Busca por nombre y marca el módulo que acabas de construir. Puedes seleccionar varios a la vez si vas a añadir más de uno."
       }
     },
     {
@@ -230,6 +287,10 @@
       "en": {
         "t": "Confirm your selection",
         "d": "Click \"Add\" to bring the selected items into the rail."
+      },
+      "es": {
+        "t": "Confirma tu selección",
+        "d": "Haz clic en \"Add\" para incorporar los elementos seleccionados al rail."
       }
     },
     {
@@ -246,6 +307,10 @@
       "en": {
         "t": "Your module now lives on the rail",
         "d": "Each item shows its type and status. Drag the handle on the left to reorder them, or click \"Add Activity\" again any time to add more."
+      },
+      "es": {
+        "t": "Tu módulo ya vive en el rail",
+        "d": "Cada elemento muestra su tipo y estado. Arrastra el asa de la izquierda para reordenarlos, o haz clic en \"Add Activity\" de nuevo cuando quieras añadir más."
       }
     },
     {
@@ -261,6 +326,10 @@
       "en": {
         "t": "Set the rail to Published",
         "d": "Back on the \"Details\" tab, change Status to \"Published\", then click \"Update\" to save."
+      },
+      "es": {
+        "t": "Cambia el rail a \"Published\"",
+        "d": "De vuelta en la pestaña \"Details\", cambia el estado a \"Published\" y luego haz clic en \"Update\" para guardar."
       }
     },
     {
@@ -276,6 +345,10 @@
       "en": {
         "t": "One last step — put the rail on the page",
         "d": "A published rail still needs a home. In the same left menu, click \"Page Builder\" — this is where the coach homepage is built."
+      },
+      "es": {
+        "t": "Un último paso: coloca el rail en la página",
+        "d": "Un rail publicado todavía necesita un lugar. En el mismo menú izquierdo, haz clic en \"Page Builder\" — ahí se construye la página de inicio de los coaches."
       }
     },
     {
@@ -291,6 +364,10 @@
       "en": {
         "t": "Open your page",
         "d": "You'll usually have just one page, called \"My Learning Content\". Click it to edit what coaches see."
+      },
+      "es": {
+        "t": "Abre tu página",
+        "d": "Normalmente tendrás una sola página, llamada \"My Learning Content\". Haz clic en ella para editar lo que ven los coaches."
       }
     },
     {
@@ -306,6 +383,10 @@
       "en": {
         "t": "Add a new block",
         "d": "Hover over any row in the Content list — a \"+\" appears on the right. Click it. The new block lands directly below the row you hovered."
+      },
+      "es": {
+        "t": "Añade un bloque nuevo",
+        "d": "Pasa el cursor sobre cualquier fila de la lista de contenido: aparece un \"+\" a la derecha. Haz clic. El bloque nuevo queda justo debajo de la fila donde estabas."
       }
     },
     {
@@ -321,6 +402,10 @@
       "en": {
         "t": "Choose \"Rail\"",
         "d": "You can add a Paragraph, Header, List, Image or Divider too — but to show your content, pick \"Rail\"."
+      },
+      "es": {
+        "t": "Elige \"Rail\"",
+        "d": "También puedes añadir \"Paragraph\", \"Header\", \"List\", \"Image\" o \"Divider\" — pero para mostrar tu contenido, elige \"Rail\"."
       }
     },
     {
@@ -336,6 +421,10 @@
       "en": {
         "t": "Find and tick your rail",
         "d": "Search by name if the list is long, then tick the rail you just published. Only published rails will show to coaches."
+      },
+      "es": {
+        "t": "Encuentra y marca tu rail",
+        "d": "Busca por nombre si la lista es larga y marca el rail que acabas de publicar. Solo los rails publicados se muestran a los coaches."
       }
     },
     {
@@ -351,6 +440,10 @@
       "en": {
         "t": "Add it to the page",
         "d": "Click \"Add\" to drop the rail into the page."
+      },
+      "es": {
+        "t": "Añádelo a la página",
+        "d": "Haz clic en \"Add\" para colocar el rail en la página."
       }
     },
     {
@@ -366,6 +459,10 @@
       "en": {
         "t": "Put it in the right order",
         "d": "The order here is the order coaches see. Use the handle on the right of any row to move it up or down — top of the list means top of their homepage."
+      },
+      "es": {
+        "t": "Ponlo en el orden correcto",
+        "d": "El orden aquí es el orden en que lo ven los coaches. Usa el asa a la derecha de cualquier fila para moverla arriba o abajo — lo primero de la lista es lo primero de su página de inicio."
       }
     },
     {
@@ -381,6 +478,10 @@
       "en": {
         "t": "Save the page",
         "d": "Click \"Update\". Nothing changes for coaches until you do."
+      },
+      "es": {
+        "t": "Guarda la página",
+        "d": "Haz clic en \"Update\". Nada cambia para los coaches hasta que lo hagas."
       }
     },
     {
@@ -396,6 +497,10 @@
       "en": {
         "t": "That's it — your content is live",
         "d": "Your rail now sits on the coach homepage, with everything you added inside it. From here on it's quicker: add another module to this rail and coaches see it straight away — you don't need to publish anything again or come back to Page Builder."
+      },
+      "es": {
+        "t": "Listo — tu contenido está publicado",
+        "d": "Tu rail ya está en la página de inicio de los coaches, con todo lo que añadiste dentro. De aquí en adelante es más rápido: añade otro módulo a este rail y los coaches lo ven de inmediato — no necesitas publicar nada de nuevo ni volver a Page Builder."
       }
     }
   ],
@@ -404,6 +509,11 @@
       "doneT": "Your content is live",
       "doneD": "You've built a module, published it through a rail, and placed that rail on the coach homepage. Next time you only need the first half: drop a new module into a rail that's already live and coaches see it immediately. You'll come back to Page Builder only when you want a brand-new rail on the page — and remember nothing changes there until you click Update.",
       "lead": "For club admins. Build your own modules — units, lessons, videos, questions, even SCORM — then publish them to coaches and put them on the homepage."
+    },
+    "es": {
+      "doneT": "Tu contenido está publicado",
+      "doneD": "Construiste un módulo, lo publicaste a través de un rail y colocaste ese rail en la página de inicio de los coaches. La próxima vez solo necesitas la primera mitad: agrega un módulo nuevo a un rail que ya está activo y los coaches lo verán de inmediato. Solo volverás a \"Page Builder\" cuando quieras un rail totalmente nuevo en la página — y recuerda que ahí nada cambia hasta que hagas clic en \"Update\".",
+      "lead": "Para administradores de club. Construye tus propios módulos — unidades, lecciones, videos, preguntas, incluso SCORM — y publícalos para tus coaches en su página de inicio."
     }
   }
 }

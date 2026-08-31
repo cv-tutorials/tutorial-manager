@@ -5,5 +5,9 @@
   "accent": "#FF6600",
   "email": "support@coachesvoice.com",
   "logo": "logo.svg",
-  "languages": ["en"]
+  "languages": [
+    "en",
+    "es"
+  ],
+  "emailEs": "essupport@coachesvoice.com"
 }

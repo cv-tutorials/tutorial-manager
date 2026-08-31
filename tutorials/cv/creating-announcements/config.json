@@ -3,7 +3,8 @@
   "partner": "cv",
   "flow": "creating-announcements",
   "title": {
-    "en": "Creating announcements"
+    "en": "Creating announcements",
+    "es": "Cómo crear anuncios"
   },
   "steps": [
     {
@@ -18,6 +19,10 @@
       "en": {
         "t": "Open Club Settings",
         "d": "Click your initials at the top-right, then select \"Club Settings\"."
+      },
+      "es": {
+        "t": "Abre \"Club Settings\"",
+        "d": "Haz clic en tus iniciales arriba a la derecha y selecciona \"Club Settings\"."
       }
     },
     {
@@ -32,6 +37,10 @@
       "en": {
         "t": "Go to Announcements",
         "d": "In the left sidebar under My Club, click \"Announcements\"."
+      },
+      "es": {
+        "t": "Ve a la sección de anuncios",
+        "d": "En el menú lateral izquierdo, bajo \"My Club\", haz clic en \"Announcements\"."
       }
     },
     {
@@ -46,6 +55,10 @@
       "en": {
         "t": "Create an announcement",
         "d": "Click \"Create Announcement\" to write a new message for your coaches."
+      },
+      "es": {
+        "t": "Crea un anuncio",
+        "d": "Haz clic en \"Create Announcement\" para escribir un mensaje nuevo para tus coaches."
       }
     },
     {
@@ -60,6 +73,10 @@
       "en": {
         "t": "Write your message",
         "d": "Add a title and description — for example, a CPD deadline reminder."
+      },
+      "es": {
+        "t": "Escribe tu mensaje",
+        "d": "Añade un título y una descripción — por ejemplo, un recordatorio de una fecha límite de CPD."
       }
     },
     {
@@ -74,6 +91,10 @@
       "en": {
         "t": "Set the style and audience",
         "d": "Pick a style, choose who receives it (Coach or Admin), and set the active date range."
+      },
+      "es": {
+        "t": "Define el estilo y la audiencia",
+        "d": "Elige un estilo, decide quién lo recibe (\"Coach\" o \"Admin\") y define el rango de fechas en que estará activo."
       }
     },
     {
@@ -88,6 +109,10 @@
       "en": {
         "t": "Publish it",
         "d": "Click \"Create\" to publish. Coaches will see the announcement when they log in."
+      },
+      "es": {
+        "t": "Publícalo",
+        "d": "Haz clic en \"Create\" para publicarlo. Los coaches verán el anuncio al iniciar sesión."
       }
     }
   ],
@@ -96,6 +121,11 @@
       "doneT": "Announcement published!",
       "doneD": "Your announcement is live and your coaches will see it when they log in. You can create, edit or remove announcements any time from Club Settings.",
       "lead": "For club admins. Publish messages that greet your coaches when they log in — like CPD deadline reminders."
+    },
+    "es": {
+      "doneT": "¡Anuncio publicado!",
+      "doneD": "Tu anuncio ya está activo y tus coaches lo verán al iniciar sesión. Puedes crear, editar o eliminar anuncios en cualquier momento desde \"Club Settings\".",
+      "lead": "Para administradores de club. Publica mensajes que reciben a tus coaches al iniciar sesión — como recordatorios de fechas límite de CPD."
     }
   }
 }

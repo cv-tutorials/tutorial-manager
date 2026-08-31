@@ -3,7 +3,8 @@
   "partner": "cv",
   "flow": "reporting",
   "title": {
-    "en": "Reviewing your coaches' reports"
+    "en": "Reviewing your coaches' reports",
+    "es": "Revisar los reportes de tus coaches"
   },
   "steps": [
     {
@@ -19,6 +20,10 @@
       "en": {
         "t": "Open Club Settings",
         "d": "Click your initials at the top-right, then select \"Club Settings\"."
+      },
+      "es": {
+        "t": "Abre \"Club Settings\"",
+        "d": "Haz clic en tus iniciales, arriba a la derecha, y selecciona \"Club Settings\"."
       }
     },
     {
@@ -34,6 +39,10 @@
       "en": {
         "t": "Go to Reporting",
         "d": "In the left sidebar under Analytics & Billing, click \"Reporting\"."
+      },
+      "es": {
+        "t": "Ve a \"Reporting\"",
+        "d": "En la barra lateral izquierda, bajo \"Analytics & Billing\", haz clic en \"Reporting\"."
       }
     },
     {
@@ -50,6 +59,10 @@
       "en": {
         "t": "Your reporting dashboard",
         "d": "This is your reporting home: headline figures at the top, and tabs below with the detail."
+      },
+      "es": {
+        "t": "Tu panel de reportes",
+        "d": "Este es tu centro de reportes: las cifras principales arriba y, debajo, las pestañas con el detalle."
       }
     },
     {
@@ -65,6 +78,10 @@
       "en": {
         "t": "Check the headline numbers",
         "d": "\"Active coaches\" and \"Seats used\" show how much of your licence is in use; \"Coaches met\" shows how many have hit their CPD target."
+      },
+      "es": {
+        "t": "Revisa las cifras principales",
+        "d": "\"Active coaches\" y \"Seats used\" muestran cuánto de tu licencia está en uso; \"Coaches met\" indica cuántos alcanzaron su meta de CPD."
       }
     },
     {
@@ -80,6 +97,10 @@
       "en": {
         "t": "Switch between report views",
         "d": "Move between Coaches, Modules, Coach Groups and Events. Start with \"Coaches\" to review people."
+      },
+      "es": {
+        "t": "Cambia entre vistas del reporte",
+        "d": "Muévete entre \"Coaches\", \"Modules\", \"Coach Groups\" y \"Events\". Empieza por \"Coaches\" para revisar a las personas."
       }
     },
     {
@@ -95,6 +116,10 @@
       "en": {
         "t": "Read the coach columns",
         "d": "For each coach you'll see In Progress, Completed, Failed, Season CPD, and whether they've met their target."
+      },
+      "es": {
+        "t": "Lee las columnas de cada coach",
+        "d": "Para cada coach verás \"In Progress\", \"Completed\", \"Failed\", \"Season CPD\" y si alcanzó su meta."
       }
     },
     {
@@ -110,6 +135,10 @@
       "en": {
         "t": "Filter the period",
         "d": "Set a date range to report on a specific season or block. \"Clear filters\" resets everything."
+      },
+      "es": {
+        "t": "Filtra el período",
+        "d": "Define un rango de fechas para reportar una temporada o un bloque específico. \"Clear filters\" restablece todo."
       }
     },
     {
@@ -125,6 +154,10 @@
       "en": {
         "t": "Export the data",
         "d": "Click \"Export\" to download the report as a file — handy for sharing or tracking progress over time."
+      },
+      "es": {
+        "t": "Exporta los datos",
+        "d": "Haz clic en \"Export\" para descargar el reporte como archivo: útil para compartirlo o seguir el progreso en el tiempo."
       }
     },
     {
@@ -140,6 +173,10 @@
       "en": {
         "t": "Open a coach's report",
         "d": "Click a coach's name to drill into their individual activity."
+      },
+      "es": {
+        "t": "Abre el reporte de un coach",
+        "d": "Haz clic en el nombre de un coach para ver en detalle su actividad individual."
       }
     },
     {
@@ -156,6 +193,10 @@
       "en": {
         "t": "See what they've worked on",
         "d": "Every unit the coach has started, with its module, organisation, status and CPD time earned."
+      },
+      "es": {
+        "t": "Mira en qué ha trabajado",
+        "d": "Cada unidad que el coach ha iniciado, con su módulo, organización, estado y tiempo de CPD obtenido."
       }
     },
     {
@@ -171,6 +212,10 @@
       "en": {
         "t": "Filter by status",
         "d": "Narrow the list by status — Completed, In Progress or Failed — to focus on what matters."
+      },
+      "es": {
+        "t": "Filtra por estado",
+        "d": "Acota la lista por estado, \"Completed\", \"In Progress\" o \"Failed\", para enfocarte en lo que importa."
       }
     }
   ],
@@ -179,6 +224,11 @@
       "doneT": "You know how to read the reports!",
       "doneD": "You can now track licence usage and CPD progress, drill into any coach's activity, and filter or export any view. Check back regularly to spot who needs a nudge.",
       "lead": "For club admins. Track licence usage, CPD progress and every coach's activity — and export any view."
+    },
+    "es": {
+      "doneT": "¡Ya sabes leer los reportes!",
+      "doneD": "Ahora puedes seguir el uso de la licencia y el progreso de CPD, ver en detalle la actividad de cualquier coach, y filtrar o exportar cualquier vista. Revisa con frecuencia para detectar a quién hay que dar un empujón.",
+      "lead": "Para admins de club. Sigue el uso de la licencia, el progreso de CPD y la actividad de cada coach, y exporta cualquier vista."
     }
   }
 }

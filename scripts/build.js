@@ -94,6 +94,9 @@ function buildUI(partner, config, stepCount) {
         ? 'Follow these steps. It only takes a couple of minutes.'
         : 'Sigue estos pasos. Solo toma un par de minutos.',
       m1: `${stepCount} ${lang === 'en' ? 'steps' : 'pasos'}`,
+      email: lang === 'es'
+        ? (config.emailEs || partner.emailEs || config.email || partner.email)
+        : (config.email || partner.email),
       ...(config.ui && config.ui[lang] || {})
     };
   }

@@ -177,6 +177,7 @@
 <script>
  const S=__STEPS__, UI=__UI__, EMAIL="__EMAIL__", AUDIO=__AUDIO__, N=S.length;
  let lang="en", idx=-1, zoomT;   // -1 intro · 0..N-1 steps · N done
+ try{const q=new URLSearchParams(location.search).get("lang"); if(q&&UI[q]) lang=q;}catch(e){}
  const LANGS=Object.keys(UI);
  if(LANGS.length<2) document.querySelector(".lang").style.display="none";
  const seg=document.getElementById("seg");
@@ -234,7 +235,7 @@
    if(LANGS.length>1){document.getElementById("lEn").classList.toggle("on",lang==="en");
    document.getElementById("lEs").classList.toggle("on",lang==="es");}
    document.getElementById("uPow").textContent=u.power;
-   document.getElementById("uHelp").innerHTML=u.help+' <a href="mailto:'+EMAIL+'">'+EMAIL+'</a>';
+   const M=u.email||EMAIL; document.getElementById("uHelp").innerHTML=u.help+' <a href="mailto:'+M+'">'+M+'</a>';
    // intro
    document.getElementById("iEye").textContent=u.eyebrow;
    document.getElementById("iH").textContent=u.title;

@@ -3,7 +3,8 @@
   "partner": "cv",
   "flow": "getting-started",
   "title": {
-    "en": "Getting started with your learning platform"
+    "en": "Getting started with your learning platform",
+    "es": "Primeros pasos en tu plataforma de aprendizaje"
   },
   "steps": [
     {
@@ -20,6 +21,10 @@
       "en": {
         "t": "Welcome to your learning home",
         "d": "When you sign in you land on My Learning — your courses, new content and CPD progress, all in one place."
+      },
+      "es": {
+        "t": "Bienvenido a tu espacio de aprendizaje",
+        "d": "Al iniciar sesión llegas a \"My Learning\": tus cursos, el contenido nuevo y tu progreso de CPD, todo en un solo lugar."
       }
     },
     {
@@ -35,6 +40,10 @@
       "en": {
         "t": "Track your CPD points",
         "d": "Your Season CPD Points live at the top right, with your target and how many are left to go. Completing units earns points — reach the target and you're all set for the season."
+      },
+      "es": {
+        "t": "Sigue tus puntos CPD",
+        "d": "Tus \"Season CPD Points\" están arriba a la derecha, con tu meta y cuántos te faltan. Completar unidades suma puntos: alcanza la meta y listo por la temporada."
       }
     },
     {
@@ -51,6 +60,10 @@
       "en": {
         "t": "Browse the library",
         "d": "Scroll down for rows of content: session plans by age group, masterclasses, webinars — and your assigned modules with their progress."
+      },
+      "es": {
+        "t": "Explora la biblioteca",
+        "d": "Desplázate hacia abajo para ver filas de contenido: planes de sesión por categoría de edad, masterclasses, webinars, y tus módulos asignados con su progreso."
       }
     },
     {
@@ -66,6 +79,10 @@
       "en": {
         "t": "Open a module",
         "d": "Click a module card to open it. The \"In progress\" and \"Completed\" tabs show where you left off."
+      },
+      "es": {
+        "t": "Abre un módulo",
+        "d": "Haz clic en la tarjeta de un módulo para abrirlo. Las pestañas \"In progress\" y \"Completed\" muestran dónde lo dejaste."
       }
     },
     {
@@ -82,6 +99,10 @@
       "en": {
         "t": "The module page",
         "d": "Each module shows its progress bar and is split into units. The icons on each unit show how many questions it has and the CPD time it earns."
+      },
+      "es": {
+        "t": "La página del módulo",
+        "d": "Cada módulo muestra su barra de progreso y se divide en unidades. Los íconos de cada unidad indican cuántas preguntas tiene y el tiempo de CPD que otorga."
       }
     },
     {
@@ -97,6 +118,10 @@
       "en": {
         "t": "Start a unit",
         "d": "Click a unit to begin. Completed units are marked with a green tick."
+      },
+      "es": {
+        "t": "Comienza una unidad",
+        "d": "Haz clic en una unidad para empezar. Las unidades completadas se marcan con un check verde."
       }
     },
     {
@@ -113,6 +138,10 @@
       "en": {
         "t": "Learn lesson by lesson",
         "d": "Inside a unit, each lesson is a short video followed by a quick question. Watch the video, then click continue to answer."
+      },
+      "es": {
+        "t": "Aprende lección por lección",
+        "d": "Dentro de una unidad, cada lección es un video corto seguido de una pregunta rápida. Mira el video y luego haz clic en continuar para responder."
       }
     },
     {
@@ -128,6 +157,10 @@
       "en": {
         "t": "Follow your progress",
         "d": "The Unit Overview lists every lesson and question, ticking them off as you go — so you always know exactly where you are."
+      },
+      "es": {
+        "t": "Sigue tu progreso",
+        "d": "El \"Unit Overview\" lista cada lección y pregunta, y las va marcando a medida que avanzas, así siempre sabes exactamente dónde estás."
       }
     },
     {
@@ -143,6 +176,10 @@
       "en": {
         "t": "Search anything",
         "d": "Click the magnifying glass and type a topic, coach or module name — then press Enter."
+      },
+      "es": {
+        "t": "Busca lo que quieras",
+        "d": "Haz clic en la lupa y escribe un tema, un coach o el nombre de un módulo; luego presiona Enter."
       }
     },
     {
@@ -159,6 +196,10 @@
       "en": {
         "t": "Refine your results",
         "d": "The search page shows everything that matches, and you can narrow it down by type or category."
+      },
+      "es": {
+        "t": "Afina tus resultados",
+        "d": "La página de búsqueda muestra todo lo que coincide, y puedes filtrar por tipo o categoría."
       }
     },
     {
@@ -174,6 +215,10 @@
       "en": {
         "t": "Browse by category",
         "d": "Or open \"Categories\" in the top menu to jump straight to a topic — from tactical themes to age groups."
+      },
+      "es": {
+        "t": "Explora por categoría",
+        "d": "O abre \"Categories\" en el menú superior para ir directo a un tema: desde conceptos tácticos hasta categorías de edad."
       }
     }
   ],
@@ -182,6 +227,11 @@
       "doneT": "You're ready to start learning!",
       "doneD": "You know your way around: find content, work through units lesson by lesson, and watch your CPD points grow. Your progress is saved automatically — pick up any time, right where you left off.",
       "lead": "For coaches. Your first tour of the platform: where everything lives and how to start earning CPD points."
+    },
+    "es": {
+      "doneT": "¡Listo para empezar a aprender!",
+      "doneD": "Ya conoces la plataforma: encuentra contenido, avanza lección a lección y mira crecer tus puntos CPD. Tu progreso se guarda automáticamente: retoma cuando quieras, justo donde lo dejaste.",
+      "lead": "Para coaches. Tu primer recorrido por la plataforma: dónde está todo y cómo empezar a sumar puntos CPD."
     }
   }
 }
