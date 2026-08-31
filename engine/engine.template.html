@@ -176,9 +176,11 @@
 
 <script>
  const S=__STEPS__, UI=__UI__, EMAIL="__EMAIL__", AUDIO=__AUDIO__, N=S.length;
- let lang="en", idx=-1, zoomT;   // -1 intro · 0..N-1 steps · N done
- try{const q=new URLSearchParams(location.search).get("lang"); if(q&&UI[q]) lang=q;}catch(e){}
  const LANGS=Object.keys(UI);
+ // Prefer English when the tutorial has it; otherwise fall back to whatever
+ // language it was authored in, so single-language tutorials still render.
+ let lang=UI.en?"en":LANGS[0], idx=-1, zoomT;   // -1 intro · 0..N-1 steps · N done
+ try{const q=new URLSearchParams(location.search).get("lang"); if(q&&UI[q]) lang=q;}catch(e){}
  if(LANGS.length<2) document.querySelector(".lang").style.display="none";
  const seg=document.getElementById("seg");
  for(let k=0;k<N;k++){const sp=document.createElement("span");sp.onclick=()=>GO(k);seg.appendChild(sp);}
