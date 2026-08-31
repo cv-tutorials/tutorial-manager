@@ -1,6 +1,7 @@
 {
   "id": "session-planner-faq",
   "_note": "Shared Session Planner FAQ. True for every partner that has Session Planner alongside the LMS. Video codes live in session-planner-videos.json — reference them, never paste them into a partner config.",
+  "_support": "Session Planner faults go to {{plannerSupport}} (their own desk). Only seat provisioning comes to CV — we hand out the licences, they build the tool. Do not collapse the two.",
   "_naming": "It is 'Session Planner' in all partner-facing copy. Never 'Sport Session Planner', never 'SSP' — not in prose, not in anchors, not in nav labels.",
 
   "items": [
@@ -10,7 +11,7 @@
       "a": [
         "<p>Use the green <strong>Session Planner</strong> button at the top right of My Learning. It opens in a new tab and leaves your learning where it was.</p>",
         "<p>Session Planner is a <strong>separate product with its own account</strong>, and it is not single sign-on. You log in with your Session Planner username and password, which are not the same as your learning platform ones and may well be a different password entirely. Worth saving both.</p>",
-        "<p>No Session Planner details yet, or they are not working? Email <a href=\"mailto:{{supportEmail}}\">{{supportEmail}}</a>.</p>"
+        "<p>Not been given Session Planner details at all? That one is ours &mdash; email <a href=\"mailto:{{supportEmail}}\">{{supportEmail}}</a> and we will sort your seat. Once you are in, anything about the tool itself &mdash; a password that will not reset, a session that will not save &mdash; goes straight to <a href=\"mailto:{{plannerSupport}}\">{{plannerSupport}}</a>, who build it.</p>"
       ]
     },
     {

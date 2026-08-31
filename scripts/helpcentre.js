@@ -291,6 +291,9 @@ function build(configFile) {
 
   const v = {
     supportEmail: cfg.supportEmail || partner.email || 'support@coachesvoice.com',
+    // Session Planner is a separate product with its own support desk. Faults with the
+    // tool belong to them; provisioning a seat belongs to us. Keep the two apart.
+    plannerSupport: cfg.plannerSupport || 'support@sportsessionplanner.com',
     partnerName: partner.name,
     ...(cfg.vars || {}),
   };

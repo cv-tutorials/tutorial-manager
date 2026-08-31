@@ -73,8 +73,13 @@ labels, not in anchor ids.
 }
 ```
 
-`{{club}}`, `{{lmsUrl}}`, `{{supportEmail}}` and anything else in `vars` are substituted
-everywhere, including inside core content. `supportEmail` falls back to `partner.json`.
+`{{club}}`, `{{lmsUrl}}`, `{{supportEmail}}`, `{{plannerSupport}}` and anything else in `vars` are
+substituted everywhere, including inside core content. `supportEmail` falls back to `partner.json`;
+`plannerSupport` defaults to Session Planner's own desk, `support@sportsessionplanner.com`.
+
+**Two support desks, deliberately.** Provisioning a Session Planner seat is ours — we hand out the
+licences. Faults in the tool are theirs. The copy routes each to the right place; do not collapse
+them back into one address or CV ends up triaging another product's bugs.
 
 The crest comes from `partner.json`, inlined as a data URI and downscaled to 300px first — a
 full-size crest doubles the page weight, because it is inlined twice. See **Brand** above for how
