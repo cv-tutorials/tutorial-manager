@@ -58,7 +58,7 @@ function build({ partner, flow, dir }) {
   if (fs.existsSync(lp)) logo = dataUri(lp);
 
   const html = [];
-  html.push(`<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title}</title>
+  html.push(`<!doctype html><html lang="${lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>${title}</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 body{font-family:"Inter",-apple-system,"Segoe UI",Arial,sans-serif;color:${nav};background:#fff;line-height:1.55}

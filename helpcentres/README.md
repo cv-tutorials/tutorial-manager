@@ -55,10 +55,6 @@ tokens these pages use.
 checks the built pages with `<script>` and `<style>` stripped out — CSS `color` and JS `Math` are
 keywords and must stay American, and flagging them would only train people to ignore the linter.
 
-Known and deliberately not "fixed": *Coach Education Center* in the asc / ecnl / efl / n1
-tutorials. It reads as the product's own name and those are US partners — a decision for the
-team, not a spelling slip.
-
 ## Links out of the platform
 
 A block marked `"revealOnComplete": true` is hidden by the SCORM layer until the module is
@@ -164,14 +160,20 @@ content, and nothing warns you.
 
 ### Completion model
 
-Every section is a checkpoint. The nav carries a progress bar and a count ("2 of 4 · 50%"), and
-the panel lists the sections with what is still to go. The button only unlocks once **every**
-section has been on screen, so finishing the module means having been through it rather than
-having scrolled past it.
+Completion has **two halves**, and both matter:
 
-Sections are picked up automatically from the config; `scormSides` overrides. Two coarse
-checkpoints were the first attempt and they were wrong: you could clear them in three seconds
-and the bar told the learner nothing about how much was left.
+- a section counts as **seen** once it has been on screen for a moment — that is what fills the
+  circles as the learner works down the page;
+- a section holding questions is only **done** once every one of them has been **opened**.
+
+Scrolling past an accordion is not reading it. With only the first half a coach could flick to
+the bottom in three seconds, press the button, and the record would say they had read the module.
+Each `<details>` carries a `data-q` id so the SCORM layer can require it and remember it in
+`suspend_data` — an id, not an index, which would shift the moment copy is reordered.
+
+The nav shows an overall percentage; the panel lists each section and, where it has questions,
+its own count ("2 of 9 opened"), so what is left is never a mystery. Sections come from the
+config automatically; `scormSides` overrides.
 
 The session rules are not negotiable, and `scripts/test-scorm.js` enforces all of them:
 

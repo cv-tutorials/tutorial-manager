@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 /**
- * Session-behaviour tests for a packaged help centre SCORM.
+ * Session and completion tests for a packaged help centre SCORM.
  *
- * These check the things that break silently inside a real LMS and that you cannot see
- * by opening the file locally: whether the SCO closes its own session, whether it
- * reports a terminal status too early, and whether a returning learner gets downgraded
- * from completed back to incomplete.
+ * These check what breaks silently inside a real LMS and cannot be seen by opening the
+ * file locally: whether the SCO closes its own session, whether it reports a terminal
+ * status too early, whether a returning learner gets downgraded from completed back to
+ * incomplete — and whether the module can be completed without actually reading it.
  *
  *   node scripts/test-scorm.js [dist-scorm/<dir>]
  */
@@ -14,14 +14,14 @@ const path = require('path');
 const { JSDOM } = require('jsdom');
 
 const ROOT = path.resolve(__dirname, '..');
-const target = process.argv[2] || 'dist-scorm/forest-help-centre';
+const target = process.argv[2] || 'dist-scorm/forest-module';
 const file = path.join(ROOT, target, 'index.html');
 if (!fs.existsSync(file)) { console.error(`Not found: ${target}/index.html — run npm run scorm first`); process.exit(1); }
 
 let pass = 0, fail = 0;
-const ok = (name) => { console.log(`  ✓ ${name}`); pass++; };
-const no = (name, detail) => { console.log(`  ✗ ${name}${detail ? `\n      ${detail}` : ''}`); fail++; };
-const check = (name, cond, detail) => (cond ? ok(name) : no(name, detail));
+const ok = (n) => { console.log(`  ✓ ${n}`); pass++; };
+const no = (n, d) => { console.log(`  ✗ ${n}${d ? `\n      ${d}` : ''}`); fail++; };
+const check = (n, cond, d) => (cond ? ok(n) : no(n, d));
 
 /** A fake SCORM 1.2 API that records every call, like an LMS would receive them. */
 function makeAPI(initial) {
@@ -69,41 +69,51 @@ function ready(win) {
   });
 }
 
-/** Drive every tracked section into view and let the dwell timer fire. */
-async function seeAllSides(win) {
+/** Drive tracked sections into view and let the dwell timer fire. */
+async function scrollThrough(win, only) {
   win.__io.forEach((obs) => {
-    obs.cb(obs.targets.map((t) => ({ target: t, isIntersecting: true })), obs);
+    const targets = only ? obs.targets.filter((t) => only.includes(t.id)) : obs.targets;
+    if (targets.length) obs.cb(targets.map((t) => ({ target: t, isIntersecting: true })), obs);
   });
   await new Promise((r) => setTimeout(r, 1500));
 }
 
-(async () => {
-  console.log(`\nSCORM session tests — ${target}\n`);
+/** Expand every question, the way a coach actually reading it would. */
+function openEveryQuestion(win) {
+  win.document.querySelectorAll('details[data-q]').forEach((d) => {
+    d.open = true;
+    d.dispatchEvent(new win.Event('toggle'));
+  });
+}
 
-  // ── 1. a fresh learner ──
+const hintOf = (win) => win.document.getElementById('sco-hint').textContent;
+const navLabel = (win) => (win.document.querySelector('.sco-prog .lbl') || {}).textContent || '';
+const subOf = (win, id) => (win.document.querySelector(`#sco-i-${id} .sub`) || {}).textContent || '';
+
+(async () => {
+  console.log(`\nSCORM tests — ${target}\n`);
+
+  // ── 1. a fresh learner, all the way through ──
   {
     const { win, API } = load();
     await ready(win);
+    const btn = win.document.getElementById('sco-btn');
+    const reward = win.document.querySelector('[data-reveal="complete"]');
+    const questions = win.document.querySelectorAll('details[data-q]').length;
 
     check('initialises the session on load', API.calls.some(c => c[0] === 'init'));
     check('does NOT finish the session on load', !API.calls.some(c => c[0] === 'finish'),
       'a finish() on load closes the SCO window in most LMSs');
     check('reports incomplete on load, never a terminal status',
-      API.data['cmi.core.lesson_status'] === 'incomplete',
-      `got "${API.data['cmi.core.lesson_status']}"`);
-
-    const btn = win.document.getElementById('sco-btn');
+      API.data['cmi.core.lesson_status'] === 'incomplete', `got "${API.data['cmi.core.lesson_status']}"`);
+    check('the page has questions to track', questions > 0, `${questions} found`);
     check('completion button starts disabled', btn && btn.disabled);
-
-    const reward = win.document.querySelector('[data-reveal="complete"]');
-    check('the module has a reveal-on-complete block to test', !!reward);
     check('the link out of the platform is hidden before completion',
       reward && reward.style.display === 'none',
       'shown early it is an exit route halfway through the work');
-    check('panel is visible once the SCORM logic runs',
-      win.document.getElementById('sco-complete') && !win.document.getElementById('sco-complete').hidden);
+    check('progress starts with nothing ticked',
+      [...win.document.querySelectorAll('#sco-list li')].every(li => !li.classList.contains('on')));
 
-    // beforeunload / pagehide must commit, not finish
     const before = API.calls.filter(c => c[0] === 'finish').length;
     win.dispatchEvent(new win.Event('beforeunload'));
     win.dispatchEvent(new win.Event('pagehide'));
@@ -111,76 +121,78 @@ async function seeAllSides(win) {
       API.calls.filter(c => c[0] === 'finish').length === before &&
       API.calls.some(c => c[0] === 'commit'));
 
-    // seeing both sides unlocks the button, but must not report complete on its own
-    // before: nothing ticked, and the panel says what is left
-    check('progress starts at zero, nothing ticked',
-      [...win.document.querySelectorAll('#sco-list li')].every(t => !t.classList.contains('on')));
-    check('panel names how many sections are left',
-      /still to go/.test(win.document.getElementById('sco-hint').textContent),
-      win.document.getElementById('sco-hint').textContent);
+    // THE point of the model: scrolling the whole page is not reading it
+    await scrollThrough(win);
+    check('scrolling past every section does NOT unlock completion',
+      btn.disabled, 'skimming to the bottom would otherwise complete the module unread');
+    check('the panel says how many questions are still to open',
+      /questions? still to open/.test(hintOf(win)), hintOf(win));
+    check('a section with unopened questions is not ticked',
+      !win.document.getElementById('sco-i-learning').classList.contains('on'));
+    check('that section shows its own count', /0 of \d+ opened/.test(subOf(win, 'learning')), subOf(win, 'learning'));
 
-    await seeAllSides(win);
-    check('button unlocks once every side has been seen', btn && !btn.disabled);
-    check('every section ticks once seen',
-      win.document.querySelectorAll('#sco-list li').length === 4 &&
-      [...win.document.querySelectorAll('#sco-list li')].every(t => t.classList.contains('on')),
-      [...win.document.querySelectorAll('#sco-list li')].map(t => t.className).join(' | '));
-    check('seeing the sides does not by itself report completion',
-      API.data['cmi.core.lesson_status'] === 'incomplete',
-      `got "${API.data['cmi.core.lesson_status']}"`);
+    // now actually read it
+    openEveryQuestion(win);
+    check('opening every question unlocks completion', !btn.disabled, hintOf(win));
+    check('every section ticks once seen and fully opened',
+      [...win.document.querySelectorAll('#sco-list li')].every(li => li.classList.contains('on')));
+    check('the nav reports it is done', /100%|All done/.test(navLabel(win)), navLabel(win));
+    check('doing the work does not by itself report completion',
+      API.data['cmi.core.lesson_status'] === 'incomplete', `got "${API.data['cmi.core.lesson_status']}"`);
 
-    // the deliberate action
     btn.dispatchEvent(new win.Event('click'));
-    check('marking complete reports "completed"', API.data['cmi.core.lesson_status'] === 'completed',
-      `got "${API.data['cmi.core.lesson_status']}"`);
+    check('marking complete reports "completed"',
+      API.data['cmi.core.lesson_status'] === 'completed', `got "${API.data['cmi.core.lesson_status']}"`);
     check('marking complete finishes the session exactly once',
       API.calls.filter(c => c[0] === 'finish').length === 1);
-
     check('the link out appears once the module is complete',
       reward && reward.style.display !== 'none');
 
-    // idempotence — a second click must not reopen or re-finish
     btn.dispatchEvent(new win.Event('click'));
     check('a second click does not finish twice',
       API.calls.filter(c => c[0] === 'finish').length === 1);
   }
 
-  // ── 2. only one side seen ──
+  // ── 2. partway through ──
   {
     const { win, API } = load();
     await ready(win);
-    const obs = win.__io[0];
-    const learning = obs.targets.find((t) => t.id === 'learning');
-    obs.cb([{ target: learning, isIntersecting: true }], obs);
-    await new Promise((r) => setTimeout(r, 1500));
+    await scrollThrough(win, ['learning']);
+    const d = win.document.querySelector('#learning details[data-q]');
+    d.open = true; d.dispatchEvent(new win.Event('toggle'));
+    await new Promise((r) => setTimeout(r, 50));
 
-    check('one side seen does not unlock completion',
+    check('one question opened does not unlock completion',
       win.document.getElementById('sco-btn').disabled);
-    check('one section seen names the ones still missing',
-      /Session Planner/.test(win.document.getElementById('sco-hint').textContent) &&
-      !/Your learning/.test(win.document.getElementById('sco-hint').textContent),
-      win.document.getElementById('sco-hint').textContent);
-    check('the nav shows a progress figure, not just ticks',
-      /\d of \d/.test((win.document.querySelector('.sco-prog .lbl') || {}).textContent || ''),
-      (win.document.querySelector('.sco-prog .lbl') || {}).textContent);
-    check('partial progress is saved to suspend_data for a resume',
-      /learning/.test(API.data['cmi.suspend_data'] || ''),
-      API.data['cmi.suspend_data']);
-    check('still incomplete with one side to go',
+    check('the section count reflects what has been opened',
+      /1 of \d+ opened/.test(subOf(win, 'learning')), subOf(win, 'learning'));
+    check('the nav shows a percentage', /\d+%/.test(navLabel(win)), navLabel(win));
+    check('what was opened is saved for a resume',
+      /opened/.test(API.data['cmi.suspend_data'] || ''), API.data['cmi.suspend_data']);
+    check('still incomplete partway through',
       API.data['cmi.core.lesson_status'] === 'incomplete');
   }
 
-  // ── 3. a learner coming back after completing ──
+  // ── 3. resuming ──
+  {
+    const { win } = load({
+      'cmi.core.lesson_status': 'incomplete',
+      'cmi.suspend_data': JSON.stringify({ seen: { learning: true }, opened: { where: true, cpd: true } }),
+    });
+    await ready(win);
+    check('a resumed session restores what was already opened',
+      /2 of \d+ opened/.test(subOf(win, 'learning')), subOf(win, 'learning'));
+  }
+
+  // ── 4. coming back after completing ──
   {
     const { win, API } = load({
       'cmi.core.lesson_status': 'completed',
-      'cmi.suspend_data': JSON.stringify({ seen: { learning: true, planner: true }, done: true }),
+      'cmi.suspend_data': JSON.stringify({ seen: {}, opened: {}, done: true }),
     });
     await ready(win);
-
     check('a completed record is never downgraded to incomplete',
-      API.data['cmi.core.lesson_status'] === 'completed',
-      `got "${API.data['cmi.core.lesson_status']}"`);
+      API.data['cmi.core.lesson_status'] === 'completed', `got "${API.data['cmi.core.lesson_status']}"`);
     check('the page still opens for a completed learner (reference stays available)',
       !!win.document.querySelector('#planner'));
     check('a returning completed learner sees the link out straight away',

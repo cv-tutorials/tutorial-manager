@@ -9,10 +9,6 @@
  *
  *   npm run lint:english            everything built
  *   npm run lint:english forest     just one partner
- *
- * Known and deliberately NOT fixed: "Coach Education Center" in the asc / ecnl / efl / n1
- * tutorials. That reads as the product's own name and those are US partners, so it is a
- * decision for the team rather than a spelling slip. Scope the run to avoid the noise.
  */
 const fs = require('fs');
 const path = require('path');
@@ -59,9 +55,14 @@ const scoped = only ? files.filter((f) => f.includes(`/${only}/`)) : files;
 if (!files.length) { console.log('\nNothing built yet — run npm run build first.'); process.exit(0); }
 if (only && !scoped.length) { console.log(`\nNothing built under "${only}".`); process.exit(0); }
 
-let hits = 0;
+let hits = 0, skipped = 0;
 for (const file of scoped) {
   let s = fs.readFileSync(file, 'utf8');
+
+  // Only check pages that are actually in English. Some tutorials are Spanish, where
+  // "color" is simply the word — flagging those would make the linter noise to ignore.
+  const lang = (s.match(/<html[^>]*\slang=["']([a-z-]+)["']/i) || [])[1] || 'en';
+  if (!/^en/i.test(lang)) { skipped++; continue; }
   s = s.replace(/<script[\s\S]*?<\/script>/gi, ' ')     // JS keywords are American by definition
        .replace(/<style[\s\S]*?<\/style>/gi, ' ')       // so are CSS properties
        .replace(/data:[^\s"')]+/g, ' ')                 // base64 payloads
@@ -79,7 +80,8 @@ for (const file of scoped) {
   }
 }
 
+const note = skipped ? ` (${skipped} non-English page(s) skipped)` : '';
 console.log(hits
-  ? `\n${hits} American spelling(s) in copy the reader sees.\n`
-  : `\n✓ British English throughout — ${scoped.length} page(s) checked.\n`);
+  ? `\n${hits} American spelling(s) in copy the reader sees.${note}\n`
+  : `\n✓ British English throughout — ${scoped.length - skipped} page(s) checked${note}.\n`);
 process.exit(hits ? 1 : 0);

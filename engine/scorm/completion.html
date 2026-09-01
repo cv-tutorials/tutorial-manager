@@ -20,6 +20,9 @@
   .sco-list li{display:flex; align-items:center; gap:var(--s-4); font-size:15px; color:var(--fg-3);
                transition:color var(--dur) var(--ease)}
   .sco-list li.on{color:var(--fg-1)}
+  .sco-list li .sub{margin-left:auto; font-size:13px; color:var(--fg-3);
+                    font-variant-numeric:tabular-nums; white-space:nowrap}
+  .sco-list li.on .sub{color:var(--cv-orange)}
   .sco-list .dot{flex:none; width:20px; height:20px; border-radius:50%; border:1.5px solid var(--border-2);
                  display:grid; place-items:center; transition:.2s var(--ease)}
   .sco-list li.on .dot{background:var(--cv-orange); border-color:var(--cv-orange)}
@@ -44,8 +47,9 @@
 
 <section id="sco-complete" class="sco-panel" hidden>
   <div class="shd"><h2>Finished here?</h2></div>
-  <p class="intro">Work through every part below and this module marks itself off. It stays open
-     afterwards &mdash; completing it does not take it away from you.</p>
+  <p class="intro">Open every question as you go and this module marks itself off. Skimming past
+     them will not do it &mdash; but it stays open afterwards, so completing it does not take it
+     away from you.</p>
   <ul class="sco-list" id="sco-list"></ul>
   <button class="sco-btn" id="sco-btn" disabled>Mark as complete</button>
   <p class="sco-hint" id="sco-hint"></p>

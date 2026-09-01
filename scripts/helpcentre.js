@@ -156,7 +156,10 @@ function resolveFaq(block, v) {
   const rows = items.map((it, i) => {
     const open = (block.open === it.id || (block.open === true && i === 0)) ? ' open' : '';
     const body = (Array.isArray(it.a) ? it.a : [it.a]).map((p) => vars(p, v)).join('\n          ');
-    return `      <details${open}>
+    // data-q gives every question a stable handle. The SCORM layer uses it to require that
+    // each one was actually opened before the module can be completed, and to remember which
+    // in suspend_data — so an id, not an index, which would shift the moment copy is reordered.
+    return `      <details data-q="${it.id}"${open}>
         <summary><span class="qn" aria-hidden="true"></span>${vars(it.q, v)}
           ${chev}</summary>
         <div class="ans">
