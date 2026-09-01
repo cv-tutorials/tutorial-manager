@@ -35,12 +35,18 @@ hosted pages.
   `content/core/session-planner-videos.json`; reference them, never paste codes into a config.
 - **SCORM** (`scripts/scorm.js`, opt in with `"scorm": true`) wraps the ALREADY BUILT page rather
   than re-authoring it, so the LMS module and the web page cannot diverge. Completion = every
-  tracked section seen + a deliberate click. Never report a terminal status on load;
+  tracked section seen AND every `details[data-q]` opened, then a deliberate click — scrolling
+  past an accordion is not reading it. Never report a terminal status on load;
   beforeunload/pagehide commit only. `npm run test:scorm` (jsdom) enforces the session rules —
   run it before handing over a package. Do not add `xmllint --schema` validation: it produces
   false failures on valid SCORM 1.2 packages.
 - Partner logos are inlined twice per page, so `helpcentre.js` downscales them to 300px. Do not
   bypass it — a 1500px crest doubles the page.
+
+- **UK English** in everything a reader sees — these are UK clubs. `npm run lint:english [partner]`
+  checks the built pages, skipping `<script>`/`<style>` (CSS `color`, JS `Math` are keywords) and
+  any page whose `<html lang>` is not English. Articles now declare their language, so add `lang`
+  to anything new.
 
 ## Non-negotiables
 - **Engine is the single source of truth.** Change design/behaviour in the engine template,
