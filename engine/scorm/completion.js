@@ -170,6 +170,7 @@
       opened[q] = true; save(); render();
     });
     if (d.open) opened[d.dataset.q] = true;   // anything open on load counts
+    if (opened[d.dataset.q]) d.classList.add('read');   // restore last session's marks
   });
 
   btn.addEventListener('click', function () {

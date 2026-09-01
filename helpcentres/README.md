@@ -171,8 +171,16 @@ the bottom in three seconds, press the button, and the record would say they had
 Each `<details>` carries a `data-q` id so the SCORM layer can require it and remember it in
 `suspend_data` — an id, not an index, which would shift the moment copy is reordered.
 
-The nav shows an overall percentage; the panel lists each section and, where it has questions,
-its own count ("2 of 9 opened"), so what is left is never a mystery. Sections come from the
+Three places tell the learner where they are, and they answer different questions:
+
+- the **nav bar** — an overall percentage: *how far through am I?*
+- the **panel** — a per-section count, "2 of 9 opened": *what is left?*
+- the **dot beside each question** — hollow until opened, then filled orange and it stays
+  filled: *which ones?* Without that last one a reader knows six are left but not which six,
+  and has to reopen each to find out.
+
+The mark is applied in the engine, so the open web page gets it too; the SCORM layer only
+restores it on resume from `suspend_data`. Sections come from the
 config automatically; `scormSides` overrides.
 
 The session rules are not negotiable, and `scripts/test-scorm.js` enforces all of them:

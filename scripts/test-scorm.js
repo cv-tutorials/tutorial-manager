@@ -166,6 +166,15 @@ const subOf = (win, id) => (win.document.querySelector(`#sco-i-${id} .sub`) || {
       win.document.getElementById('sco-btn').disabled);
     check('the section count reflects what has been opened',
       /1 of \d+ opened/.test(subOf(win, 'learning')), subOf(win, 'learning'));
+    check('the question just opened is marked read on the page',
+      d.classList.contains('read'),
+      'without a mark the reader knows how many are left but not which ones');
+    d.open = false; d.dispatchEvent(new win.Event('toggle'));
+    check('the mark survives closing it again', d.classList.contains('read'));
+    check('questions never opened stay unmarked',
+      [...win.document.querySelectorAll('#learning details[data-q]')]
+        .filter(x => !x.classList.contains('read')).length ===
+      win.document.querySelectorAll('#learning details[data-q]').length - 1);
     check('the nav shows a percentage', /\d+%/.test(navLabel(win)), navLabel(win));
     check('what was opened is saved for a resume',
       /opened/.test(API.data['cmi.suspend_data'] || ''), API.data['cmi.suspend_data']);
@@ -182,6 +191,9 @@ const subOf = (win, id) => (win.document.querySelector(`#sco-i-${id} .sub`) || {
     await ready(win);
     check('a resumed session restores what was already opened',
       /2 of \d+ opened/.test(subOf(win, 'learning')), subOf(win, 'learning'));
+    check('a resumed session re-marks those questions on the page',
+      win.document.querySelectorAll('#learning details.read').length === 2,
+      `${win.document.querySelectorAll('#learning details.read').length} marked`);
   }
 
   // ── 4. coming back after completing ──
