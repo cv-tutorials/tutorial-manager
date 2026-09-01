@@ -176,10 +176,34 @@ successfully — fails it too, so a failure there would be a false alarm.
 
 ## Built pages
 
-| Page | Audience |
-|---|---|
-| `forest/help-centre` | Every Forest coach |
-| `forest/admin` | Forest's platform administrators only — at Forest, admin access sits with the club, so this is deliberately a separate page and must not be linked where coaches can reach it |
+| Page | Audience | Where it goes |
+|---|---|---|
+| `forest/module` | A coach **already inside** the platform | The SCORM module. Assumes they are logged in — never explains invitations or signing in |
+| `forest/help-centre` | A coach **not yet in**, or locked out | The invitation email, and what support sends when someone cannot get in |
+| `forest/admin` | Forest's platform administrators only | Shared by hand. At Forest, admin access sits with the club, so this must not be linked where coaches can reach it |
+
+**Two entry sections, one body.** `module` and `help-centre` differ only in the first section:
+one says "bookmark this and go and set up Session Planner", the other says "accept your invitation
+and log in". Everything after that is the same shared core, so the version inside the platform and
+the version outside it cannot contradict each other.
+
+That split is not optional. A module that opens with "accept your invitation" is telling a
+logged-in coach how to reach the page they are already reading; a web page that assumes you are
+signed in is useless to the one person who most needs it.
+
+### The reference card
+
+`npm run refcard forest/module` renders a one-page A4 PDF from the same config — the two URLs,
+the two support desks and the four rules that generate tickets. Needs Chrome for the HTML → PDF
+step. It is the artefact that still works when the platform does not, which is exactly when a
+coach needs the address and the right inbox.
+
+### Questions
+
+`helpcentres/forest/questions.md` holds the three questions to add as **native Question items**
+after the SCORM lesson, with options, correct answers and feedback. Deliberately not inside the
+SCORM: native questions appear in reporting, can be edited without repackaging, and feed the
+module's Percentage To Pass.
 
 ## Open items
 
