@@ -126,6 +126,48 @@ public video on the official SportSessionPlanner YouTube channel. All 33 codes w
 oEmbed on 30/08/2026. Reference them from `session-planner-videos.json`; never paste codes into a
 partner config.
 
+## SCORM (putting it in the LMS as a module)
+
+Opt in with `"scorm": true` in the flow's config, then:
+
+```bash
+npm run build && npm run scorm && npm run test:scorm
+```
+
+Output: `dist-scorm/<partner>-<flow>.zip`, ready to upload as a **SCORM item** inside a lesson
+(Create Unit → Lessons → add item → SCORM).
+
+**It wraps the built page, it does not re-author it.** `scripts/scorm.js` reads
+`dist/<partner>/<flow>/index.html` and adds the SCORM runtime plus a completion panel. So the
+module and the web page always say the same thing — change the JSON, rebuild, repackage. A SCORM
+that carries its own copy of the copy is a snapshot that starts lying the day someone edits the
+content, and nothing warns you.
+
+### Completion model
+
+The module completes when the coach has **seen every tracked section** and then presses
+*Mark as complete*. Sections default to `learning` + `planner` (override with `scormSides`),
+which is exactly the "LMS on one side, Session Planner on the other" the module was asked for.
+
+The session rules are not negotiable, and `scripts/test-scorm.js` enforces all of them:
+
+- No terminal status on load — it reports `incomplete` and stays there.
+- Seeing the sections unlocks the button; it does **not** report completion on its own.
+- `beforeunload` / `pagehide` **commit only**. A `finish()` on those events closes the SCO by
+  itself, and they fire when they feel like it.
+- `finish()` is idempotent; a second click cannot re-finish.
+- A record that is already `completed` is never downgraded back to `incomplete` on a revisit.
+- Partial progress goes to `suspend_data`, so a coach resumes where they left off.
+- If `scorm_api.js` fails to load, the page degrades instead of dying half-rendered.
+
+### Manifest validation
+
+`scorm.js` checks well-formedness, the SCORM version, identifier legality, that every
+`<file href>` exists, and that the org/resource references resolve. It deliberately does **not**
+run `xmllint --schema`: that command cannot resolve the `adlcp` namespace from a single schema
+and trips over ADL's own `ims_xml.xsd`. The EFL package — which imported into the LMS
+successfully — fails it too, so a failure there would be a false alarm.
+
 ## Adding a partner
 
 1. `partners/<slug>/partner.json` + `logo.png` (any size — it gets downscaled).

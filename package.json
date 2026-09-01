@@ -7,6 +7,8 @@
     "build": "node scripts/build.js",
     "iframe": "node scripts/build.js iframe",
     "sync-builder": "node scripts/sync-builder.js",
-    "helpcentre": "node scripts/helpcentre.js"
+    "helpcentre": "node scripts/helpcentre.js",
+    "scorm": "node scripts/scorm.js",
+    "test:scorm": "node scripts/test-scorm.js"
   }
 }

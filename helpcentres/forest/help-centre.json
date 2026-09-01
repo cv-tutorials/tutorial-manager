@@ -3,6 +3,8 @@
   "partner": "forest",
   "flow": "help-centre",
   "freshdesk": false,
+  "scorm": true,
+  "scormTitle": "Tools — your platform and Session Planner",
 
   "title": "Nottingham Forest F.C. — Coach Development help centre",
   "fdTitle": "Coach Development help centre",
