@@ -98,6 +98,7 @@ A section is `{ id, title, note?, lead?, blocks[] }`. It becomes a nav item auto
 | `cards` | Link cards | `cards[]` — a string reuses a shared card, an object defines one |
 | `videos` | Video cards | `codes` (a set name or list), `numbered`, `copy{}`, `heading` |
 | `callout` | Box edged in the club's colour | `text` or `use` (a shared callout) |
+| `bookmark` | Loud orange prompt — the one thing we want them to *do* | `title`, `text`, `href` (optional), `label` |
 | `prose` | A lead paragraph | `text` |
 
 ### Bending a shared FAQ
@@ -145,9 +146,14 @@ content, and nothing warns you.
 
 ### Completion model
 
-The module completes when the coach has **seen every tracked section** and then presses
-*Mark as complete*. Sections default to `learning` + `planner` (override with `scormSides`),
-which is exactly the "LMS on one side, Session Planner on the other" the module was asked for.
+Every section is a checkpoint. The nav carries a progress bar and a count ("2 of 4 · 50%"), and
+the panel lists the sections with what is still to go. The button only unlocks once **every**
+section has been on screen, so finishing the module means having been through it rather than
+having scrolled past it.
+
+Sections are picked up automatically from the config; `scormSides` overrides. Two coarse
+checkpoints were the first attempt and they were wrong: you could clear them in three seconds
+and the bar told the learner nothing about how much was left.
 
 The session rules are not negotiable, and `scripts/test-scorm.js` enforces all of them:
 

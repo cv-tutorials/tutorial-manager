@@ -1,47 +1,56 @@
 <style>
-  /* ── SCORM completion, in the CV design system ── */
-  .sco-track{display:flex; align-items:center; gap:10px; margin-left:var(--s-6);
-             padding:5px 0; flex-wrap:wrap}
-  .sco-track .t{display:flex; align-items:center; gap:7px; font-size:12.5px;
-                color:rgba(255,255,255,.55); letter-spacing:-.01em;
-                transition:color var(--dur) var(--ease)}
-  .sco-track .t.on{color:#fff}
-  .sco-track .dot{width:14px; height:14px; border-radius:50%; flex:none;
-                  border:1.5px solid rgba(255,255,255,.35); display:grid; place-items:center;
-                  transition:background var(--dur) var(--ease), border-color var(--dur) var(--ease)}
-  .sco-track .t.on .dot{background:var(--cv-orange); border-color:var(--cv-orange)}
-  .sco-track .dot svg{width:8px; height:8px; stroke:#fff; stroke-width:3.5; fill:none;
-                      opacity:0; transition:opacity var(--dur) var(--ease)}
-  .sco-track .t.on .dot svg{opacity:1}
-  @media (max-width:760px){ .sco-track{margin-left:0; width:100%} }
+  /* ── progress in the nav: a bar plus what is left, so it is never a mystery ── */
+  .sco-prog{display:flex; align-items:center; gap:12px; margin-left:auto; padding:5px 0; min-width:210px}
+  .sco-prog .bar{flex:1; height:5px; border-radius:999px; background:rgba(255,255,255,.16); overflow:hidden}
+  .sco-prog .bar i{display:block; height:100%; width:0; border-radius:999px; background:var(--cv-orange);
+                   transition:width .35s var(--ease)}
+  .sco-prog .lbl{font-size:12px; font-weight:500; color:rgba(255,255,255,.72); white-space:nowrap;
+                 font-variant-numeric:tabular-nums}
+  .sco-prog.done .lbl{color:var(--cv-orange); font-weight:600}
+  @media (max-width:760px){ .sco-prog{margin-left:0; width:100%; min-width:0} }
 
+  /* ── the completion panel ── */
   .sco-panel{background:var(--bg-1); border:1px solid var(--border-1); border-radius:var(--r-md);
              padding:var(--s-7); margin:var(--s-9) 0 var(--s-8); box-shadow:var(--shadow-1);
              max-width:var(--measure)}
   .sco-panel h2{margin-bottom:var(--s-3)}
-  .sco-panel p{font-size:15.5px; color:var(--fg-2); line-height:1.55; margin:0 0 var(--s-5)}
-  .sco-panel .todo{font-size:14.5px; color:var(--fg-3); margin:0 0 var(--s-5)}
+  .sco-panel p.intro{font-size:15.5px; color:var(--fg-2); line-height:1.55; margin:0 0 var(--s-6)}
+
+  .sco-list{list-style:none; margin:0 0 var(--s-6); padding:0; display:flex; flex-direction:column; gap:var(--s-3)}
+  .sco-list li{display:flex; align-items:center; gap:var(--s-4); font-size:15px; color:var(--fg-3);
+               transition:color var(--dur) var(--ease)}
+  .sco-list li.on{color:var(--fg-1)}
+  .sco-list .dot{flex:none; width:20px; height:20px; border-radius:50%; border:1.5px solid var(--border-2);
+                 display:grid; place-items:center; transition:.2s var(--ease)}
+  .sco-list li.on .dot{background:var(--cv-orange); border-color:var(--cv-orange)}
+  .sco-list .dot svg{width:10px; height:10px; stroke:#fff; stroke-width:3.5; fill:none; opacity:0; transition:opacity .2s}
+  .sco-list li.on .dot svg{opacity:1}
+
   .sco-btn{font-family:var(--font-display); font-weight:500; font-size:15px; letter-spacing:-.02em;
            background:var(--cv-orange); color:#fff; border:0; border-radius:var(--r-sm);
            padding:13px 26px; cursor:pointer; transition:background var(--dur) var(--ease)}
   .sco-btn:hover:not(:disabled){background:var(--cv-orange-600)}
-  .sco-btn:disabled{background:var(--n-300); color:var(--n-500); cursor:not-allowed}
+  .sco-btn:disabled{background:var(--n-200); color:var(--n-500); cursor:not-allowed}
   .sco-btn:focus-visible{outline:none; box-shadow:var(--shadow-focus)}
+  .sco-hint{font-size:13.5px; color:var(--fg-3); margin-top:var(--s-3)}
   .sco-done{display:none; font-size:15.5px; color:var(--fg-1); line-height:1.55}
   .sco-done strong{font-weight:600}
-  .sco-panel.is-done .sco-btn, .sco-panel.is-done .todo, .sco-panel.is-done p.intro{display:none}
+  .sco-panel.is-done .sco-btn,
+  .sco-panel.is-done .sco-hint,
+  .sco-panel.is-done p.intro,
+  .sco-panel.is-done .sco-list{display:none}
   .sco-panel.is-done .sco-done{display:block}
 </style>
 
 <section id="sco-complete" class="sco-panel" hidden>
   <div class="shd"><h2>Finished here?</h2></div>
-  <p class="intro">This module is marked complete once you have been through both sides &mdash;
-     your learning platform and Session Planner. Come back to this page whenever you need it;
-     it stays available after you have completed it.</p>
-  <p class="todo" id="sco-todo"></p>
+  <p class="intro">Work through every part below and this module marks itself off. It stays open
+     afterwards &mdash; completing it does not take it away from you.</p>
+  <ul class="sco-list" id="sco-list"></ul>
   <button class="sco-btn" id="sco-btn" disabled>Mark as complete</button>
+  <p class="sco-hint" id="sco-hint"></p>
   <div class="sco-done">
-    <strong>Complete.</strong> Your learning record has been updated. You can close this and it
-    will stay marked off &mdash; and the page is still here whenever you need to look something up.
+    <strong>Complete.</strong> Your learning record has been updated. The page is still here
+    whenever you need to look something up.
   </div>
 </section>

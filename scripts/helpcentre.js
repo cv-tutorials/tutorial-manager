@@ -257,15 +257,17 @@ function resolveCallout(block, v) {
 
 function resolveBookmark(block, v) {
   const url = vars(block.href || '', v);
-  if (!url) fail('bookmark block needs an href');
-  const shown = url.replace(/^https?:\/\//, '').replace(/\/$/, '');
   const icon = '<svg viewBox="0 0 24 24"><path d="M6 2h12a2 2 0 0 1 2 2v18l-8-5-8 5V4a2 2 0 0 1 2-2z"/></svg>';
+  // A bare URL on screen is something nobody types and everybody skims past. If there is
+  // somewhere to go, it is a button; if the reader is already there, there is no link at all.
+  const action = url
+    ? `\n        <a class="link" href="${url}" target="_blank" rel="noopener">${vars(block.label || 'Open the guide', v)} &rarr;</a>`
+    : '';
   return `    <div class="bookmark">
       <span class="ico" aria-hidden="true">${icon}</span>
       <div>
         <h3>${vars(block.title || 'Save this in your favourites', v)}</h3>
-        <p>${vars(block.text || '', v)}</p>
-        <a class="link" href="${url}" target="_blank" rel="noopener">${shown}</a>
+        <p>${vars(block.text || '', v)}</p>${action}
       </div>
     </div>`;
 }

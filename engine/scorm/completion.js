@@ -1,7 +1,7 @@
 /**
- * SCORM session behaviour for a help centre module.
+ * SCORM session behaviour and progress for a help centre module.
  *
- * The rules here are the ones that hurt if you get them wrong (see cv-scorm-builder):
+ * The session rules are the ones that hurt if you get them wrong (cv-scorm-builder):
  *  - a terminal status is reported ONLY when the learner deliberately marks the module
  *    complete. Never on load, never on scroll.
  *  - beforeunload / pagehide COMMIT, they never finish. Those events fire spuriously and
@@ -9,18 +9,21 @@
  *  - finish() is idempotent (guarded inside scorm_api.js).
  *  - an already-completed record is never downgraded back to incomplete on a revisit.
  *
- * Completion means: the coach has been through both sides of the module — the learning
- * platform and Session Planner — which is exactly what the module was asked to cover.
+ * Progress: every section is a checkpoint. The bar in the nav shows how far through they
+ * are and the panel names what is left, so it is never a mystery. The button only unlocks
+ * once every section has actually been on screen — finishing the module means having been
+ * through all of it, not having scrolled past it in three seconds.
  */
 (function () {
-  var SIDES = __SCO_SIDES__;               // [{id, label}, …] — the sections that must be seen
+  var SIDES = __SCO_SIDES__;               // [{id, label}, …] — every section that must be seen
   var seen = {};
   var completed = false;
 
   var panel = document.getElementById('sco-complete');
   var btn   = document.getElementById('sco-btn');
-  var todo  = document.getElementById('sco-todo');
-  if (!panel || !btn || !todo) return;
+  var hint  = document.getElementById('sco-hint');
+  var list  = document.getElementById('sco-list');
+  if (!panel || !btn || !hint || !list) return;
   panel.hidden = false;
 
   // If scorm_api.js failed to load at all, degrade instead of dying half-rendered:
@@ -30,7 +33,7 @@
   var live = hasApi && ScormAPI.initialize();
   if (!hasApi) console.warn('scorm_api.js did not load — running without LMS reporting');
 
-  // Resume: restore which sides were seen, and never downgrade a completed record.
+  // Resume: restore what was seen, and never downgrade a completed record.
   if (live) {
     var prior = ScormAPI.getSuspendData();
     if (prior && prior.seen) seen = prior.seen;
@@ -44,42 +47,53 @@
   }
 
   var tick = '<svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>';
+  var bar, lblEl, progWrap;
 
-  function buildTracker() {
-    var links = document.querySelector('.navlinks');
-    if (!links) return;
-    var wrap = document.createElement('div');
-    wrap.className = 'sco-track';
-    wrap.id = 'sco-track';
+  function buildProgress() {
+    var nav = document.querySelector('.navin');
+    if (nav) {
+      progWrap = document.createElement('div');
+      progWrap.className = 'sco-prog';
+      progWrap.innerHTML = '<span class="bar"><i></i></span><span class="lbl"></span>';
+      nav.appendChild(progWrap);
+      bar = progWrap.querySelector('i');
+      lblEl = progWrap.querySelector('.lbl');
+    }
     SIDES.forEach(function (s) {
-      var el = document.createElement('span');
-      el.className = 't';
-      el.id = 'sco-t-' + s.id;
-      el.innerHTML = '<span class="dot">' + tick + '</span>' + s.label;
-      wrap.appendChild(el);
+      var li = document.createElement('li');
+      li.id = 'sco-i-' + s.id;
+      li.innerHTML = '<span class="dot">' + tick + '</span>' + s.label;
+      list.appendChild(li);
     });
-    links.parentNode.insertBefore(wrap, links.nextSibling);
   }
 
   function render() {
+    var done = SIDES.filter(function (s) { return seen[s.id]; });
     var missing = SIDES.filter(function (s) { return !seen[s.id]; });
+    var pct = Math.round((done.length / SIDES.length) * 100);
+
     SIDES.forEach(function (s) {
-      var el = document.getElementById('sco-t-' + s.id);
-      if (el) el.classList.toggle('on', !!seen[s.id]);
+      var li = document.getElementById('sco-i-' + s.id);
+      if (li) li.classList.toggle('on', !!seen[s.id]);
     });
 
-    if (completed) {
-      panel.classList.add('is-done');
-      return;
+    if (bar) bar.style.width = (completed ? 100 : pct) + '%';
+    if (lblEl) {
+      lblEl.textContent = completed ? 'Complete'
+        : pct === 100 ? 'All seen'
+        : done.length + ' of ' + SIDES.length + ' · ' + pct + '%';
     }
-    if (missing.length) {
-      btn.disabled = true;
-      todo.textContent = 'Still to look at: ' +
-        missing.map(function (s) { return s.label; }).join(' and ') + '.';
-    } else {
-      btn.disabled = false;
-      todo.textContent = 'Both sides seen — you are good to mark this off.';
-    }
+    if (progWrap) progWrap.classList.toggle('done', completed || pct === 100);
+
+    if (completed) { panel.classList.add('is-done'); return; }
+
+    btn.disabled = missing.length > 0;
+    hint.textContent = missing.length
+      ? (missing.length === 1
+          ? 'One section still to go: ' + missing[0].label + '.'
+          : missing.length + ' sections still to go — ' +
+            missing.map(function (s) { return s.label; }).join(', ') + '.')
+      : 'Everything seen. You are good to mark this off.';
   }
 
   function markSeen(id) {
@@ -89,7 +103,7 @@
     render();
   }
 
-  // A side counts as seen once it has actually been on screen for a moment,
+  // A section counts as seen once it has actually been on screen for a moment,
   // not merely because the page loaded with it below the fold.
   var timers = {};
   var io = new IntersectionObserver(function (entries) {
@@ -101,7 +115,7 @@
         clearTimeout(timers[id]);
       }
     });
-  }, { threshold: 0.25 });
+  }, { threshold: 0.2 });
 
   SIDES.forEach(function (s) {
     var el = document.getElementById(s.id);
@@ -128,6 +142,6 @@
   window.addEventListener('beforeunload', save);
   window.addEventListener('pagehide', save);
 
-  buildTracker();
+  buildProgress();
   render();
 })();

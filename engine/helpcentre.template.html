@@ -216,12 +216,11 @@ details[open] .qn{background:var(--cv-orange)}
 .bookmark p{font-size:15px; color:var(--fg-2); line-height:1.5; margin:0}
 .bookmark p strong{color:var(--fg-1); font-weight:600}
 .bookmark a.link{display:inline-block; margin-top:var(--s-4);
-                 font-family:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
-                 font-size:13px; font-weight:500; color:var(--cv-orange);
-                 background:#fff; border:1px solid rgba(255,102,0,.35);
-                 border-radius:var(--r-sm); padding:7px 12px; word-break:break-all;
-                 transition:background var(--dur) var(--ease), border-color var(--dur) var(--ease)}
-.bookmark a.link:hover{background:var(--cv-orange); border-color:var(--cv-orange); color:#fff}
+                 font-family:var(--font-display); font-weight:500; font-size:15px;
+                 letter-spacing:-.02em; color:#fff; background:var(--cv-orange);
+                 border-radius:var(--r-sm); padding:11px 22px; text-decoration:none;
+                 transition:background var(--dur) var(--ease)}
+.bookmark a.link:hover{background:var(--cv-orange-600); color:#fff}
 @media (max-width:560px){ .bookmark{padding:var(--s-5); gap:var(--s-4)} }
 
 /* ── callout: the club's own voice, so it wears the club's colour ── */

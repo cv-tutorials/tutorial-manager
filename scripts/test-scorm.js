@@ -107,18 +107,18 @@ async function seeAllSides(win) {
 
     // seeing both sides unlocks the button, but must not report complete on its own
     // before: nothing ticked, and the panel says what is left
-    check('nav tracker starts with nothing ticked',
-      [...win.document.querySelectorAll('#sco-track .t')].every(t => !t.classList.contains('on')));
-    check('panel names what is still to look at',
-      /Still to look at/.test(win.document.getElementById('sco-todo').textContent),
-      win.document.getElementById('sco-todo').textContent);
+    check('progress starts at zero, nothing ticked',
+      [...win.document.querySelectorAll('#sco-list li')].every(t => !t.classList.contains('on')));
+    check('panel names how many sections are left',
+      /still to go/.test(win.document.getElementById('sco-hint').textContent),
+      win.document.getElementById('sco-hint').textContent);
 
     await seeAllSides(win);
     check('button unlocks once every side has been seen', btn && !btn.disabled);
-    check('nav tracker ticks every side once seen',
-      win.document.querySelectorAll('#sco-track .t').length === 2 &&
-      [...win.document.querySelectorAll('#sco-track .t')].every(t => t.classList.contains('on')),
-      [...win.document.querySelectorAll('#sco-track .t')].map(t => t.className).join(' | '));
+    check('every section ticks once seen',
+      win.document.querySelectorAll('#sco-list li').length === 4 &&
+      [...win.document.querySelectorAll('#sco-list li')].every(t => t.classList.contains('on')),
+      [...win.document.querySelectorAll('#sco-list li')].map(t => t.className).join(' | '));
     check('seeing the sides does not by itself report completion',
       API.data['cmi.core.lesson_status'] === 'incomplete',
       `got "${API.data['cmi.core.lesson_status']}"`);
@@ -147,10 +147,13 @@ async function seeAllSides(win) {
 
     check('one side seen does not unlock completion',
       win.document.getElementById('sco-btn').disabled);
-    check('one side seen names only the missing one',
-      /Session Planner/.test(win.document.getElementById('sco-todo').textContent) &&
-      !/Your learning and/.test(win.document.getElementById('sco-todo').textContent),
-      win.document.getElementById('sco-todo').textContent);
+    check('one section seen names the ones still missing',
+      /Session Planner/.test(win.document.getElementById('sco-hint').textContent) &&
+      !/Your learning/.test(win.document.getElementById('sco-hint').textContent),
+      win.document.getElementById('sco-hint').textContent);
+    check('the nav shows a progress figure, not just ticks',
+      /\d of \d/.test((win.document.querySelector('.sco-prog .lbl') || {}).textContent || ''),
+      (win.document.querySelector('.sco-prog .lbl') || {}).textContent);
     check('partial progress is saved to suspend_data for a resume',
       /learning/.test(API.data['cmi.suspend_data'] || ''),
       API.data['cmi.suspend_data']);

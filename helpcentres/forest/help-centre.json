@@ -113,8 +113,7 @@
         {
           "type": "bookmark",
           "title": "Save this page to your favourites",
-          "text": "This page needs <strong>no login</strong>, so it works from your phone at the training ground and on the day you cannot get into the platform. That is exactly when you will want it.",
-          "href": "{{webUrl}}"
+          "text": "You are on it. This page needs <strong>no login</strong>, so it works from your phone at the training ground and on the day you cannot get into the platform &mdash; which is exactly when you will want it."
         }
       ],
       "nav": true,

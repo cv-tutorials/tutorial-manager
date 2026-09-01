@@ -59,12 +59,14 @@ function discover(only) {
  */
 function sides(cfg) {
   if (Array.isArray(cfg.scormSides)) return cfg.scormSides;
-  const ids = (cfg.sections || []).map((s) => s.id);
-  const guess = [];
-  if (ids.includes('learning')) guess.push({ id: 'learning', label: 'Your learning' });
-  if (ids.includes('planner')) guess.push({ id: 'planner', label: 'Session Planner' });
-  if (!guess.length) fail('no sections to track — set "scormSides" in the config');
-  return guess;
+  // Every section is a checkpoint. Two coarse ones could be scrolled past in seconds and
+  // still counted as "seen"; one per section makes the progress bar mean something and
+  // makes reaching the end a requirement rather than a suggestion.
+  const list = (cfg.sections || [])
+    .filter((s) => s.id && s.title)
+    .map((s) => ({ id: s.id, label: (s.navLabel || s.title).replace(/&[a-z]+;/g, '').trim() }));
+  if (!list.length) fail('no sections to track — set "scormSides" in the config');
+  return list;
 }
 
 function build({ partner, flow, cfg }) {
