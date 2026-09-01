@@ -255,12 +255,28 @@ function resolveCallout(block, v) {
   return `    <div class="callout">${vars(text, v)}</div>`;
 }
 
+function resolveBookmark(block, v) {
+  const url = vars(block.href || '', v);
+  if (!url) fail('bookmark block needs an href');
+  const shown = url.replace(/^https?:\/\//, '').replace(/\/$/, '');
+  const icon = '<svg viewBox="0 0 24 24"><path d="M6 2h12a2 2 0 0 1 2 2v18l-8-5-8 5V4a2 2 0 0 1 2-2z"/></svg>';
+  return `    <div class="bookmark">
+      <span class="ico" aria-hidden="true">${icon}</span>
+      <div>
+        <h3>${vars(block.title || 'Save this in your favourites', v)}</h3>
+        <p>${vars(block.text || '', v)}</p>
+        <a class="link" href="${url}" target="_blank" rel="noopener">${shown}</a>
+      </div>
+    </div>`;
+}
+
 const BLOCKS = {
   faq: resolveFaq,
   cards: resolveCards,
   videos: resolveVideos,
   steps: resolveSteps,
   callout: resolveCallout,
+  bookmark: resolveBookmark,
   prose: (b, v) => `    <p class="lead">${vars(b.text, v)}</p>`,
 };
 

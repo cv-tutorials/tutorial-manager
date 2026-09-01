@@ -111,7 +111,14 @@
       "id": "help",
       "title": "Still stuck?",
       "navLabel": "Help",
-      "blocks": [ { "type": "cards", "cards": ["webCopy"] } ],
+      "blocks": [
+        {
+          "type": "bookmark",
+          "title": "Save this guide to your favourites",
+          "text": "Everything on this page also lives on the open web, with <strong>no login needed</strong> &mdash; so you can check something from your phone at the training ground without signing in. Bookmark it now and you will not have to come back through the platform to find it.",
+          "href": "{{webUrl}}"
+        }
+      ],
       "lead": "Anything about <strong>this platform</strong> goes to <a href=\"mailto:{{supportEmail}}\">{{supportEmail}}</a>. Anything about <strong>Session Planner</strong> goes to <a href=\"mailto:{{plannerSupport}}\">{{plannerSupport}}</a>. Tell us your name, the module or session you were in and what you saw on screen &mdash; it gets you an answer far quicker. Anything about the Forest content itself, speak to your Academy contact."
     }
   ]

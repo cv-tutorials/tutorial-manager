@@ -15,7 +15,8 @@
   "vars": {
     "club": "Forest",
     "lmsUrl": "https://nottingham-forest-fc.coachesvoice.com/",
-    "lmsHost": "nottingham-forest-fc.coachesvoice.com"
+    "lmsHost": "nottingham-forest-fc.coachesvoice.com",
+    "webUrl": "https://cv-tutorials.github.io/tutorial-manager/forest/help-centre/"
   },
 
   "sections": [
@@ -108,6 +109,14 @@
     {
       "id": "help",
       "title": "Still stuck?",
+      "blocks": [
+        {
+          "type": "bookmark",
+          "title": "Save this page to your favourites",
+          "text": "This page needs <strong>no login</strong>, so it works from your phone at the training ground and on the day you cannot get into the platform. That is exactly when you will want it.",
+          "href": "{{webUrl}}"
+        }
+      ],
       "nav": true,
       "navLabel": "Help",
       "lead": "Email <a href=\"mailto:{{supportEmail}}\" style=\"color:var(--red);font-weight:700;text-decoration:none\">{{supportEmail}}</a>. Tell us your name, the module or session you were in and what you saw on screen &mdash; it gets you an answer far quicker. Anything about the Forest content itself, speak to your Academy contact."
