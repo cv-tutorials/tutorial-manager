@@ -82,7 +82,7 @@
       "id": "planner",
       "title": "Session Planner",
       "note": "Build it, animate it, send it to your players",
-      "lead": "Build a session, animate it in 3D so your players see the movement rather than read a diagram, and send it to them before they get to the ground. Next week, adapt it instead of starting again. It is a separate tool from your learning platform, with its own login.",
+      "lead": "Build a session, animate it in 3D so your players see the movement rather than read a diagram, and send it to them before they get to the ground. Next week, adapt it instead of starting again. It is a separate platform from your learning one, with its own login.",
       "blocks": [
         { "type": "faq", "include": "session-planner-faq", "open": "open" },
         {

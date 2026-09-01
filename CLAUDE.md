@@ -29,7 +29,9 @@ hosted pages.
   engine: the answers that are true for every partner live once in `content/core/`, and a partner
   config includes / omits / overrides / adds. **Nothing club-specific in `content/core/`.**
 - Session Planner is called **Session Planner** in all partner-facing copy — never "SSP", never
-  "Sport Session Planner". Its 33 tutorials are public YouTube videos catalogued in
+  "Sport Session Planner". It is **also Coaches' Voice** — two platforms, not two companies; never
+  imply a third party. Support splits by platform: LMS → support@coachesvoice.com, Session Planner
+  → support@sportsessionplanner.com. Its 33 tutorials are public YouTube videos catalogued in
   `content/core/session-planner-videos.json`; reference them, never paste codes into a config.
 - Partner logos are inlined twice per page, so `helpcentre.js` downscales them to 300px. Do not
   bypass it — a 1500px crest doubles the page.

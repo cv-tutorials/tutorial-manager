@@ -62,10 +62,10 @@
     {
       "id": "planner",
       "title": "Session Planner",
-      "note": "A separate product, administered separately",
+      "note": "The other Coaches&rsquo; Voice platform, administered separately",
       "lead": [
-        "Session Planner has its own club administration, unconnected to the learning platform. Adding a coach to one does <strong>not</strong> add them to the other, and the accounts are not linked &mdash; there is no single sign-on between them. Budget for doing both.",
-        "The four videos below are Session Planner&rsquo;s own, on their public channel. The <strong>curriculum library</strong> one is the relevant one for Forest: that is where the age-group folders are managed once they are built out."
+        "Session Planner is the other Coaches&rsquo; Voice platform, and it has its own club administration. Adding a coach to one does <strong>not</strong> add them to the other, and the accounts are not linked &mdash; there is no single sign-on between them. Budget for doing both.",
+        "The four videos below come from Session Planner&rsquo;s own channel. The <strong>curriculum library</strong> one is the relevant one for Forest: that is where the age-group folders are managed once they are built out."
       ],
       "blocks": [
         {

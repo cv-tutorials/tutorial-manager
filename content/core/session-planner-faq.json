@@ -1,7 +1,7 @@
 {
   "id": "session-planner-faq",
   "_note": "Shared Session Planner FAQ. True for every partner that has Session Planner alongside the LMS. Video codes live in session-planner-videos.json — reference them, never paste them into a partner config.",
-  "_support": "Session Planner faults go to {{plannerSupport}} (their own desk). Only seat provisioning comes to CV — we hand out the licences, they build the tool. Do not collapse the two.",
+  "_support": "Session Planner is ALSO Coaches' Voice — two platforms, not two companies. Do not write copy that implies a third party ('they build it', 'their product'). The only split is the support desk: LMS questions to {{supportEmail}}, Session Planner questions to {{plannerSupport}}. One rule, no judgement call for the coach.",
   "_naming": "It is 'Session Planner' in all partner-facing copy. Never 'Sport Session Planner', never 'SSP' — not in prose, not in anchors, not in nav labels.",
 
   "items": [
@@ -10,8 +10,8 @@
       "q": "How do I open it, and why is it asking me to log in again?",
       "a": [
         "<p>Use the green <strong>Session Planner</strong> button at the top right of My Learning. It opens in a new tab and leaves your learning where it was.</p>",
-        "<p>Session Planner is a <strong>separate product with its own account</strong>, and it is not single sign-on. You log in with your Session Planner username and password, which are not the same as your learning platform ones and may well be a different password entirely. Worth saving both.</p>",
-        "<p>Not been given Session Planner details at all? That one is ours &mdash; email <a href=\"mailto:{{supportEmail}}\">{{supportEmail}}</a> and we will sort your seat. Once you are in, anything about the tool itself &mdash; a password that will not reset, a session that will not save &mdash; goes straight to <a href=\"mailto:{{plannerSupport}}\">{{plannerSupport}}</a>, who build it.</p>"
+        "<p>Session Planner is a <strong>separate platform with its own account</strong>, and it is not single sign-on. You log in with your Session Planner username and password, which are not the same as your learning platform ones and may well be a different password entirely. Worth saving both.</p>",
+        "<p>Both are Coaches&rsquo; Voice platforms, but each has its own support desk. Anything about Session Planner &mdash; details you have not been given, a password that will not reset, a session that will not save &mdash; goes to <a href=\"mailto:{{plannerSupport}}\">{{plannerSupport}}</a>. Anything about your learning platform stays with <a href=\"mailto:{{supportEmail}}\">{{supportEmail}}</a>.</p>"
       ]
     },
     {
@@ -33,7 +33,7 @@
   ],
 
   "blurbs": {
-    "coachIntro": "Build a session, animate it in 3D so your players see the movement rather than read a diagram, and send it to them before they get to the ground. Next week, adapt it instead of starting again. It is a separate tool from your learning platform, with its own login.",
+    "coachIntro": "Build a session, animate it in 3D so your players see the movement rather than read a diagram, and send it to them before they get to the ground. Next week, adapt it instead of starting again. It is a separate platform from your learning one, with its own login.",
     "adminIntro": "Session Planner has its own club administration, unconnected to the learning platform. Adding a coach to one does <strong>not</strong> add them to the other, and the accounts are not linked &mdash; there is no single sign-on between them. Budget for doing both.",
     "adminOffboard": "<strong>When someone leaves, revoke both.</strong> Removing a coach from the learning platform leaves their Session Planner access untouched, and vice versa. Two products, two off-boarding steps."
   },

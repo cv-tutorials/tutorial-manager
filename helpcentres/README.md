@@ -77,9 +77,10 @@ labels, not in anchor ids.
 substituted everywhere, including inside core content. `supportEmail` falls back to `partner.json`;
 `plannerSupport` defaults to Session Planner's own desk, `support@sportsessionplanner.com`.
 
-**Two support desks, deliberately.** Provisioning a Session Planner seat is ours — we hand out the
-licences. Faults in the tool are theirs. The copy routes each to the right place; do not collapse
-them back into one address or CV ends up triaging another product's bugs.
+**Session Planner is also Coaches' Voice** — two platforms, not two companies. Never write copy
+that implies a third party ("they build it", "their product"). The only thing that splits is the
+support desk: learning-platform questions to `{{supportEmail}}`, Session Planner questions to
+`{{plannerSupport}}`. One rule, so the coach never has to work out whose problem it is.
 
 The crest comes from `partner.json`, inlined as a data URI and downscaled to 300px first — a
 full-size crest doubles the page weight, because it is inlined twice. See **Brand** above for how
