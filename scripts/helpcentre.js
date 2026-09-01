@@ -263,7 +263,12 @@ function resolveBookmark(block, v) {
   const action = url
     ? `\n        <a class="link" href="${url}" target="_blank" rel="noopener">${vars(block.label || 'Open the guide', v)} &rarr;</a>`
     : '';
-  return `    <div class="bookmark">
+  // A link out of the platform, shown before the work is done, is an exit. Blocks marked
+  // revealOnComplete are hidden by the SCORM layer until the module is finished. On the
+  // open web there is no SCORM layer, so they simply show — which is right, the reader is
+  // already outside.
+  const reveal = block.revealOnComplete ? ' data-reveal="complete"' : '';
+  return `    <div class="bookmark"${reveal}>
       <span class="ico" aria-hidden="true">${icon}</span>
       <div>
         <h3>${vars(block.title || 'Save this in your favourites', v)}</h3>

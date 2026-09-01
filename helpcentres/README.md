@@ -49,6 +49,24 @@ Brand assets live in `engine/brand/`, lifted from the CV design system package.
 `cv-tokens-reference.css` is the full token file, kept for reference — the engine inlines only the
 tokens these pages use.
 
+## Language
+
+**UK English, everywhere a reader sees it.** These are UK clubs. `npm run lint:english [partner]`
+checks the built pages with `<script>` and `<style>` stripped out — CSS `color` and JS `Math` are
+keywords and must stay American, and flagging them would only train people to ignore the linter.
+
+Known and deliberately not "fixed": *Coach Education Center* in the asc / ecnl / efl / n1
+tutorials. It reads as the product's own name and those are US partners — a decision for the
+team, not a spelling slip.
+
+## Links out of the platform
+
+A block marked `"revealOnComplete": true` is hidden by the SCORM layer until the module is
+finished, then revealed, and the completion click scrolls to it rather than back to the panel.
+A link out shown up front is an exit route halfway through the work; shown at the end it is the
+next step. On the open web there is no SCORM layer, so such blocks simply render — correct,
+since the reader is already outside.
+
 ## Naming
 
 It is **Session Planner**. Never "Sport Session Planner", never "SSP" — not in copy, not in nav
@@ -98,7 +116,7 @@ A section is `{ id, title, note?, lead?, blocks[] }`. It becomes a nav item auto
 | `cards` | Link cards | `cards[]` — a string reuses a shared card, an object defines one |
 | `videos` | Video cards | `codes` (a set name or list), `numbered`, `copy{}`, `heading` |
 | `callout` | Box edged in the club's colour | `text` or `use` (a shared callout) |
-| `bookmark` | Loud orange prompt — the one thing we want them to *do* | `title`, `text`, `href` (optional), `label` |
+| `bookmark` | Loud orange prompt — the one thing we want them to *do* | `title`, `text`, `href` (optional), `label`, `revealOnComplete` |
 | `prose` | A lead paragraph | `text` |
 
 ### Bending a shared FAQ

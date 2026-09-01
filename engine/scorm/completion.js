@@ -49,6 +49,14 @@
   var tick = '<svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>';
   var bar, lblEl, progWrap;
 
+  // Anything that would take the learner out of the platform stays hidden until the module
+  // is done. Shown up front it is an exit route halfway through the work.
+  var rewards = [].slice.call(document.querySelectorAll('[data-reveal="complete"]'));
+  function setRewards(show) {
+    rewards.forEach(function (el) { el.style.display = show ? '' : 'none'; });
+  }
+  setRewards(completed);
+
   function buildProgress() {
     var nav = document.querySelector('.navin');
     if (nav) {
@@ -85,7 +93,7 @@
     }
     if (progWrap) progWrap.classList.toggle('done', completed || pct === 100);
 
-    if (completed) { panel.classList.add('is-done'); return; }
+    if (completed) { panel.classList.add('is-done'); setRewards(true); return; }
 
     btn.disabled = missing.length > 0;
     hint.textContent = missing.length
@@ -132,9 +140,12 @@
       ScormAPI.finish();               // terminal status only on a deliberate action
     }
     render();
+    // Scroll to whatever just appeared rather than back to the panel: the reward for
+    // finishing is the thing they could not see a moment ago.
+    var target = rewards[0] || panel;
     // Guarded: an exception in a click handler inside an unknown LMS browser would
     // strand the learner on a button that looks like it did nothing.
-    if (panel.scrollIntoView) { try { panel.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {} }
+    if (target.scrollIntoView) { try { target.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {} }
   });
 
   // Commit only. Never finish here — these events fire when they feel like it.

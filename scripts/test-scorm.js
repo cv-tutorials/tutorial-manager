@@ -94,6 +94,12 @@ async function seeAllSides(win) {
 
     const btn = win.document.getElementById('sco-btn');
     check('completion button starts disabled', btn && btn.disabled);
+
+    const reward = win.document.querySelector('[data-reveal="complete"]');
+    check('the module has a reveal-on-complete block to test', !!reward);
+    check('the link out of the platform is hidden before completion',
+      reward && reward.style.display === 'none',
+      'shown early it is an exit route halfway through the work');
     check('panel is visible once the SCORM logic runs',
       win.document.getElementById('sco-complete') && !win.document.getElementById('sco-complete').hidden);
 
@@ -129,6 +135,9 @@ async function seeAllSides(win) {
       `got "${API.data['cmi.core.lesson_status']}"`);
     check('marking complete finishes the session exactly once',
       API.calls.filter(c => c[0] === 'finish').length === 1);
+
+    check('the link out appears once the module is complete',
+      reward && reward.style.display !== 'none');
 
     // idempotence — a second click must not reopen or re-finish
     btn.dispatchEvent(new win.Event('click'));
@@ -174,6 +183,8 @@ async function seeAllSides(win) {
       `got "${API.data['cmi.core.lesson_status']}"`);
     check('the page still opens for a completed learner (reference stays available)',
       !!win.document.querySelector('#planner'));
+    check('a returning completed learner sees the link out straight away',
+      (win.document.querySelector('[data-reveal="complete"]') || {}).style.display !== 'none');
   }
 
   console.log(`\n${pass} passed, ${fail} failed\n`);

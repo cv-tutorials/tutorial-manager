@@ -114,8 +114,10 @@
       "blocks": [
         {
           "type": "bookmark",
-          "title": "Save this guide to your favourites",
-          "text": "Everything on this page also lives on the open web, with <strong>no login needed</strong> &mdash; so you can check something from your phone at the training ground without signing in. Bookmark it now and you will not have to come back through the platform to find it.",
+          "revealOnComplete": true,
+          "title": "One last thing &mdash; save it to your favourites",
+          "text": "Everything you have just been through also lives on the open web, with <strong>no login needed</strong>. Open it once and bookmark it, and you can check any of this from your phone at the training ground without signing in.",
+          "label": "Open the guide",
           "href": "{{webUrl}}"
         }
       ],

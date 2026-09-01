@@ -10,6 +10,7 @@
     "helpcentre": "node scripts/helpcentre.js",
     "scorm": "node scripts/scorm.js",
     "test:scorm": "node scripts/test-scorm.js",
-    "refcard": "node scripts/refcard.js"
+    "refcard": "node scripts/refcard.js",
+    "lint:english": "node scripts/lint-english.js"
   }
 }
