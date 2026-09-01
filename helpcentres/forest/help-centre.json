@@ -21,9 +21,9 @@
   "sections": [
     {
       "id": "start",
-      "title": "Start here",
-      "note": "Three steps, about ten minutes",
-      "lead": "If you are new to Forest, or new to the platform, do these in order.",
+      "title": "Getting in",
+      "note": "New here, or locked out",
+      "lead": "If you have not been into the platform yet, or you cannot get in today, start here. Everything below it is reference you can use at any time, without signing in.",
       "blocks": [
         {
           "type": "steps",

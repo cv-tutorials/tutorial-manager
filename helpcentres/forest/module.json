@@ -17,7 +17,8 @@
   "vars": {
     "club": "Forest",
     "lmsUrl": "https://nottingham-forest-fc.coachesvoice.com/",
-    "lmsHost": "nottingham-forest-fc.coachesvoice.com"
+    "lmsHost": "nottingham-forest-fc.coachesvoice.com",
+    "webUrl": "https://cv-tutorials.github.io/tutorial-manager/forest/help-centre/"
   },
 
   "sections": [
@@ -110,6 +111,7 @@
       "id": "help",
       "title": "Still stuck?",
       "navLabel": "Help",
+      "blocks": [ { "type": "cards", "cards": ["webCopy"] } ],
       "lead": "Anything about <strong>this platform</strong> goes to <a href=\"mailto:{{supportEmail}}\">{{supportEmail}}</a>. Anything about <strong>Session Planner</strong> goes to <a href=\"mailto:{{plannerSupport}}\">{{plannerSupport}}</a>. Tell us your name, the module or session you were in and what you saw on screen &mdash; it gets you an answer far quicker. Anything about the Forest content itself, speak to your Academy contact."
     }
   ]

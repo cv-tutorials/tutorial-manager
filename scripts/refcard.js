@@ -159,6 +159,12 @@ footer img{height:5.5mm;opacity:.75}
       <div class="sup"><div class="w">Session Planner</div><div class="a">${v.plannerSupport}</div></div>
     </div>
   </section>
+
+  ${v.webUrl ? `<section style="margin-top:9mm">
+    <h2>If you need this again</h2>
+    <p style="font-size:9.5pt;color:var(--muted)">The full guide is on the open web &mdash; <b style="color:var(--slate)">no login needed</b>, so you can check something from your phone at the training ground.</p>
+    <span class="url" style="margin-top:2.5mm">${v.webUrl.replace(/^https?:\/\//, '')}</span>
+  </section>` : ''}
 </main>
 
 <footer>

@@ -39,6 +39,12 @@
       "td": "Every guide for the tool itself. Log in to Session Planner first.",
       "href": "https://www.sportsessionplanner.com/my.mpl?a=help_center"
     },
+    "webCopy": {
+      "who": "No login needed",
+      "tt": "Keep this to hand",
+      "td": "Everything here also lives on the open web, so you can check something from your phone at the training ground without signing in. Bookmark it.",
+      "href": "{{webUrl}}"
+    },
     "coachTour": {
       "who": "Video &middot; 2 min",
       "tt": "A tour of your platform",
