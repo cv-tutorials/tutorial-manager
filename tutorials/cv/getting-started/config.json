@@ -226,7 +226,8 @@
     "en": {
       "doneT": "You're ready to start learning!",
       "doneD": "You know your way around: find content, work through units lesson by lesson, and watch your CPD points grow. Your progress is saved automatically — pick up any time, right where you left off.",
-      "lead": "For coaches. Your first tour of the platform: where everything lives and how to start earning CPD points."
+      "lead": "For coaches. Your first tour of the platform: where everything lives and how to start earning CPD points.",
+      "sub": "Coach guide"
     },
     "es": {
       "doneT": "¡Listo para empezar a aprender!",

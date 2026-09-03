@@ -111,7 +111,8 @@
     "en": {
       "doneT": "That's your 5 hours complete!",
       "doneD": "3 core + 1 tactical + 1 technical = your full 5 required hours. Your certificate will be waiting in the \"Achievements\" section of your profile.",
-      "lead": "For coaches in N1 and ECNL clubs. How to complete your 5 required hours and earn your certificate."
+      "lead": "For coaches in N1 and ECNL clubs. How to complete your 5 required hours and earn your certificate.",
+      "sub": "Coach guide"
     }
   }
 }

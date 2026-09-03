@@ -85,11 +85,13 @@ function buildUI(partner, config, stepCount) {
   for (const lang of langs) {
     const base = UI_STRINGS[lang] || UI_STRINGS.en;
     const title = config.title[lang] || config.title.en || '';
+    // per-tutorial audience label (e.g. "Coach guide"); defaults to the admin label
+    const subLabel = (config.ui && config.ui[lang] && config.ui[lang].sub) || base.sub;
     ui[lang] = {
       ...base,
       title,
-      sub: `${partner.name} · ${base.sub}`,
-      eyebrow: `${base.sub} · ${partner.name}`,
+      sub: `${partner.name} · ${subLabel}`,
+      eyebrow: `${subLabel} · ${partner.name}`,
       lead: lang === 'en'
         ? 'Follow these steps. It only takes a couple of minutes.'
         : 'Sigue estos pasos. Solo toma un par de minutos.',
