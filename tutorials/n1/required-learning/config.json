@@ -1,0 +1,117 @@
+{
+  "version": 2,
+  "partner": "n1",
+  "flow": "required-learning",
+  "title": {
+    "en": "Completing your 5 required hours"
+  },
+  "steps": [
+    {
+      "img": "screenshots/01-home.png",
+      "ar": 0.919,
+      "section": "Find the content",
+      "cx": 12.8,
+      "cy": 51.5,
+      "w": 19,
+      "h": 3.6,
+      "z": 1.7,
+      "en": {
+        "t": "Find the Required Learning rail",
+        "d": "From your homepage, scroll down to the rail called \"N1 - Required Learning\". In an ECNL club platform it's called \"ECNL - Required Learning\" — everything else works exactly the same."
+      }
+    },
+    {
+      "img": "screenshots/01-home.png",
+      "ar": 0.919,
+      "section": "Find the content",
+      "cx": 15.8,
+      "cy": 61.3,
+      "w": 24.5,
+      "h": 15.5,
+      "z": 1.3,
+      "en": {
+        "t": "Open the season card",
+        "d": "Click the \"N1 season 2026/2027\" card to see everything that counts towards your certificate."
+      }
+    },
+    {
+      "img": "screenshots/02-season.png",
+      "ar": 0.919,
+      "section": "Find the content",
+      "cx": 50,
+      "cy": 40,
+      "w": 94,
+      "h": 22,
+      "z": 1,
+      "static": true,
+      "noSpot": true,
+      "en": {
+        "t": "Three buckets, five hours",
+        "d": "Inside you'll find three buckets: Core, Tactical and Technical modules. Together they add up to the 5 hours you need for your certificate."
+      }
+    },
+    {
+      "img": "screenshots/03-core.png",
+      "ar": 0.919,
+      "section": "Core modules",
+      "cx": 26.3,
+      "cy": 16.5,
+      "w": 46,
+      "h": 6,
+      "z": 1.4,
+      "en": {
+        "t": "Core modules: complete all three",
+        "d": "Start here. All three core modules are required — that's your first 3 hours."
+      }
+    },
+    {
+      "img": "screenshots/03-core.png",
+      "ar": 0.919,
+      "section": "Core modules",
+      "cx": 49.2,
+      "cy": 48.6,
+      "w": 29,
+      "h": 4.4,
+      "z": 1.5,
+      "en": {
+        "t": "Start a module",
+        "d": "Hover over any module and click \"Start\". Each one shows its CPD value and length before you begin."
+      }
+    },
+    {
+      "img": "screenshots/04-tactical.png",
+      "ar": 0.919,
+      "section": "Choose your electives",
+      "cx": 28.5,
+      "cy": 17.5,
+      "w": 50.5,
+      "h": 9,
+      "z": 1.3,
+      "en": {
+        "t": "Tactical modules: complete one of three",
+        "d": "Next, pick whichever tactical module suits you best — you only need to complete one of the three. That's your fourth hour."
+      }
+    },
+    {
+      "img": "screenshots/05-technical.png",
+      "ar": 0.919,
+      "section": "Choose your electives",
+      "cx": 28.5,
+      "cy": 17.5,
+      "w": 50.5,
+      "h": 9,
+      "z": 1.3,
+      "en": {
+        "t": "Technical modules: complete one of three",
+        "d": "Finally, do the same here: complete any one of the three technical modules. That's your fifth and final hour."
+      }
+    }
+  ],
+  "ui": {
+    "en": {
+      "doneT": "That's your 5 hours complete!",
+      "doneD": "3 core + 1 tactical + 1 technical = your full 5 required hours. Your certificate will be waiting in the \"Achievements\" section of your profile.",
+      "lead": "For coaches in N1 and ECNL clubs. How to complete your 5 required hours and earn your certificate."
+    }
+  }
+}
