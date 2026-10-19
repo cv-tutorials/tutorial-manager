@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "extends": "cv/setting-up-your-club",
+  "partner": "efl",
+  "flow": "setting-up-your-club",
+  "languages": ["en"],
+
+  "_note": "EFL-branded build of the generic club-admin walkthrough. Steps, highlight boxes and copy all come from tutorials/cv/setting-up-your-club — this file only changes the partner, the branding and the language set. Correct the steps in the cv config, not here, so every partner reusing them gets the correction."
+}

@@ -31,7 +31,13 @@ function discover() {
     for (const flow of fs.readdirSync(pdir)) {
       const fdir = path.join(pdir, flow);
       if (!fs.statSync(fdir).isDirectory()) continue;
-      if (fs.existsSync(path.join(fdir, 'config.json'))) out.push({ partner, flow, dir: fdir });
+      const cfg = path.join(fdir, 'config.json');
+      if (!fs.existsSync(cfg)) continue;
+      // A tutorial built with `extends` has no boxes of its own — they live in the
+      // config it extends. Offering an editor here would quietly edit the original
+      // for every partner reusing it, so tune that one instead.
+      if (JSON.parse(fs.readFileSync(cfg, 'utf8')).extends) continue;
+      out.push({ partner, flow, dir: fdir });
     }
   }
   return out;

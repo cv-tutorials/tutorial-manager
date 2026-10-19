@@ -2,6 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 const { execSync } = require('child_process');
+const { resolveConfig, langsFor } = require('./config-resolve');
 
 const ROOT = path.resolve(__dirname, '..');
 const ENGINE_PATH = path.join(ROOT, 'engine', 'engine.template.html');
@@ -80,7 +81,7 @@ function optimiseImage(imgPath) {
 }
 
 function buildUI(partner, config, stepCount) {
-  const langs = partner.languages || ['en', 'es'];
+  const langs = langsFor(partner, config);
   const ui = {};
   for (const lang of langs) {
     const base = UI_STRINGS[lang] || UI_STRINGS.en;
@@ -105,22 +106,35 @@ function buildUI(partner, config, stepCount) {
   return ui;
 }
 
-function buildTutorial(engineTemplate, partner, config, configDir) {
+function buildTutorial(engineTemplate, partner, config, configDir, baseDir) {
+  // Assets resolve against this tutorial's own folder first, then the folder it
+  // extends — so a derived tutorial can swap a single screenshot for its own
+  // without copying the other sixteen.
+  const assetDirs = baseDir && baseDir !== configDir ? [configDir, baseDir] : [configDir];
+  const langs = langsFor(partner, config);
+
+  // When a tutorial narrows its languages, the ones it dropped should not ride along
+  // in the payload. An English-only EFL guide that still ships the Spanish copy is
+  // weight nobody reads, and it reads as an oversight to anyone opening the source.
+  const unusedLangs = Object.keys(UI_STRINGS).filter(l => !langs.includes(l));
+
   const steps = config.steps.map(s => {
-    const imgPath = path.join(configDir, s.img);
+    const imgPath = assetDirs.map(d => path.join(d, s.img)).find(p => fs.existsSync(p))
+      || path.join(configDir, s.img);
     const imgData = optimiseImage(imgPath);
-    return { ...s, img: imgData };
+    const step = { ...s, img: imgData };
+    for (const l of unusedLangs) delete step[l];
+    return step;
   });
 
   const ui = buildUI(partner, config, steps.length);
   const title = `${config.title.en || config.title[Object.keys(config.title)[0]]} · ${partner.name}`;
 
   // audio: which <lang>/step-N.mp3 clips exist for this tutorial
-  const langs = partner.languages || ['en', 'es'];
   const audioKeys = [];
   for (const lang of langs) {
     for (let i = 1; i <= config.steps.length; i++) {
-      if (fs.existsSync(path.join(configDir, 'audio', lang, `step-${i}.mp3`))) {
+      if (assetDirs.some(d => fs.existsSync(path.join(d, 'audio', lang, `step-${i}.mp3`)))) {
         audioKeys.push(`${lang}/step-${i}.mp3`);
       }
     }
@@ -292,10 +306,10 @@ for (const t of tutorials) {
     continue;
   }
 
-  const config = JSON.parse(fs.readFileSync(configFile, 'utf8'));
+  const { config, baseDir } = resolveConfig(configFile, configDir);
   const partner = loadPartner(config.partner || partnerSlug);
 
-  const standalone = buildTutorial(engineTemplate, partner, config, configDir);
+  const standalone = buildTutorial(engineTemplate, partner, config, configDir, baseDir);
   const embed = makeEmbed(standalone);
 
   validateJS(standalone, `${partnerSlug}/${flowSlug}/index.html`);

@@ -1,0 +1,94 @@
+{
+  "version": 1,
+  "partner": "efl",
+  "flow": "admin",
+  "freshdesk": false,
+
+  "_note": "The club-admin page for EFL clubs. Like helpcentres/efl/module.json it is ONE page for every EFL club, so nothing here may name a club, a crest, a domain or an LMS address. Modelled on helpcentres/forest/admin.json, but the shape of the job is different: an EFL club admin administers their OWN club's section only — EFL Content and EFL Resources are central and every club sees the same ones. That split is the first thing on the page because it is the thing an admin discovers by trying to edit something they cannot. Facts about the home page come from the 07.10 recording, via module.json.",
+
+  "title": "Running your club's platform — EFL club admin",
+  "eyebrow": "EFL &middot; Club administration",
+  "h1": "Running your club's platform",
+  "lead": "For the people who administer their club&rsquo;s platform rather than learn on it: adding coaches, building and publishing your own content, and reading what the reporting tells you.",
+  "footer": "EFL &middot; Club administration",
+
+  "vars": {
+    "club": "club"
+  },
+
+  "sections": [
+    {
+      "id": "setup",
+      "title": "Where you work",
+      "nav": false,
+      "lead": "Everything below happens in <strong>Club Settings</strong>. Click your initials at the top right of the platform and choose it &mdash; that opens the admin area with its own sidebar down the left. Coaches never see any of it.",
+      "blocks": [
+        {
+          "type": "callout",
+          "text": "<strong>You administer your own club&rsquo;s section, not the EFL&rsquo;s.</strong> <em>EFL Content</em> and <em>EFL Resources</em> are central: they are built and published by the EFL, every club sees the same ones, and they will not appear in your admin area. What you build and publish is your club&rsquo;s own section &mdash; how you play, how you coach, your curriculum, your CPD calendar and your resources. If something you want to change is not in Club Settings, it is almost certainly EFL-level."
+        }
+      ]
+    },
+
+    {
+      "id": "coaches",
+      "title": "Coaches",
+      "note": "Getting people on, and organising them",
+      "lead": "Start here in the week before an induction: get the invitations out early so nobody spends their first morning waiting on an email.",
+      "blocks": [
+        { "type": "cards", "cards": ["invite", "setup", "announcements"] },
+        {
+          "type": "callout",
+          "text": "<strong>An invitation is tied to the email address you sent it to.</strong> If a coach replies that they never received it, resend it before creating a second account &mdash; two accounts for one coach split their progress in half and neither reads as complete."
+        }
+      ]
+    },
+
+    {
+      "id": "content",
+      "title": "Content",
+      "note": "Building it, and putting it in front of coaches",
+      "lead": "Content is built as <strong>modules</strong>, which hold <strong>units</strong>, which hold <strong>lessons</strong>. Publishing a module is not the last step &mdash; it also has to be added to a content rail before coaches see it on their home page.",
+      "blocks": [
+        { "type": "cards", "cards": ["content"] },
+        { "type": "callout", "use": "publishedNotVisible" }
+      ]
+    },
+
+    {
+      "id": "reporting",
+      "title": "Reporting",
+      "note": "What people have actually done",
+      "lead": "Reporting is where you check induction has landed: who has completed what, who has not started, and how many of your seats are in use.",
+      "blocks": [
+        { "type": "cards", "cards": ["reporting"] },
+        { "type": "callout", "use": "referenceNoProgress" }
+      ]
+    },
+
+    {
+      "id": "planner",
+      "title": "Session Planner",
+      "note": "The other Coaches&rsquo; Voice platform, administered separately",
+      "lead": [
+        "Session Planner is the other Coaches&rsquo; Voice platform, and it has its own club administration. Adding a coach to one does <strong>not</strong> add them to the other, and the accounts are not linked &mdash; there is no single sign-on between them. Budget for doing both.",
+        "The videos below come from Session Planner&rsquo;s own channel."
+      ],
+      "blocks": [
+        { "type": "videos", "codes": "clubAdmin" },
+        { "type": "cards", "cards": ["sessionPlannerHelp"] },
+        {
+          "type": "callout",
+          "text": "<strong>When a coach leaves your club, revoke both.</strong> Removing them from the learning platform leaves their Session Planner access untouched, and vice versa. Two platforms, two off-boarding steps."
+        }
+      ]
+    },
+
+    {
+      "id": "help",
+      "title": "Need a hand?",
+      "navLabel": "Help",
+      "lead": "Anything about the <strong>platform itself</strong> &mdash; invitations, seats, publishing, reporting &mdash; goes to <a href=\"mailto:{{supportEmail}}\" style=\"color:var(--red);font-weight:700;text-decoration:none\">{{supportEmail}}</a>. Anything about <strong>Session Planner</strong> goes to <a href=\"mailto:{{plannerSupport}}\" style=\"color:var(--red);font-weight:700;text-decoration:none\">{{plannerSupport}}</a>. Tell us what you were doing and what you saw on screen &mdash; it gets you an answer far quicker. Coaches looking for help with their own learning should be pointed at their induction module rather than sent here."
+    }
+  ]
+}

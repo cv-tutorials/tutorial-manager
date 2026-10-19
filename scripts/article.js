@@ -12,6 +12,7 @@
  */
 const fs = require('fs');
 const path = require('path');
+const { resolveConfig } = require('./config-resolve');
 
 const ROOT = path.resolve(__dirname, '..');
 const TUTORIALS_DIR = path.join(ROOT, 'tutorials');
@@ -39,7 +40,10 @@ function discover() {
 }
 
 function build({ partner, flow, dir }) {
-  const config = JSON.parse(fs.readFileSync(path.join(dir, 'config.json'), 'utf8'));
+  // A derived tutorial keeps its steps — and its screenshots — in the config it extends.
+  const { config, baseDir } = resolveConfig(path.join(dir, 'config.json'), dir);
+  const assetDirs = baseDir !== dir ? [dir, baseDir] : [dir];
+  const findAsset = rel => assetDirs.map(d => path.join(d, rel)).find(fs.existsSync) || path.join(dir, rel);
   let brand = { name: partner.toUpperCase(), accent: '#FF6600', primary: '#333F48', email: '' };
   try { brand = { ...brand, ...JSON.parse(fs.readFileSync(path.join(PARTNERS_DIR, config.partner || partner, 'partner.json'), 'utf8')) }; } catch {}
 
@@ -97,7 +101,7 @@ body{font-family:"Inter",-apple-system,"Segoe UI",Arial,sans-serif;color:${nav};
   steps.forEach((s, i) => {
     if (s.section && s.section !== lastSec) { html.push(`<div class="sec">${s.section}</div>`); lastSec = s.section; }
     const loc = pick(s);
-    const img = dataUri(path.join(dir, s.img));
+    const img = dataUri(findAsset(s.img));
     let hl = '';
     if (!s.noSpot) {
       const L = s.cx - s.w / 2, T = s.cy - s.h / 2;
