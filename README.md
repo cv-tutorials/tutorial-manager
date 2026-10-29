@@ -7,7 +7,7 @@ re-branded per partner, and embed them in Freshdesk Knowledge Base articles.
 
 ```bash
 npm run build              # builds all tutorials → dist/
-npm run iframe efl/invite-users   # prints the Freshdesk <iframe> snippet
+npm run iframe efl/reporting      # prints the Freshdesk <iframe> snippet
 npm run sync-builder       # syncs engine template into builder
 npm run helpcentre         # builds only the partner help centres
 ```

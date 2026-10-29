@@ -67,8 +67,8 @@ npm run sync-builder             # sync engine → builder ENGINE string
 ```json
 {
   "version": 2,
-  "partner": "efl",
-  "flow": "invite-users",
+  "partner": "cv",
+  "flow": "reporting",
   "title": { "en": "...", "es": "..." },
   "primary": "#override",   // optional — falls back to partner.json
   "accent": "#override",    // optional
